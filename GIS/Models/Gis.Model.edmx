@@ -1,0 +1,2835 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Gis.MapModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="GisMapModelStoreContainer">
+          <EntitySet Name="AcquisitionPrices" EntityType="Gis.MapModel.Store.AcquisitionPrices" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Assets" EntityType="Gis.MapModel.Store.Assets" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Consumers" EntityType="Gis.MapModel.Store.Consumers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ConsumerTypes" EntityType="Gis.MapModel.Store.ConsumerTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ConsumerTypesToReports" EntityType="Gis.MapModel.Store.ConsumerTypesToReports" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ConsumptionDetails" EntityType="Gis.MapModel.Store.ConsumptionDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Consumptions" EntityType="Gis.MapModel.Store.Consumptions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CostCenters" EntityType="Gis.MapModel.Store.CostCenters" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Districts" EntityType="Gis.MapModel.Store.Districts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ElectricStations" EntityType="Gis.MapModel.Store.ElectricStations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FieldClusters" EntityType="Gis.MapModel.Store.FieldClusters" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ImportFiles" EntityType="Gis.MapModel.Store.ImportFiles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Imports" EntityType="Gis.MapModel.Store.Imports" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ImportTypes" EntityType="Gis.MapModel.Store.ImportTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Locations" EntityType="Gis.MapModel.Store.Locations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Menu" EntityType="Gis.MapModel.Store.Menu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MenuToRoles" EntityType="Gis.MapModel.Store.MenuToRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Months" EntityType="Gis.MapModel.Store.Months" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NetworkOperators" EntityType="Gis.MapModel.Store.NetworkOperators" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NotificationRules" EntityType="Gis.MapModel.Store.NotificationRules" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Notifications" EntityType="Gis.MapModel.Store.Notifications" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NotificationsToUsers" EntityType="Gis.MapModel.Store.NotificationsToUsers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Reports" EntityType="Gis.MapModel.Store.Reports" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReportsToRoles" EntityType="Gis.MapModel.Store.ReportsToRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Roles" EntityType="Gis.MapModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="Gis.MapModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersToRoles" EntityType="Gis.MapModel.Store.UsersToRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VoltageLevels" EntityType="Gis.MapModel.Store.VoltageLevels" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_AcquisitionPrices_NetworkOperators" Association="Gis.MapModel.Store.FK_AcquisitionPrices_NetworkOperators">
+            <End Role="NetworkOperators" EntitySet="NetworkOperators" />
+            <End Role="AcquisitionPrices" EntitySet="AcquisitionPrices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Assets_Users" Association="Gis.MapModel.Store.FK_Assets_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Assets" EntitySet="Assets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Assets_Users1" Association="Gis.MapModel.Store.FK_Assets_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Assets" EntitySet="Assets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_Assets" Association="Gis.MapModel.Store.FK_Consumers_Assets">
+            <End Role="Assets" EntitySet="Assets" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_ConsumerTypes" Association="Gis.MapModel.Store.FK_Consumers_ConsumerTypes">
+            <End Role="ConsumerTypes" EntitySet="ConsumerTypes" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_CostCenters" Association="Gis.MapModel.Store.FK_Consumers_CostCenters">
+            <End Role="CostCenters" EntitySet="CostCenters" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_Districts" Association="Gis.MapModel.Store.FK_Consumers_Districts">
+            <End Role="Districts" EntitySet="Districts" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_ElectricStations" Association="Gis.MapModel.Store.FK_Consumers_ElectricStations">
+            <End Role="ElectricStations" EntitySet="ElectricStations" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_FieldClusters" Association="Gis.MapModel.Store.FK_Consumers_FieldClusters">
+            <End Role="FieldClusters" EntitySet="FieldClusters" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_NetworkOperators" Association="Gis.MapModel.Store.FK_Consumers_NetworkOperators">
+            <End Role="NetworkOperators" EntitySet="NetworkOperators" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_VoltageLevels" Association="Gis.MapModel.Store.FK_Consumers_VoltageLevels">
+            <End Role="VoltageLevels" EntitySet="VoltageLevels" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_VoltageLevels1" Association="Gis.MapModel.Store.FK_Consumers_VoltageLevels1">
+            <End Role="VoltageLevels" EntitySet="VoltageLevels" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsumerTypesToReports_ConsumerTypes" Association="Gis.MapModel.Store.FK_ConsumerTypesToReports_ConsumerTypes">
+            <End Role="ConsumerTypes" EntitySet="ConsumerTypes" />
+            <End Role="ConsumerTypesToReports" EntitySet="ConsumerTypesToReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsumerTypesToReports_Reports" Association="Gis.MapModel.Store.FK_ConsumerTypesToReports_Reports">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="ConsumerTypesToReports" EntitySet="ConsumerTypesToReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsumerTypesToReports_Users" Association="Gis.MapModel.Store.FK_ConsumerTypesToReports_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ConsumerTypesToReports" EntitySet="ConsumerTypesToReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsumptionDetails_Consumptions" Association="Gis.MapModel.Store.FK_ConsumptionDetails_Consumptions">
+            <End Role="Consumptions" EntitySet="Consumptions" />
+            <End Role="ConsumptionDetails" EntitySet="ConsumptionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsumptionDetails_Users" Association="Gis.MapModel.Store.FK_ConsumptionDetails_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ConsumptionDetails" EntitySet="ConsumptionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsumptionDetails_Users1" Association="Gis.MapModel.Store.FK_ConsumptionDetails_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ConsumptionDetails" EntitySet="ConsumptionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumptions_Consumers" Association="Gis.MapModel.Store.FK_Consumptions_Consumers">
+            <End Role="Consumers" EntitySet="Consumers" />
+            <End Role="Consumptions" EntitySet="Consumptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumptions_Users" Association="Gis.MapModel.Store.FK_Consumptions_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Consumptions" EntitySet="Consumptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CostCenters_CostCenters" Association="Gis.MapModel.Store.FK_CostCenters_CostCenters">
+            <End Role="CostCenters" EntitySet="CostCenters" />
+            <End Role="CostCenters1" EntitySet="CostCenters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CostCenters_Users" Association="Gis.MapModel.Store.FK_CostCenters_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CostCenters" EntitySet="CostCenters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CostCenters_Users1" Association="Gis.MapModel.Store.FK_CostCenters_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CostCenters" EntitySet="CostCenters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Imports_ImportFiles" Association="Gis.MapModel.Store.FK_Imports_ImportFiles">
+            <End Role="ImportFiles" EntitySet="ImportFiles" />
+            <End Role="Imports" EntitySet="Imports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Imports_ImportFiles1" Association="Gis.MapModel.Store.FK_Imports_ImportFiles1">
+            <End Role="ImportFiles" EntitySet="ImportFiles" />
+            <End Role="Imports" EntitySet="Imports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Imports_Users" Association="Gis.MapModel.Store.FK_Imports_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Imports" EntitySet="Imports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Locations_Consumers" Association="Gis.MapModel.Store.FK_Locations_Consumers">
+            <End Role="Consumers" EntitySet="Consumers" />
+            <End Role="Locations" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Locations_Users" Association="Gis.MapModel.Store.FK_Locations_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Locations" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Locations_Users1" Association="Gis.MapModel.Store.FK_Locations_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Locations" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_ParentMenu" Association="Gis.MapModel.Store.FK_Menu_ParentMenu">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="Menu1" EntitySet="Menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_Users" Association="Gis.MapModel.Store.FK_Menu_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Menu" EntitySet="Menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_Users1" Association="Gis.MapModel.Store.FK_Menu_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Menu" EntitySet="Menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuToRoles_Menu" Association="Gis.MapModel.Store.FK_MenuToRoles_Menu">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="MenuToRoles" EntitySet="MenuToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuToRoles_Roles" Association="Gis.MapModel.Store.FK_MenuToRoles_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="MenuToRoles" EntitySet="MenuToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuToRoles_Users" Association="Gis.MapModel.Store.FK_MenuToRoles_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="MenuToRoles" EntitySet="MenuToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuToRoles_Users1" Association="Gis.MapModel.Store.FK_MenuToRoles_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="MenuToRoles" EntitySet="MenuToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationRules_NotificationRules" Association="Gis.MapModel.Store.FK_NotificationRules_NotificationRules">
+            <End Role="NotificationRules" EntitySet="NotificationRules" />
+            <End Role="NotificationRules1" EntitySet="NotificationRules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationRules_Users" Association="Gis.MapModel.Store.FK_NotificationRules_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="NotificationRules" EntitySet="NotificationRules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationRules_Users1" Association="Gis.MapModel.Store.FK_NotificationRules_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="NotificationRules" EntitySet="NotificationRules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notifications_NotificationRules" Association="Gis.MapModel.Store.FK_Notifications_NotificationRules">
+            <End Role="NotificationRules" EntitySet="NotificationRules" />
+            <End Role="Notifications" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationsToUsers_NotificationsToUsers" Association="Gis.MapModel.Store.FK_NotificationsToUsers_NotificationsToUsers">
+            <End Role="Notifications" EntitySet="Notifications" />
+            <End Role="NotificationsToUsers" EntitySet="NotificationsToUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationsToUsers_Users" Association="Gis.MapModel.Store.FK_NotificationsToUsers_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="NotificationsToUsers" EntitySet="NotificationsToUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reports_Users" Association="Gis.MapModel.Store.FK_Reports_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportsToRoles_Reports" Association="Gis.MapModel.Store.FK_ReportsToRoles_Reports">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="ReportsToRoles" EntitySet="ReportsToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportsToRoles_Roles" Association="Gis.MapModel.Store.FK_ReportsToRoles_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="ReportsToRoles" EntitySet="ReportsToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersToRoles_CreatedByUser" Association="Gis.MapModel.Store.FK_UsersToRoles_CreatedByUser">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UsersToRoles" EntitySet="UsersToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersToRoles_Roles" Association="Gis.MapModel.Store.FK_UsersToRoles_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UsersToRoles" EntitySet="UsersToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersToRoles_Users" Association="Gis.MapModel.Store.FK_UsersToRoles_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UsersToRoles" EntitySet="UsersToRoles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AcquisitionPrices">
+          <Key>
+            <PropertyRef Name="IDAcquisitionPrice" />
+          </Key>
+          <Property Name="IDAcquisitionPrice" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDNetworkOperator" Type="int" Nullable="false" />
+          <Property Name="ActiveEnergyPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="ReactiveMTEnergyPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="ReactiveJTEnergyPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="TL" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="SS" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="OPCOM" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="IT" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="MT" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="JT" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="BalancingCost" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="ProviderProfit" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="CogenerationContribution" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Assets">
+          <Key>
+            <PropertyRef Name="IDAsset" />
+          </Key>
+          <Property Name="IDAsset" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Consumers">
+          <Key>
+            <PropertyRef Name="IDConsumer" />
+          </Key>
+          <Property Name="IDConsumer" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ConsumerName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="IDConsumerType" Type="int" Nullable="false" />
+          <Property Name="IDCostCenter" Type="int" Nullable="false" />
+          <Property Name="IDNetworkOperator" Type="int" Nullable="false" />
+          <Property Name="IDDistrict" Type="int" Nullable="false" />
+          <Property Name="IDAsset" Type="int" Nullable="false" />
+          <Property Name="IDFieldCluster" Type="int" />
+          <Property Name="ConsumptionPlaceName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ConsumptionPlaceAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="IDElectricStation" Type="int" />
+          <Property Name="MeasurePointName" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="VMSCode" Type="nvarchar" MaxLength="25" />
+          <Property Name="ComputingSign" Type="int" Nullable="false" />
+          <Property Name="IDVoltageLevelMeasurePoint" Type="int" />
+          <Property Name="IDVoltageLevelSettlementPoint" Type="int" />
+          <Property Name="RecordedEnergyCorrection" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="ElectricMeterSerial" Type="nvarchar" MaxLength="100" />
+          <Property Name="ElectricMeterConstant" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="datetime" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="Image" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="ConsumerTypes">
+          <Key>
+            <PropertyRef Name="IDConsumerType" />
+          </Key>
+          <Property Name="IDConsumerType" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ConsumerTypeName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="MapType" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ConsumerTypesToReports">
+          <Key>
+            <PropertyRef Name="IDConsumerTypeToReport" />
+          </Key>
+          <Property Name="IDConsumerTypeToReport" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDConsumerType" Type="int" Nullable="false" />
+          <Property Name="IDReport" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ConsumptionDetails">
+          <Key>
+            <PropertyRef Name="IDConsumptionDetail" />
+          </Key>
+          <Property Name="IDConsumptionDetail" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDConsumption" Type="int" Nullable="false" />
+          <Property Name="ElectricCurrent" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Voltage" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Power" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="PowerFactor" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="CurrentUnbalance" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="VoltageUnbalance" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Frequency" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="Consumptions">
+          <Key>
+            <PropertyRef Name="IDConsumption" />
+          </Key>
+          <Property Name="IDConsumption" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDConsumer" Type="int" Nullable="false" />
+          <Property Name="ActiveEnergyMeterStartIndex" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="ActiveEnergyMeterEndIndex" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="ActiveEnergyConsumption" Type="decimal" Nullable="false" Precision="10" Scale="3" />
+          <Property Name="InductiveEnergyMeterStartIndex" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="InductiveEnergyMeterEndIndex" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="InductiveEnergyConsumption" Type="decimal" Nullable="false" Precision="10" Scale="3" />
+          <Property Name="CapacitiveEnergyMeterStartIndex" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="CapacitiveEnergyMeterEndIndex" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="CapacitiveEnergyConsumption" Type="decimal" Nullable="false" Precision="10" Scale="3" />
+          <Property Name="UseActiveEnergyCorrection" Type="bit" Nullable="false" />
+          <Property Name="UseInductiveEnergyCorrection" Type="bit" Nullable="false" />
+          <Property Name="UseCapacitiveEnergyCorrection" Type="bit" Nullable="false" />
+          <Property Name="ConsumptionDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedOn" Type="date" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CostCenters">
+          <Key>
+            <PropertyRef Name="IDCostCenter" />
+          </Key>
+          <Property Name="IDCostCenter" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ShortName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IDParentCostCenter" Type="int" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="Districts">
+          <Key>
+            <PropertyRef Name="IDDistrict" />
+          </Key>
+          <Property Name="IDDistrict" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DistrictName" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ElectricStations">
+          <Key>
+            <PropertyRef Name="IDElectricStation" />
+          </Key>
+          <Property Name="IDElectricStation" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ElectricStationName" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="FieldClusters">
+          <Key>
+            <PropertyRef Name="IDFieldCluster" />
+          </Key>
+          <Property Name="IDFieldCluster" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FieldClusterName" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ImportFiles">
+          <Key>
+            <PropertyRef Name="IDImportFile" />
+          </Key>
+          <Property Name="IDImportFile" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="ContentType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="FileContent" Type="varbinary(max)" Nullable="false" />
+          <Property Name="UploadStartTime" Type="datetime" Nullable="false" />
+          <Property Name="UploadEndTime" Type="datetime" />
+          <Property Name="FileSize" Type="int" Nullable="false" />
+          <Property Name="FileExtension" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Imports">
+          <Key>
+            <PropertyRef Name="IDImport" />
+          </Key>
+          <Property Name="IDImport" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDImportType" Type="int" Nullable="false" />
+          <Property Name="IDOriginalFile" Type="int" Nullable="false" />
+          <Property Name="IDAnnotatedFile" Type="int" />
+          <Property Name="IDMonth" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ImportTypes">
+          <Key>
+            <PropertyRef Name="IDImportType" />
+          </Key>
+          <Property Name="IDImportType" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ImportTypeName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Locations">
+          <Key>
+            <PropertyRef Name="IDLocation" />
+          </Key>
+          <Property Name="IDLocation" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDConsumer" Type="int" Nullable="false" />
+          <Property Name="Longitude" Type="float" Nullable="false" />
+          <Property Name="Latitude" Type="float" Nullable="false" />
+          <Property Name="ElectricalLineDiagramX" Type="int" />
+          <Property Name="ElectricalLineDiagramY" Type="int" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="IDMenu" />
+          </Key>
+          <Property Name="IDMenu" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MenuName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="IDParentMenu" Type="int" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuToRoles">
+          <Key>
+            <PropertyRef Name="IDMenuToRole" />
+          </Key>
+          <Property Name="IDMenuToRole" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDMenu" Type="int" Nullable="false" />
+          <Property Name="IDRole" Type="int" Nullable="false" />
+          <Property Name="ReadPermission" Type="bit" Nullable="false" />
+          <Property Name="CreatePermission" Type="bit" Nullable="false" />
+          <Property Name="EditPermission" Type="bit" Nullable="false" />
+          <Property Name="DeletePermission" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Months">
+          <Key>
+            <PropertyRef Name="IDMonth" />
+          </Key>
+          <Property Name="IDMonth" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MonthCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MonthName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
+          <Property Name="MonthInt" Type="int" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NetworkOperators">
+          <Key>
+            <PropertyRef Name="IDNetworkOperator" />
+          </Key>
+          <Property Name="IDNetworkOperator" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NetworkOperatorName" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="NotificationRules">
+          <Key>
+            <PropertyRef Name="IDNotificationRule" />
+          </Key>
+          <Property Name="IDNotificationRule" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RuleDescription" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="SPToExecute" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NotificationSubject" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="NotificationBody" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ValidityDays" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Notifications">
+          <Key>
+            <PropertyRef Name="IDNotification" />
+          </Key>
+          <Property Name="IDNotification" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDNotificationRule" Type="int" />
+          <Property Name="NotificationSubject" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="NotificationBody" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NotificationStartDate" Type="datetime" Nullable="false" />
+          <Property Name="NotificationEndDate" Type="datetime" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NotificationsToUsers">
+          <Key>
+            <PropertyRef Name="IDNotificationToUser" />
+          </Key>
+          <Property Name="IDNotificationToUser" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDNotification" Type="int" Nullable="false" />
+          <Property Name="IDUser" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="DateRead" Type="datetime" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityType Name="Reports">
+          <Key>
+            <PropertyRef Name="IDReport" />
+          </Key>
+          <Property Name="IDReport" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReportName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="UIReportName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="ReportGroup" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReportGroupOrderNo" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportsToRoles">
+          <Key>
+            <PropertyRef Name="IDReportToRole" />
+          </Key>
+          <Property Name="IDReportToRole" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDReport" Type="int" Nullable="false" />
+          <Property Name="IDRole" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="IDRole" />
+          </Key>
+          <Property Name="IDRole" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="IDUser" />
+          </Key>
+          <Property Name="IDUser" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersToRoles">
+          <Key>
+            <PropertyRef Name="IDUserToRole" />
+          </Key>
+          <Property Name="IDUserToRole" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDUser" Type="int" Nullable="false" />
+          <Property Name="IDRole" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VoltageLevels">
+          <Key>
+            <PropertyRef Name="IDVoltageLevel" />
+          </Key>
+          <Property Name="IDVoltageLevel" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VoltageLevelName" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_AcquisitionPrices_NetworkOperators">
+          <End Role="NetworkOperators" Type="Gis.MapModel.Store.NetworkOperators" Multiplicity="1" />
+          <End Role="AcquisitionPrices" Type="Gis.MapModel.Store.AcquisitionPrices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetworkOperators">
+              <PropertyRef Name="IDNetworkOperator" />
+            </Principal>
+            <Dependent Role="AcquisitionPrices">
+              <PropertyRef Name="IDNetworkOperator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Assets_Users">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="1" />
+          <End Role="Assets" Type="Gis.MapModel.Store.Assets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Assets">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Assets_Users1">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="0..1" />
+          <End Role="Assets" Type="Gis.MapModel.Store.Assets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Assets">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_Assets">
+          <End Role="Assets" Type="Gis.MapModel.Store.Assets" Multiplicity="1" />
+          <End Role="Consumers" Type="Gis.MapModel.Store.Consumers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assets">
+              <PropertyRef Name="IDAsset" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDAsset" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_ConsumerTypes">
+          <End Role="ConsumerTypes" Type="Gis.MapModel.Store.ConsumerTypes" Multiplicity="1" />
+          <End Role="Consumers" Type="Gis.MapModel.Store.Consumers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConsumerTypes">
+              <PropertyRef Name="IDConsumerType" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDConsumerType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_CostCenters">
+          <End Role="CostCenters" Type="Gis.MapModel.Store.CostCenters" Multiplicity="1" />
+          <End Role="Consumers" Type="Gis.MapModel.Store.Consumers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CostCenters">
+              <PropertyRef Name="IDCostCenter" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDCostCenter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_Districts">
+          <End Role="Districts" Type="Gis.MapModel.Store.Districts" Multiplicity="1" />
+          <End Role="Consumers" Type="Gis.MapModel.Store.Consumers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Districts">
+              <PropertyRef Name="IDDistrict" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDDistrict" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_ElectricStations">
+          <End Role="ElectricStations" Type="Gis.MapModel.Store.ElectricStations" Multiplicity="0..1" />
+          <End Role="Consumers" Type="Gis.MapModel.Store.Consumers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElectricStations">
+              <PropertyRef Name="IDElectricStation" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDElectricStation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_FieldClusters">
+          <End Role="FieldClusters" Type="Gis.MapModel.Store.FieldClusters" Multiplicity="0..1" />
+          <End Role="Consumers" Type="Gis.MapModel.Store.Consumers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FieldClusters">
+              <PropertyRef Name="IDFieldCluster" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDFieldCluster" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_NetworkOperators">
+          <End Role="NetworkOperators" Type="Gis.MapModel.Store.NetworkOperators" Multiplicity="1" />
+          <End Role="Consumers" Type="Gis.MapModel.Store.Consumers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetworkOperators">
+              <PropertyRef Name="IDNetworkOperator" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDNetworkOperator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_VoltageLevels">
+          <End Role="VoltageLevels" Type="Gis.MapModel.Store.VoltageLevels" Multiplicity="0..1" />
+          <End Role="Consumers" Type="Gis.MapModel.Store.Consumers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoltageLevels">
+              <PropertyRef Name="IDVoltageLevel" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDVoltageLevelMeasurePoint" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_VoltageLevels1">
+          <End Role="VoltageLevels" Type="Gis.MapModel.Store.VoltageLevels" Multiplicity="0..1" />
+          <End Role="Consumers" Type="Gis.MapModel.Store.Consumers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoltageLevels">
+              <PropertyRef Name="IDVoltageLevel" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDVoltageLevelSettlementPoint" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsumerTypesToReports_ConsumerTypes">
+          <End Role="ConsumerTypes" Type="Gis.MapModel.Store.ConsumerTypes" Multiplicity="1" />
+          <End Role="ConsumerTypesToReports" Type="Gis.MapModel.Store.ConsumerTypesToReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConsumerTypes">
+              <PropertyRef Name="IDConsumerType" />
+            </Principal>
+            <Dependent Role="ConsumerTypesToReports">
+              <PropertyRef Name="IDConsumerType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsumerTypesToReports_Reports">
+          <End Role="Reports" Type="Gis.MapModel.Store.Reports" Multiplicity="1" />
+          <End Role="ConsumerTypesToReports" Type="Gis.MapModel.Store.ConsumerTypesToReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="IDReport" />
+            </Principal>
+            <Dependent Role="ConsumerTypesToReports">
+              <PropertyRef Name="IDReport" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsumerTypesToReports_Users">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="1" />
+          <End Role="ConsumerTypesToReports" Type="Gis.MapModel.Store.ConsumerTypesToReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="ConsumerTypesToReports">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsumptionDetails_Consumptions">
+          <End Role="Consumptions" Type="Gis.MapModel.Store.Consumptions" Multiplicity="1" />
+          <End Role="ConsumptionDetails" Type="Gis.MapModel.Store.ConsumptionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consumptions">
+              <PropertyRef Name="IDConsumption" />
+            </Principal>
+            <Dependent Role="ConsumptionDetails">
+              <PropertyRef Name="IDConsumption" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsumptionDetails_Users">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="0..1" />
+          <End Role="ConsumptionDetails" Type="Gis.MapModel.Store.ConsumptionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="ConsumptionDetails">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsumptionDetails_Users1">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="1" />
+          <End Role="ConsumptionDetails" Type="Gis.MapModel.Store.ConsumptionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="ConsumptionDetails">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumptions_Consumers">
+          <End Role="Consumers" Type="Gis.MapModel.Store.Consumers" Multiplicity="1" />
+          <End Role="Consumptions" Type="Gis.MapModel.Store.Consumptions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consumers">
+              <PropertyRef Name="IDConsumer" />
+            </Principal>
+            <Dependent Role="Consumptions">
+              <PropertyRef Name="IDConsumer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumptions_Users">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="1" />
+          <End Role="Consumptions" Type="Gis.MapModel.Store.Consumptions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Consumptions">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CostCenters_CostCenters">
+          <End Role="CostCenters" Type="Gis.MapModel.Store.CostCenters" Multiplicity="0..1" />
+          <End Role="CostCenters1" Type="Gis.MapModel.Store.CostCenters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CostCenters">
+              <PropertyRef Name="IDCostCenter" />
+            </Principal>
+            <Dependent Role="CostCenters1">
+              <PropertyRef Name="IDParentCostCenter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CostCenters_Users">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="1" />
+          <End Role="CostCenters" Type="Gis.MapModel.Store.CostCenters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="CostCenters">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CostCenters_Users1">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="0..1" />
+          <End Role="CostCenters" Type="Gis.MapModel.Store.CostCenters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="CostCenters">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Imports_ImportFiles">
+          <End Role="ImportFiles" Type="Gis.MapModel.Store.ImportFiles" Multiplicity="1" />
+          <End Role="Imports" Type="Gis.MapModel.Store.Imports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImportFiles">
+              <PropertyRef Name="IDImportFile" />
+            </Principal>
+            <Dependent Role="Imports">
+              <PropertyRef Name="IDOriginalFile" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Imports_ImportFiles1">
+          <End Role="ImportFiles" Type="Gis.MapModel.Store.ImportFiles" Multiplicity="0..1" />
+          <End Role="Imports" Type="Gis.MapModel.Store.Imports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImportFiles">
+              <PropertyRef Name="IDImportFile" />
+            </Principal>
+            <Dependent Role="Imports">
+              <PropertyRef Name="IDAnnotatedFile" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Imports_Users">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="1" />
+          <End Role="Imports" Type="Gis.MapModel.Store.Imports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Imports">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Locations_Consumers">
+          <End Role="Consumers" Type="Gis.MapModel.Store.Consumers" Multiplicity="1" />
+          <End Role="Locations" Type="Gis.MapModel.Store.Locations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consumers">
+              <PropertyRef Name="IDConsumer" />
+            </Principal>
+            <Dependent Role="Locations">
+              <PropertyRef Name="IDConsumer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Locations_Users">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="1" />
+          <End Role="Locations" Type="Gis.MapModel.Store.Locations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Locations">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Locations_Users1">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="0..1" />
+          <End Role="Locations" Type="Gis.MapModel.Store.Locations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Locations">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_ParentMenu">
+          <End Role="Menu" Type="Gis.MapModel.Store.Menu" Multiplicity="0..1" />
+          <End Role="Menu1" Type="Gis.MapModel.Store.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="IDMenu" />
+            </Principal>
+            <Dependent Role="Menu1">
+              <PropertyRef Name="IDParentMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_Users">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="1" />
+          <End Role="Menu" Type="Gis.MapModel.Store.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_Users1">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="0..1" />
+          <End Role="Menu" Type="Gis.MapModel.Store.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuToRoles_Menu">
+          <End Role="Menu" Type="Gis.MapModel.Store.Menu" Multiplicity="1" />
+          <End Role="MenuToRoles" Type="Gis.MapModel.Store.MenuToRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="IDMenu" />
+            </Principal>
+            <Dependent Role="MenuToRoles">
+              <PropertyRef Name="IDMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuToRoles_Roles">
+          <End Role="Roles" Type="Gis.MapModel.Store.Roles" Multiplicity="1" />
+          <End Role="MenuToRoles" Type="Gis.MapModel.Store.MenuToRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="IDRole" />
+            </Principal>
+            <Dependent Role="MenuToRoles">
+              <PropertyRef Name="IDRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuToRoles_Users">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="1" />
+          <End Role="MenuToRoles" Type="Gis.MapModel.Store.MenuToRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="MenuToRoles">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuToRoles_Users1">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="0..1" />
+          <End Role="MenuToRoles" Type="Gis.MapModel.Store.MenuToRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="MenuToRoles">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationRules_NotificationRules">
+          <End Role="NotificationRules" Type="Gis.MapModel.Store.NotificationRules" Multiplicity="1" />
+          <End Role="NotificationRules1" Type="Gis.MapModel.Store.NotificationRules" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationRules">
+              <PropertyRef Name="IDNotificationRule" />
+            </Principal>
+            <Dependent Role="NotificationRules1">
+              <PropertyRef Name="IDNotificationRule" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationRules_Users">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="1" />
+          <End Role="NotificationRules" Type="Gis.MapModel.Store.NotificationRules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="NotificationRules">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationRules_Users1">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="0..1" />
+          <End Role="NotificationRules" Type="Gis.MapModel.Store.NotificationRules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="NotificationRules">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notifications_NotificationRules">
+          <End Role="NotificationRules" Type="Gis.MapModel.Store.NotificationRules" Multiplicity="0..1" />
+          <End Role="Notifications" Type="Gis.MapModel.Store.Notifications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationRules">
+              <PropertyRef Name="IDNotificationRule" />
+            </Principal>
+            <Dependent Role="Notifications">
+              <PropertyRef Name="IDNotificationRule" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationsToUsers_NotificationsToUsers">
+          <End Role="Notifications" Type="Gis.MapModel.Store.Notifications" Multiplicity="1" />
+          <End Role="NotificationsToUsers" Type="Gis.MapModel.Store.NotificationsToUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notifications">
+              <PropertyRef Name="IDNotification" />
+            </Principal>
+            <Dependent Role="NotificationsToUsers">
+              <PropertyRef Name="IDNotification" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationsToUsers_Users">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="1" />
+          <End Role="NotificationsToUsers" Type="Gis.MapModel.Store.NotificationsToUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="NotificationsToUsers">
+              <PropertyRef Name="IDUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reports_Users">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="1" />
+          <End Role="Reports" Type="Gis.MapModel.Store.Reports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportsToRoles_Reports">
+          <End Role="Reports" Type="Gis.MapModel.Store.Reports" Multiplicity="1" />
+          <End Role="ReportsToRoles" Type="Gis.MapModel.Store.ReportsToRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="IDReport" />
+            </Principal>
+            <Dependent Role="ReportsToRoles">
+              <PropertyRef Name="IDReport" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportsToRoles_Roles">
+          <End Role="Roles" Type="Gis.MapModel.Store.Roles" Multiplicity="1" />
+          <End Role="ReportsToRoles" Type="Gis.MapModel.Store.ReportsToRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="IDRole" />
+            </Principal>
+            <Dependent Role="ReportsToRoles">
+              <PropertyRef Name="IDRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersToRoles_CreatedByUser">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="1" />
+          <End Role="UsersToRoles" Type="Gis.MapModel.Store.UsersToRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="UsersToRoles">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersToRoles_Roles">
+          <End Role="Roles" Type="Gis.MapModel.Store.Roles" Multiplicity="1" />
+          <End Role="UsersToRoles" Type="Gis.MapModel.Store.UsersToRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="IDRole" />
+            </Principal>
+            <Dependent Role="UsersToRoles">
+              <PropertyRef Name="IDRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersToRoles_Users">
+          <End Role="Users" Type="Gis.MapModel.Store.Users" Multiplicity="1" />
+          <End Role="UsersToRoles" Type="Gis.MapModel.Store.UsersToRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="UsersToRoles">
+              <PropertyRef Name="IDUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Gis.MapModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="GisConnectionString" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AcquisitionPrices" EntityType="Gis.MapModel.AcquisitionPrice" />
+          <EntitySet Name="Assets" EntityType="Gis.MapModel.Asset" />
+          <EntitySet Name="Consumers" EntityType="Gis.MapModel.Consumer" />
+          <EntitySet Name="ConsumerTypes" EntityType="Gis.MapModel.ConsumerType" />
+          <EntitySet Name="ConsumerTypesToReports" EntityType="Gis.MapModel.ConsumerTypesToReport" />
+          <EntitySet Name="ConsumptionDetails" EntityType="Gis.MapModel.ConsumptionDetail" />
+          <EntitySet Name="Consumptions" EntityType="Gis.MapModel.Consumption" />
+          <EntitySet Name="CostCenters" EntityType="Gis.MapModel.CostCenter" />
+          <EntitySet Name="Districts" EntityType="Gis.MapModel.District" />
+          <EntitySet Name="ElectricStations" EntityType="Gis.MapModel.ElectricStation" />
+          <EntitySet Name="FieldClusters" EntityType="Gis.MapModel.FieldCluster" />
+          <EntitySet Name="ImportFiles" EntityType="Gis.MapModel.ImportFile" />
+          <EntitySet Name="Imports" EntityType="Gis.MapModel.Import" />
+          <EntitySet Name="ImportTypes" EntityType="Gis.MapModel.ImportType" />
+          <EntitySet Name="Locations" EntityType="Gis.MapModel.Location" />
+          <EntitySet Name="Menus" EntityType="Gis.MapModel.Menu" />
+          <EntitySet Name="MenuToRoles" EntityType="Gis.MapModel.MenuToRole" />
+          <EntitySet Name="Months" EntityType="Gis.MapModel.Month" />
+          <EntitySet Name="NetworkOperators" EntityType="Gis.MapModel.NetworkOperator" />
+          <EntitySet Name="NotificationRules" EntityType="Gis.MapModel.NotificationRule" />
+          <EntitySet Name="Notifications" EntityType="Gis.MapModel.Notification" />
+          <EntitySet Name="NotificationsToUsers" EntityType="Gis.MapModel.NotificationsToUser" />
+          <EntitySet Name="Reports" EntityType="Gis.MapModel.Report" />
+          <EntitySet Name="ReportsToRoles" EntityType="Gis.MapModel.ReportsToRole" />
+          <EntitySet Name="Roles" EntityType="Gis.MapModel.Role" />
+          <EntitySet Name="Users" EntityType="Gis.MapModel.User" />
+          <EntitySet Name="UsersToRoles" EntityType="Gis.MapModel.UsersToRole" />
+          <EntitySet Name="VoltageLevels" EntityType="Gis.MapModel.VoltageLevel" />
+          <AssociationSet Name="FK_AcquisitionPrices_NetworkOperators" Association="Gis.MapModel.FK_AcquisitionPrices_NetworkOperators">
+            <End Role="NetworkOperators" EntitySet="NetworkOperators" />
+            <End Role="AcquisitionPrices" EntitySet="AcquisitionPrices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Assets_Users" Association="Gis.MapModel.FK_Assets_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Assets" EntitySet="Assets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Assets_Users1" Association="Gis.MapModel.FK_Assets_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Assets" EntitySet="Assets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_Assets" Association="Gis.MapModel.FK_Consumers_Assets">
+            <End Role="Assets" EntitySet="Assets" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_ConsumerTypes" Association="Gis.MapModel.FK_Consumers_ConsumerTypes">
+            <End Role="ConsumerTypes" EntitySet="ConsumerTypes" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_CostCenters" Association="Gis.MapModel.FK_Consumers_CostCenters">
+            <End Role="CostCenters" EntitySet="CostCenters" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_Districts" Association="Gis.MapModel.FK_Consumers_Districts">
+            <End Role="Districts" EntitySet="Districts" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_ElectricStations" Association="Gis.MapModel.FK_Consumers_ElectricStations">
+            <End Role="ElectricStations" EntitySet="ElectricStations" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_FieldClusters" Association="Gis.MapModel.FK_Consumers_FieldClusters">
+            <End Role="FieldClusters" EntitySet="FieldClusters" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_NetworkOperators" Association="Gis.MapModel.FK_Consumers_NetworkOperators">
+            <End Role="NetworkOperators" EntitySet="NetworkOperators" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_VoltageLevels" Association="Gis.MapModel.FK_Consumers_VoltageLevels">
+            <End Role="VoltageLevels" EntitySet="VoltageLevels" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumers_VoltageLevels1" Association="Gis.MapModel.FK_Consumers_VoltageLevels1">
+            <End Role="VoltageLevels" EntitySet="VoltageLevels" />
+            <End Role="Consumers" EntitySet="Consumers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumptions_Consumers" Association="Gis.MapModel.FK_Consumptions_Consumers">
+            <End Role="Consumers" EntitySet="Consumers" />
+            <End Role="Consumptions" EntitySet="Consumptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Locations_Consumers" Association="Gis.MapModel.FK_Locations_Consumers">
+            <End Role="Consumers" EntitySet="Consumers" />
+            <End Role="Locations" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsumerTypesToReports_ConsumerTypes" Association="Gis.MapModel.FK_ConsumerTypesToReports_ConsumerTypes">
+            <End Role="ConsumerTypes" EntitySet="ConsumerTypes" />
+            <End Role="ConsumerTypesToReports" EntitySet="ConsumerTypesToReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsumerTypesToReports_Reports" Association="Gis.MapModel.FK_ConsumerTypesToReports_Reports">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="ConsumerTypesToReports" EntitySet="ConsumerTypesToReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsumerTypesToReports_Users" Association="Gis.MapModel.FK_ConsumerTypesToReports_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ConsumerTypesToReports" EntitySet="ConsumerTypesToReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsumptionDetails_Consumptions" Association="Gis.MapModel.FK_ConsumptionDetails_Consumptions">
+            <End Role="Consumptions" EntitySet="Consumptions" />
+            <End Role="ConsumptionDetails" EntitySet="ConsumptionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsumptionDetails_Users" Association="Gis.MapModel.FK_ConsumptionDetails_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ConsumptionDetails" EntitySet="ConsumptionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsumptionDetails_Users1" Association="Gis.MapModel.FK_ConsumptionDetails_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ConsumptionDetails" EntitySet="ConsumptionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consumptions_Users" Association="Gis.MapModel.FK_Consumptions_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Consumptions" EntitySet="Consumptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CostCenters_CostCenters" Association="Gis.MapModel.FK_CostCenters_CostCenters">
+            <End Role="CostCenters" EntitySet="CostCenters" />
+            <End Role="CostCenters1" EntitySet="CostCenters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CostCenters_Users" Association="Gis.MapModel.FK_CostCenters_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CostCenters" EntitySet="CostCenters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CostCenters_Users1" Association="Gis.MapModel.FK_CostCenters_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CostCenters" EntitySet="CostCenters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Imports_ImportFiles" Association="Gis.MapModel.FK_Imports_ImportFiles">
+            <End Role="ImportFiles" EntitySet="ImportFiles" />
+            <End Role="Imports" EntitySet="Imports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Imports_ImportFiles1" Association="Gis.MapModel.FK_Imports_ImportFiles1">
+            <End Role="ImportFiles" EntitySet="ImportFiles" />
+            <End Role="Imports" EntitySet="Imports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Imports_Users" Association="Gis.MapModel.FK_Imports_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Imports" EntitySet="Imports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Locations_Users" Association="Gis.MapModel.FK_Locations_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Locations" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Locations_Users1" Association="Gis.MapModel.FK_Locations_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Locations" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_ParentMenu" Association="Gis.MapModel.FK_Menu_ParentMenu">
+            <End Role="Menu" EntitySet="Menus" />
+            <End Role="Menu1" EntitySet="Menus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_Users" Association="Gis.MapModel.FK_Menu_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Menu" EntitySet="Menus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_Users1" Association="Gis.MapModel.FK_Menu_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Menu" EntitySet="Menus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuToRoles_Menu" Association="Gis.MapModel.FK_MenuToRoles_Menu">
+            <End Role="Menu" EntitySet="Menus" />
+            <End Role="MenuToRoles" EntitySet="MenuToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuToRoles_Roles" Association="Gis.MapModel.FK_MenuToRoles_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="MenuToRoles" EntitySet="MenuToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuToRoles_Users" Association="Gis.MapModel.FK_MenuToRoles_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="MenuToRoles" EntitySet="MenuToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuToRoles_Users1" Association="Gis.MapModel.FK_MenuToRoles_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="MenuToRoles" EntitySet="MenuToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationRules_NotificationRules" Association="Gis.MapModel.FK_NotificationRules_NotificationRules">
+            <End Role="NotificationRules" EntitySet="NotificationRules" />
+            <End Role="NotificationRules1" EntitySet="NotificationRules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationRules_Users" Association="Gis.MapModel.FK_NotificationRules_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="NotificationRules" EntitySet="NotificationRules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationRules_Users1" Association="Gis.MapModel.FK_NotificationRules_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="NotificationRules" EntitySet="NotificationRules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notifications_NotificationRules" Association="Gis.MapModel.FK_Notifications_NotificationRules">
+            <End Role="NotificationRules" EntitySet="NotificationRules" />
+            <End Role="Notifications" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationsToUsers_NotificationsToUsers" Association="Gis.MapModel.FK_NotificationsToUsers_NotificationsToUsers">
+            <End Role="Notifications" EntitySet="Notifications" />
+            <End Role="NotificationsToUsers" EntitySet="NotificationsToUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationsToUsers_Users" Association="Gis.MapModel.FK_NotificationsToUsers_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="NotificationsToUsers" EntitySet="NotificationsToUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reports_Users" Association="Gis.MapModel.FK_Reports_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportsToRoles_Reports" Association="Gis.MapModel.FK_ReportsToRoles_Reports">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="ReportsToRoles" EntitySet="ReportsToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportsToRoles_Roles" Association="Gis.MapModel.FK_ReportsToRoles_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="ReportsToRoles" EntitySet="ReportsToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersToRoles_Roles" Association="Gis.MapModel.FK_UsersToRoles_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UsersToRoles" EntitySet="UsersToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersToRoles_CreatedByUser" Association="Gis.MapModel.FK_UsersToRoles_CreatedByUser">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UsersToRoles" EntitySet="UsersToRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersToRoles_Users" Association="Gis.MapModel.FK_UsersToRoles_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UsersToRoles" EntitySet="UsersToRoles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AcquisitionPrice">
+          <Key>
+            <PropertyRef Name="IDAcquisitionPrice" />
+          </Key>
+          <Property Name="IDAcquisitionPrice" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IDNetworkOperator" Type="Int32" Nullable="false" />
+          <Property Name="ActiveEnergyPrice" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="ReactiveMTEnergyPrice" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="ReactiveJTEnergyPrice" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="TL" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="SS" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="OPCOM" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="IT" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="MT" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="JT" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="BalancingCost" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="ProviderProfit" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="CogenerationContribution" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="NetworkOperator" Relationship="Gis.MapModel.FK_AcquisitionPrices_NetworkOperators" FromRole="AcquisitionPrices" ToRole="NetworkOperators" />
+        </EntityType>
+        <EntityType Name="Asset">
+          <Key>
+            <PropertyRef Name="IDAsset" />
+          </Key>
+          <Property Name="IDAsset" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Gis.MapModel.FK_Assets_Users" FromRole="Assets" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Gis.MapModel.FK_Assets_Users1" FromRole="Assets" ToRole="Users" />
+          <NavigationProperty Name="Consumers" Relationship="Gis.MapModel.FK_Consumers_Assets" FromRole="Assets" ToRole="Consumers" />
+        </EntityType>
+        <EntityType Name="Consumer">
+          <Key>
+            <PropertyRef Name="IDConsumer" />
+          </Key>
+          <Property Name="IDConsumer" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ConsumerName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IDConsumerType" Type="Int32" Nullable="false" />
+          <Property Name="IDCostCenter" Type="Int32" Nullable="false" />
+          <Property Name="IDNetworkOperator" Type="Int32" Nullable="false" />
+          <Property Name="IDDistrict" Type="Int32" Nullable="false" />
+          <Property Name="IDAsset" Type="Int32" Nullable="false" />
+          <Property Name="IDFieldCluster" Type="Int32" />
+          <Property Name="ConsumptionPlaceName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ConsumptionPlaceAddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="IDElectricStation" Type="Int32" />
+          <Property Name="MeasurePointName" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="VMSCode" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="ComputingSign" Type="Int32" Nullable="false" />
+          <Property Name="IDVoltageLevelMeasurePoint" Type="Int32" />
+          <Property Name="IDVoltageLevelSettlementPoint" Type="Int32" />
+          <Property Name="RecordedEnergyCorrection" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="ElectricMeterSerial" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ElectricMeterConstant" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Asset" Relationship="Gis.MapModel.FK_Consumers_Assets" FromRole="Consumers" ToRole="Assets" />
+          <NavigationProperty Name="ConsumerType" Relationship="Gis.MapModel.FK_Consumers_ConsumerTypes" FromRole="Consumers" ToRole="ConsumerTypes" />
+          <NavigationProperty Name="CostCenter" Relationship="Gis.MapModel.FK_Consumers_CostCenters" FromRole="Consumers" ToRole="CostCenters" />
+          <NavigationProperty Name="District" Relationship="Gis.MapModel.FK_Consumers_Districts" FromRole="Consumers" ToRole="Districts" />
+          <NavigationProperty Name="ElectricStation" Relationship="Gis.MapModel.FK_Consumers_ElectricStations" FromRole="Consumers" ToRole="ElectricStations" />
+          <NavigationProperty Name="FieldCluster" Relationship="Gis.MapModel.FK_Consumers_FieldClusters" FromRole="Consumers" ToRole="FieldClusters" />
+          <NavigationProperty Name="NetworkOperator" Relationship="Gis.MapModel.FK_Consumers_NetworkOperators" FromRole="Consumers" ToRole="NetworkOperators" />
+          <NavigationProperty Name="VoltageLevel" Relationship="Gis.MapModel.FK_Consumers_VoltageLevels" FromRole="Consumers" ToRole="VoltageLevels" />
+          <NavigationProperty Name="VoltageLevel1" Relationship="Gis.MapModel.FK_Consumers_VoltageLevels1" FromRole="Consumers" ToRole="VoltageLevels" />
+          <NavigationProperty Name="Consumptions" Relationship="Gis.MapModel.FK_Consumptions_Consumers" FromRole="Consumers" ToRole="Consumptions" />
+          <NavigationProperty Name="Locations" Relationship="Gis.MapModel.FK_Locations_Consumers" FromRole="Consumers" ToRole="Locations" />
+        </EntityType>
+        <EntityType Name="ConsumerType">
+          <Key>
+            <PropertyRef Name="IDConsumerType" />
+          </Key>
+          <Property Name="IDConsumerType" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ConsumerTypeName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="MapType" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Consumers" Relationship="Gis.MapModel.FK_Consumers_ConsumerTypes" FromRole="ConsumerTypes" ToRole="Consumers" />
+          <NavigationProperty Name="ConsumerTypesToReports" Relationship="Gis.MapModel.FK_ConsumerTypesToReports_ConsumerTypes" FromRole="ConsumerTypes" ToRole="ConsumerTypesToReports" />
+        </EntityType>
+        <EntityType Name="ConsumerTypesToReport">
+          <Key>
+            <PropertyRef Name="IDConsumerTypeToReport" />
+          </Key>
+          <Property Name="IDConsumerTypeToReport" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IDConsumerType" Type="Int32" Nullable="false" />
+          <Property Name="IDReport" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ConsumerType" Relationship="Gis.MapModel.FK_ConsumerTypesToReports_ConsumerTypes" FromRole="ConsumerTypesToReports" ToRole="ConsumerTypes" />
+          <NavigationProperty Name="Report" Relationship="Gis.MapModel.FK_ConsumerTypesToReports_Reports" FromRole="ConsumerTypesToReports" ToRole="Reports" />
+          <NavigationProperty Name="User" Relationship="Gis.MapModel.FK_ConsumerTypesToReports_Users" FromRole="ConsumerTypesToReports" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="ConsumptionDetail">
+          <Key>
+            <PropertyRef Name="IDConsumptionDetail" />
+          </Key>
+          <Property Name="IDConsumptionDetail" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IDConsumption" Type="Int32" Nullable="false" />
+          <Property Name="ElectricCurrent" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Voltage" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Power" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="PowerFactor" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="CurrentUnbalance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="VoltageUnbalance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Frequency" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <NavigationProperty Name="Consumption" Relationship="Gis.MapModel.FK_ConsumptionDetails_Consumptions" FromRole="ConsumptionDetails" ToRole="Consumptions" />
+          <NavigationProperty Name="User" Relationship="Gis.MapModel.FK_ConsumptionDetails_Users" FromRole="ConsumptionDetails" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Gis.MapModel.FK_ConsumptionDetails_Users1" FromRole="ConsumptionDetails" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Consumption">
+          <Key>
+            <PropertyRef Name="IDConsumption" />
+          </Key>
+          <Property Name="IDConsumption" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IDConsumer" Type="Int32" Nullable="false" />
+          <Property Name="ActiveEnergyMeterStartIndex" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="ActiveEnergyMeterEndIndex" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="ActiveEnergyConsumption" Type="Decimal" Nullable="false" Precision="10" Scale="3" />
+          <Property Name="InductiveEnergyMeterStartIndex" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="InductiveEnergyMeterEndIndex" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="InductiveEnergyConsumption" Type="Decimal" Nullable="false" Precision="10" Scale="3" />
+          <Property Name="CapacitiveEnergyMeterStartIndex" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="CapacitiveEnergyMeterEndIndex" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="CapacitiveEnergyConsumption" Type="Decimal" Nullable="false" Precision="10" Scale="3" />
+          <Property Name="UseActiveEnergyCorrection" Type="Boolean" Nullable="false" />
+          <Property Name="UseInductiveEnergyCorrection" Type="Boolean" Nullable="false" />
+          <Property Name="UseCapacitiveEnergyCorrection" Type="Boolean" Nullable="false" />
+          <Property Name="ConsumptionDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Consumer" Relationship="Gis.MapModel.FK_Consumptions_Consumers" FromRole="Consumptions" ToRole="Consumers" />
+          <NavigationProperty Name="ConsumptionDetails" Relationship="Gis.MapModel.FK_ConsumptionDetails_Consumptions" FromRole="Consumptions" ToRole="ConsumptionDetails" />
+          <NavigationProperty Name="User" Relationship="Gis.MapModel.FK_Consumptions_Users" FromRole="Consumptions" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="CostCenter">
+          <Key>
+            <PropertyRef Name="IDCostCenter" />
+          </Key>
+          <Property Name="IDCostCenter" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ShortName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IDParentCostCenter" Type="Int32" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <NavigationProperty Name="Consumers" Relationship="Gis.MapModel.FK_Consumers_CostCenters" FromRole="CostCenters" ToRole="Consumers" />
+          <NavigationProperty Name="CostCenters1" Relationship="Gis.MapModel.FK_CostCenters_CostCenters" FromRole="CostCenters" ToRole="CostCenters1" />
+          <NavigationProperty Name="CostCenter1" Relationship="Gis.MapModel.FK_CostCenters_CostCenters" FromRole="CostCenters1" ToRole="CostCenters" />
+          <NavigationProperty Name="User" Relationship="Gis.MapModel.FK_CostCenters_Users" FromRole="CostCenters" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Gis.MapModel.FK_CostCenters_Users1" FromRole="CostCenters" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="District">
+          <Key>
+            <PropertyRef Name="IDDistrict" />
+          </Key>
+          <Property Name="IDDistrict" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DistrictName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Consumers" Relationship="Gis.MapModel.FK_Consumers_Districts" FromRole="Districts" ToRole="Consumers" />
+        </EntityType>
+        <EntityType Name="ElectricStation">
+          <Key>
+            <PropertyRef Name="IDElectricStation" />
+          </Key>
+          <Property Name="IDElectricStation" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ElectricStationName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Consumers" Relationship="Gis.MapModel.FK_Consumers_ElectricStations" FromRole="ElectricStations" ToRole="Consumers" />
+        </EntityType>
+        <EntityType Name="FieldCluster">
+          <Key>
+            <PropertyRef Name="IDFieldCluster" />
+          </Key>
+          <Property Name="IDFieldCluster" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FieldClusterName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Consumers" Relationship="Gis.MapModel.FK_Consumers_FieldClusters" FromRole="FieldClusters" ToRole="Consumers" />
+        </EntityType>
+        <EntityType Name="ImportFile">
+          <Key>
+            <PropertyRef Name="IDImportFile" />
+          </Key>
+          <Property Name="IDImportFile" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ContentType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FileContent" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="UploadStartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UploadEndTime" Type="DateTime" Precision="3" />
+          <Property Name="FileSize" Type="Int32" Nullable="false" />
+          <Property Name="FileExtension" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Imports" Relationship="Gis.MapModel.FK_Imports_ImportFiles" FromRole="ImportFiles" ToRole="Imports" />
+          <NavigationProperty Name="Imports1" Relationship="Gis.MapModel.FK_Imports_ImportFiles1" FromRole="ImportFiles" ToRole="Imports" />
+        </EntityType>
+        <EntityType Name="Import">
+          <Key>
+            <PropertyRef Name="IDImport" />
+          </Key>
+          <Property Name="IDImport" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IDImportType" Type="Int32" Nullable="false" />
+          <Property Name="IDOriginalFile" Type="Int32" Nullable="false" />
+          <Property Name="IDAnnotatedFile" Type="Int32" />
+          <Property Name="IDMonth" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ImportFile" Relationship="Gis.MapModel.FK_Imports_ImportFiles" FromRole="Imports" ToRole="ImportFiles" />
+          <NavigationProperty Name="ImportFile1" Relationship="Gis.MapModel.FK_Imports_ImportFiles1" FromRole="Imports" ToRole="ImportFiles" />
+          <NavigationProperty Name="User" Relationship="Gis.MapModel.FK_Imports_Users" FromRole="Imports" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="ImportType">
+          <Key>
+            <PropertyRef Name="IDImportType" />
+          </Key>
+          <Property Name="IDImportType" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ImportTypeName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="IDLocation" />
+          </Key>
+          <Property Name="IDLocation" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IDConsumer" Type="Int32" Nullable="false" />
+          <Property Name="Longitude" Type="Double" Nullable="false" />
+          <Property Name="Latitude" Type="Double" Nullable="false" />
+          <Property Name="ElectricalLineDiagramX" Type="Int32" />
+          <Property Name="ElectricalLineDiagramY" Type="Int32" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Consumer" Relationship="Gis.MapModel.FK_Locations_Consumers" FromRole="Locations" ToRole="Consumers" />
+          <NavigationProperty Name="User" Relationship="Gis.MapModel.FK_Locations_Users" FromRole="Locations" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Gis.MapModel.FK_Locations_Users1" FromRole="Locations" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="IDMenu" />
+          </Key>
+          <Property Name="IDMenu" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IDParentMenu" Type="Int32" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Menu1" Relationship="Gis.MapModel.FK_Menu_ParentMenu" FromRole="Menu" ToRole="Menu1" />
+          <NavigationProperty Name="Menu2" Relationship="Gis.MapModel.FK_Menu_ParentMenu" FromRole="Menu1" ToRole="Menu" />
+          <NavigationProperty Name="User" Relationship="Gis.MapModel.FK_Menu_Users" FromRole="Menu" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Gis.MapModel.FK_Menu_Users1" FromRole="Menu" ToRole="Users" />
+          <NavigationProperty Name="MenuToRoles" Relationship="Gis.MapModel.FK_MenuToRoles_Menu" FromRole="Menu" ToRole="MenuToRoles" />
+        </EntityType>
+        <EntityType Name="MenuToRole">
+          <Key>
+            <PropertyRef Name="IDMenuToRole" />
+          </Key>
+          <Property Name="IDMenuToRole" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IDMenu" Type="Int32" Nullable="false" />
+          <Property Name="IDRole" Type="Int32" Nullable="false" />
+          <Property Name="ReadPermission" Type="Boolean" Nullable="false" />
+          <Property Name="CreatePermission" Type="Boolean" Nullable="false" />
+          <Property Name="EditPermission" Type="Boolean" Nullable="false" />
+          <Property Name="DeletePermission" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Menu" Relationship="Gis.MapModel.FK_MenuToRoles_Menu" FromRole="MenuToRoles" ToRole="Menu" />
+          <NavigationProperty Name="Role" Relationship="Gis.MapModel.FK_MenuToRoles_Roles" FromRole="MenuToRoles" ToRole="Roles" />
+          <NavigationProperty Name="User" Relationship="Gis.MapModel.FK_MenuToRoles_Users" FromRole="MenuToRoles" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Gis.MapModel.FK_MenuToRoles_Users1" FromRole="MenuToRoles" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Month">
+          <Key>
+            <PropertyRef Name="IDMonth" />
+          </Key>
+          <Property Name="IDMonth" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MonthCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MonthName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MonthInt" Type="Int32" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NetworkOperator">
+          <Key>
+            <PropertyRef Name="IDNetworkOperator" />
+          </Key>
+          <Property Name="IDNetworkOperator" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="NetworkOperatorName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="AcquisitionPrices" Relationship="Gis.MapModel.FK_AcquisitionPrices_NetworkOperators" FromRole="NetworkOperators" ToRole="AcquisitionPrices" />
+          <NavigationProperty Name="Consumers" Relationship="Gis.MapModel.FK_Consumers_NetworkOperators" FromRole="NetworkOperators" ToRole="Consumers" />
+        </EntityType>
+        <EntityType Name="NotificationRule">
+          <Key>
+            <PropertyRef Name="IDNotificationRule" />
+          </Key>
+          <Property Name="IDNotificationRule" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RuleDescription" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="SPToExecute" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="NotificationSubject" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="NotificationBody" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ValidityDays" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="NotificationRules1" Relationship="Gis.MapModel.FK_NotificationRules_NotificationRules" FromRole="NotificationRules" ToRole="NotificationRules1" />
+          <NavigationProperty Name="NotificationRule1" Relationship="Gis.MapModel.FK_NotificationRules_NotificationRules" FromRole="NotificationRules1" ToRole="NotificationRules" />
+          <NavigationProperty Name="User" Relationship="Gis.MapModel.FK_NotificationRules_Users" FromRole="NotificationRules" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Gis.MapModel.FK_NotificationRules_Users1" FromRole="NotificationRules" ToRole="Users" />
+          <NavigationProperty Name="Notifications" Relationship="Gis.MapModel.FK_Notifications_NotificationRules" FromRole="NotificationRules" ToRole="Notifications" />
+        </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="IDNotification" />
+          </Key>
+          <Property Name="IDNotification" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IDNotificationRule" Type="Int32" />
+          <Property Name="NotificationSubject" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="NotificationBody" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="NotificationStartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NotificationEndDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="NotificationRule" Relationship="Gis.MapModel.FK_Notifications_NotificationRules" FromRole="Notifications" ToRole="NotificationRules" />
+          <NavigationProperty Name="NotificationsToUsers" Relationship="Gis.MapModel.FK_NotificationsToUsers_NotificationsToUsers" FromRole="Notifications" ToRole="NotificationsToUsers" />
+        </EntityType>
+        <EntityType Name="NotificationsToUser">
+          <Key>
+            <PropertyRef Name="IDNotificationToUser" />
+          </Key>
+          <Property Name="IDNotificationToUser" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IDNotification" Type="Int32" Nullable="false" />
+          <Property Name="IDUser" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateRead" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="Boolean" />
+          <NavigationProperty Name="Notification" Relationship="Gis.MapModel.FK_NotificationsToUsers_NotificationsToUsers" FromRole="NotificationsToUsers" ToRole="Notifications" />
+          <NavigationProperty Name="User" Relationship="Gis.MapModel.FK_NotificationsToUsers_Users" FromRole="NotificationsToUsers" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="IDReport" />
+          </Key>
+          <Property Name="IDReport" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ReportName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="UIReportName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ReportGroup" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ReportGroupOrderNo" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ConsumerTypesToReports" Relationship="Gis.MapModel.FK_ConsumerTypesToReports_Reports" FromRole="Reports" ToRole="ConsumerTypesToReports" />
+          <NavigationProperty Name="User" Relationship="Gis.MapModel.FK_Reports_Users" FromRole="Reports" ToRole="Users" />
+          <NavigationProperty Name="ReportsToRoles" Relationship="Gis.MapModel.FK_ReportsToRoles_Reports" FromRole="Reports" ToRole="ReportsToRoles" />
+        </EntityType>
+        <EntityType Name="ReportsToRole">
+          <Key>
+            <PropertyRef Name="IDReportToRole" />
+          </Key>
+          <Property Name="IDReportToRole" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IDReport" Type="Int32" Nullable="false" />
+          <Property Name="IDRole" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Report" Relationship="Gis.MapModel.FK_ReportsToRoles_Reports" FromRole="ReportsToRoles" ToRole="Reports" />
+          <NavigationProperty Name="Role" Relationship="Gis.MapModel.FK_ReportsToRoles_Roles" FromRole="ReportsToRoles" ToRole="Roles" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="IDRole" />
+          </Key>
+          <Property Name="IDRole" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="MenuToRoles" Relationship="Gis.MapModel.FK_MenuToRoles_Roles" FromRole="Roles" ToRole="MenuToRoles" />
+          <NavigationProperty Name="ReportsToRoles" Relationship="Gis.MapModel.FK_ReportsToRoles_Roles" FromRole="Roles" ToRole="ReportsToRoles" />
+          <NavigationProperty Name="UsersToRoles" Relationship="Gis.MapModel.FK_UsersToRoles_Roles" FromRole="Roles" ToRole="UsersToRoles" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="IDUser" />
+          </Key>
+          <Property Name="IDUser" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FirstName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Assets" Relationship="Gis.MapModel.FK_Assets_Users" FromRole="Users" ToRole="Assets" />
+          <NavigationProperty Name="Assets1" Relationship="Gis.MapModel.FK_Assets_Users1" FromRole="Users" ToRole="Assets" />
+          <NavigationProperty Name="ConsumerTypesToReports" Relationship="Gis.MapModel.FK_ConsumerTypesToReports_Users" FromRole="Users" ToRole="ConsumerTypesToReports" />
+          <NavigationProperty Name="ConsumptionDetails" Relationship="Gis.MapModel.FK_ConsumptionDetails_Users" FromRole="Users" ToRole="ConsumptionDetails" />
+          <NavigationProperty Name="ConsumptionDetails1" Relationship="Gis.MapModel.FK_ConsumptionDetails_Users1" FromRole="Users" ToRole="ConsumptionDetails" />
+          <NavigationProperty Name="Consumptions" Relationship="Gis.MapModel.FK_Consumptions_Users" FromRole="Users" ToRole="Consumptions" />
+          <NavigationProperty Name="CostCenters" Relationship="Gis.MapModel.FK_CostCenters_Users" FromRole="Users" ToRole="CostCenters" />
+          <NavigationProperty Name="CostCenters1" Relationship="Gis.MapModel.FK_CostCenters_Users1" FromRole="Users" ToRole="CostCenters" />
+          <NavigationProperty Name="Imports" Relationship="Gis.MapModel.FK_Imports_Users" FromRole="Users" ToRole="Imports" />
+          <NavigationProperty Name="Locations" Relationship="Gis.MapModel.FK_Locations_Users" FromRole="Users" ToRole="Locations" />
+          <NavigationProperty Name="Locations1" Relationship="Gis.MapModel.FK_Locations_Users1" FromRole="Users" ToRole="Locations" />
+          <NavigationProperty Name="Menus" Relationship="Gis.MapModel.FK_Menu_Users" FromRole="Users" ToRole="Menu" />
+          <NavigationProperty Name="Menus1" Relationship="Gis.MapModel.FK_Menu_Users1" FromRole="Users" ToRole="Menu" />
+          <NavigationProperty Name="MenuToRoles" Relationship="Gis.MapModel.FK_MenuToRoles_Users" FromRole="Users" ToRole="MenuToRoles" />
+          <NavigationProperty Name="MenuToRoles1" Relationship="Gis.MapModel.FK_MenuToRoles_Users1" FromRole="Users" ToRole="MenuToRoles" />
+          <NavigationProperty Name="NotificationRules" Relationship="Gis.MapModel.FK_NotificationRules_Users" FromRole="Users" ToRole="NotificationRules" />
+          <NavigationProperty Name="NotificationRules1" Relationship="Gis.MapModel.FK_NotificationRules_Users1" FromRole="Users" ToRole="NotificationRules" />
+          <NavigationProperty Name="NotificationsToUsers" Relationship="Gis.MapModel.FK_NotificationsToUsers_Users" FromRole="Users" ToRole="NotificationsToUsers" />
+          <NavigationProperty Name="Reports" Relationship="Gis.MapModel.FK_Reports_Users" FromRole="Users" ToRole="Reports" />
+          <NavigationProperty Name="UsersToRoles" Relationship="Gis.MapModel.FK_UsersToRoles_CreatedByUser" FromRole="Users" ToRole="UsersToRoles" />
+          <NavigationProperty Name="UsersToRoles1" Relationship="Gis.MapModel.FK_UsersToRoles_Users" FromRole="Users" ToRole="UsersToRoles" />
+        </EntityType>
+        <EntityType Name="UsersToRole">
+          <Key>
+            <PropertyRef Name="IDUserToRole" />
+          </Key>
+          <Property Name="IDUserToRole" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IDUser" Type="Int32" Nullable="false" />
+          <Property Name="IDRole" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="Gis.MapModel.FK_UsersToRoles_Roles" FromRole="UsersToRoles" ToRole="Roles" />
+          <NavigationProperty Name="User" Relationship="Gis.MapModel.FK_UsersToRoles_CreatedByUser" FromRole="UsersToRoles" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Gis.MapModel.FK_UsersToRoles_Users" FromRole="UsersToRoles" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="VoltageLevel">
+          <Key>
+            <PropertyRef Name="IDVoltageLevel" />
+          </Key>
+          <Property Name="IDVoltageLevel" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="VoltageLevelName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Consumers" Relationship="Gis.MapModel.FK_Consumers_VoltageLevels" FromRole="VoltageLevels" ToRole="Consumers" />
+          <NavigationProperty Name="Consumers1" Relationship="Gis.MapModel.FK_Consumers_VoltageLevels1" FromRole="VoltageLevels" ToRole="Consumers" />
+        </EntityType>
+        <Association Name="FK_AcquisitionPrices_NetworkOperators">
+          <End Role="NetworkOperators" Type="Gis.MapModel.NetworkOperator" Multiplicity="1" />
+          <End Role="AcquisitionPrices" Type="Gis.MapModel.AcquisitionPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetworkOperators">
+              <PropertyRef Name="IDNetworkOperator" />
+            </Principal>
+            <Dependent Role="AcquisitionPrices">
+              <PropertyRef Name="IDNetworkOperator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Assets_Users">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="1" />
+          <End Role="Assets" Type="Gis.MapModel.Asset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Assets">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Assets_Users1">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="0..1" />
+          <End Role="Assets" Type="Gis.MapModel.Asset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Assets">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_Assets">
+          <End Role="Assets" Type="Gis.MapModel.Asset" Multiplicity="1" />
+          <End Role="Consumers" Type="Gis.MapModel.Consumer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assets">
+              <PropertyRef Name="IDAsset" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDAsset" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_ConsumerTypes">
+          <End Role="ConsumerTypes" Type="Gis.MapModel.ConsumerType" Multiplicity="1" />
+          <End Role="Consumers" Type="Gis.MapModel.Consumer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConsumerTypes">
+              <PropertyRef Name="IDConsumerType" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDConsumerType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_CostCenters">
+          <End Role="CostCenters" Type="Gis.MapModel.CostCenter" Multiplicity="1" />
+          <End Role="Consumers" Type="Gis.MapModel.Consumer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CostCenters">
+              <PropertyRef Name="IDCostCenter" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDCostCenter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_Districts">
+          <End Role="Districts" Type="Gis.MapModel.District" Multiplicity="1" />
+          <End Role="Consumers" Type="Gis.MapModel.Consumer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Districts">
+              <PropertyRef Name="IDDistrict" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDDistrict" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_ElectricStations">
+          <End Role="ElectricStations" Type="Gis.MapModel.ElectricStation" Multiplicity="0..1" />
+          <End Role="Consumers" Type="Gis.MapModel.Consumer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElectricStations">
+              <PropertyRef Name="IDElectricStation" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDElectricStation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_FieldClusters">
+          <End Role="FieldClusters" Type="Gis.MapModel.FieldCluster" Multiplicity="0..1" />
+          <End Role="Consumers" Type="Gis.MapModel.Consumer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FieldClusters">
+              <PropertyRef Name="IDFieldCluster" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDFieldCluster" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_NetworkOperators">
+          <End Role="NetworkOperators" Type="Gis.MapModel.NetworkOperator" Multiplicity="1" />
+          <End Role="Consumers" Type="Gis.MapModel.Consumer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetworkOperators">
+              <PropertyRef Name="IDNetworkOperator" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDNetworkOperator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_VoltageLevels">
+          <End Role="VoltageLevels" Type="Gis.MapModel.VoltageLevel" Multiplicity="0..1" />
+          <End Role="Consumers" Type="Gis.MapModel.Consumer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoltageLevels">
+              <PropertyRef Name="IDVoltageLevel" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDVoltageLevelMeasurePoint" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumers_VoltageLevels1">
+          <End Role="VoltageLevels" Type="Gis.MapModel.VoltageLevel" Multiplicity="0..1" />
+          <End Role="Consumers" Type="Gis.MapModel.Consumer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoltageLevels">
+              <PropertyRef Name="IDVoltageLevel" />
+            </Principal>
+            <Dependent Role="Consumers">
+              <PropertyRef Name="IDVoltageLevelSettlementPoint" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumptions_Consumers">
+          <End Role="Consumers" Type="Gis.MapModel.Consumer" Multiplicity="1" />
+          <End Role="Consumptions" Type="Gis.MapModel.Consumption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consumers">
+              <PropertyRef Name="IDConsumer" />
+            </Principal>
+            <Dependent Role="Consumptions">
+              <PropertyRef Name="IDConsumer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Locations_Consumers">
+          <End Role="Consumers" Type="Gis.MapModel.Consumer" Multiplicity="1" />
+          <End Role="Locations" Type="Gis.MapModel.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consumers">
+              <PropertyRef Name="IDConsumer" />
+            </Principal>
+            <Dependent Role="Locations">
+              <PropertyRef Name="IDConsumer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsumerTypesToReports_ConsumerTypes">
+          <End Role="ConsumerTypes" Type="Gis.MapModel.ConsumerType" Multiplicity="1" />
+          <End Role="ConsumerTypesToReports" Type="Gis.MapModel.ConsumerTypesToReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConsumerTypes">
+              <PropertyRef Name="IDConsumerType" />
+            </Principal>
+            <Dependent Role="ConsumerTypesToReports">
+              <PropertyRef Name="IDConsumerType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsumerTypesToReports_Reports">
+          <End Role="Reports" Type="Gis.MapModel.Report" Multiplicity="1" />
+          <End Role="ConsumerTypesToReports" Type="Gis.MapModel.ConsumerTypesToReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="IDReport" />
+            </Principal>
+            <Dependent Role="ConsumerTypesToReports">
+              <PropertyRef Name="IDReport" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsumerTypesToReports_Users">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="1" />
+          <End Role="ConsumerTypesToReports" Type="Gis.MapModel.ConsumerTypesToReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="ConsumerTypesToReports">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsumptionDetails_Consumptions">
+          <End Role="Consumptions" Type="Gis.MapModel.Consumption" Multiplicity="1" />
+          <End Role="ConsumptionDetails" Type="Gis.MapModel.ConsumptionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consumptions">
+              <PropertyRef Name="IDConsumption" />
+            </Principal>
+            <Dependent Role="ConsumptionDetails">
+              <PropertyRef Name="IDConsumption" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsumptionDetails_Users">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="0..1" />
+          <End Role="ConsumptionDetails" Type="Gis.MapModel.ConsumptionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="ConsumptionDetails">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsumptionDetails_Users1">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="1" />
+          <End Role="ConsumptionDetails" Type="Gis.MapModel.ConsumptionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="ConsumptionDetails">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consumptions_Users">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="1" />
+          <End Role="Consumptions" Type="Gis.MapModel.Consumption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Consumptions">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CostCenters_CostCenters">
+          <End Role="CostCenters" Type="Gis.MapModel.CostCenter" Multiplicity="0..1" />
+          <End Role="CostCenters1" Type="Gis.MapModel.CostCenter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CostCenters">
+              <PropertyRef Name="IDCostCenter" />
+            </Principal>
+            <Dependent Role="CostCenters1">
+              <PropertyRef Name="IDParentCostCenter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CostCenters_Users">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="1" />
+          <End Role="CostCenters" Type="Gis.MapModel.CostCenter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="CostCenters">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CostCenters_Users1">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="0..1" />
+          <End Role="CostCenters" Type="Gis.MapModel.CostCenter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="CostCenters">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Imports_ImportFiles">
+          <End Role="ImportFiles" Type="Gis.MapModel.ImportFile" Multiplicity="1" />
+          <End Role="Imports" Type="Gis.MapModel.Import" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImportFiles">
+              <PropertyRef Name="IDImportFile" />
+            </Principal>
+            <Dependent Role="Imports">
+              <PropertyRef Name="IDOriginalFile" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Imports_ImportFiles1">
+          <End Role="ImportFiles" Type="Gis.MapModel.ImportFile" Multiplicity="0..1" />
+          <End Role="Imports" Type="Gis.MapModel.Import" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImportFiles">
+              <PropertyRef Name="IDImportFile" />
+            </Principal>
+            <Dependent Role="Imports">
+              <PropertyRef Name="IDAnnotatedFile" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Imports_Users">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="1" />
+          <End Role="Imports" Type="Gis.MapModel.Import" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Imports">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Locations_Users">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="1" />
+          <End Role="Locations" Type="Gis.MapModel.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Locations">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Locations_Users1">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="0..1" />
+          <End Role="Locations" Type="Gis.MapModel.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Locations">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_ParentMenu">
+          <End Role="Menu" Type="Gis.MapModel.Menu" Multiplicity="0..1" />
+          <End Role="Menu1" Type="Gis.MapModel.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="IDMenu" />
+            </Principal>
+            <Dependent Role="Menu1">
+              <PropertyRef Name="IDParentMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_Users">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="1" />
+          <End Role="Menu" Type="Gis.MapModel.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_Users1">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="0..1" />
+          <End Role="Menu" Type="Gis.MapModel.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuToRoles_Menu">
+          <End Role="Menu" Type="Gis.MapModel.Menu" Multiplicity="1" />
+          <End Role="MenuToRoles" Type="Gis.MapModel.MenuToRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="IDMenu" />
+            </Principal>
+            <Dependent Role="MenuToRoles">
+              <PropertyRef Name="IDMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuToRoles_Roles">
+          <End Role="Roles" Type="Gis.MapModel.Role" Multiplicity="1" />
+          <End Role="MenuToRoles" Type="Gis.MapModel.MenuToRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="IDRole" />
+            </Principal>
+            <Dependent Role="MenuToRoles">
+              <PropertyRef Name="IDRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuToRoles_Users">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="1" />
+          <End Role="MenuToRoles" Type="Gis.MapModel.MenuToRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="MenuToRoles">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuToRoles_Users1">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="0..1" />
+          <End Role="MenuToRoles" Type="Gis.MapModel.MenuToRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="MenuToRoles">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationRules_NotificationRules">
+          <End Role="NotificationRules" Type="Gis.MapModel.NotificationRule" Multiplicity="1" />
+          <End Role="NotificationRules1" Type="Gis.MapModel.NotificationRule" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationRules">
+              <PropertyRef Name="IDNotificationRule" />
+            </Principal>
+            <Dependent Role="NotificationRules1">
+              <PropertyRef Name="IDNotificationRule" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationRules_Users">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="1" />
+          <End Role="NotificationRules" Type="Gis.MapModel.NotificationRule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="NotificationRules">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationRules_Users1">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="0..1" />
+          <End Role="NotificationRules" Type="Gis.MapModel.NotificationRule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="NotificationRules">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notifications_NotificationRules">
+          <End Role="NotificationRules" Type="Gis.MapModel.NotificationRule" Multiplicity="0..1" />
+          <End Role="Notifications" Type="Gis.MapModel.Notification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationRules">
+              <PropertyRef Name="IDNotificationRule" />
+            </Principal>
+            <Dependent Role="Notifications">
+              <PropertyRef Name="IDNotificationRule" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationsToUsers_NotificationsToUsers">
+          <End Role="Notifications" Type="Gis.MapModel.Notification" Multiplicity="1" />
+          <End Role="NotificationsToUsers" Type="Gis.MapModel.NotificationsToUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notifications">
+              <PropertyRef Name="IDNotification" />
+            </Principal>
+            <Dependent Role="NotificationsToUsers">
+              <PropertyRef Name="IDNotification" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationsToUsers_Users">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="1" />
+          <End Role="NotificationsToUsers" Type="Gis.MapModel.NotificationsToUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="NotificationsToUsers">
+              <PropertyRef Name="IDUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reports_Users">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="1" />
+          <End Role="Reports" Type="Gis.MapModel.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportsToRoles_Reports">
+          <End Role="Reports" Type="Gis.MapModel.Report" Multiplicity="1" />
+          <End Role="ReportsToRoles" Type="Gis.MapModel.ReportsToRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="IDReport" />
+            </Principal>
+            <Dependent Role="ReportsToRoles">
+              <PropertyRef Name="IDReport" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportsToRoles_Roles">
+          <End Role="Roles" Type="Gis.MapModel.Role" Multiplicity="1" />
+          <End Role="ReportsToRoles" Type="Gis.MapModel.ReportsToRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="IDRole" />
+            </Principal>
+            <Dependent Role="ReportsToRoles">
+              <PropertyRef Name="IDRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersToRoles_Roles">
+          <End Role="Roles" Type="Gis.MapModel.Role" Multiplicity="1" />
+          <End Role="UsersToRoles" Type="Gis.MapModel.UsersToRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="IDRole" />
+            </Principal>
+            <Dependent Role="UsersToRoles">
+              <PropertyRef Name="IDRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersToRoles_CreatedByUser">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="1" />
+          <End Role="UsersToRoles" Type="Gis.MapModel.UsersToRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="UsersToRoles">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersToRoles_Users">
+          <End Role="Users" Type="Gis.MapModel.User" Multiplicity="1" />
+          <End Role="UsersToRoles" Type="Gis.MapModel.UsersToRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="UsersToRoles">
+              <PropertyRef Name="IDUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GisMapModelStoreContainer" CdmEntityContainer="GisConnectionString">
+          <EntitySetMapping Name="AcquisitionPrices">
+            <EntityTypeMapping TypeName="Gis.MapModel.AcquisitionPrice">
+              <MappingFragment StoreEntitySet="AcquisitionPrices">
+                <ScalarProperty Name="IDAcquisitionPrice" ColumnName="IDAcquisitionPrice" />
+                <ScalarProperty Name="IDNetworkOperator" ColumnName="IDNetworkOperator" />
+                <ScalarProperty Name="ActiveEnergyPrice" ColumnName="ActiveEnergyPrice" />
+                <ScalarProperty Name="ReactiveMTEnergyPrice" ColumnName="ReactiveMTEnergyPrice" />
+                <ScalarProperty Name="ReactiveJTEnergyPrice" ColumnName="ReactiveJTEnergyPrice" />
+                <ScalarProperty Name="TL" ColumnName="TL" />
+                <ScalarProperty Name="SS" ColumnName="SS" />
+                <ScalarProperty Name="OPCOM" ColumnName="OPCOM" />
+                <ScalarProperty Name="IT" ColumnName="IT" />
+                <ScalarProperty Name="MT" ColumnName="MT" />
+                <ScalarProperty Name="JT" ColumnName="JT" />
+                <ScalarProperty Name="BalancingCost" ColumnName="BalancingCost" />
+                <ScalarProperty Name="ProviderProfit" ColumnName="ProviderProfit" />
+                <ScalarProperty Name="CogenerationContribution" ColumnName="CogenerationContribution" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Assets">
+            <EntityTypeMapping TypeName="Gis.MapModel.Asset">
+              <MappingFragment StoreEntitySet="Assets">
+                <ScalarProperty Name="IDAsset" ColumnName="IDAsset" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Consumers">
+            <EntityTypeMapping TypeName="Gis.MapModel.Consumer">
+              <MappingFragment StoreEntitySet="Consumers">
+                <ScalarProperty Name="IDConsumer" ColumnName="IDConsumer" />
+                <ScalarProperty Name="ConsumerName" ColumnName="ConsumerName" />
+                <ScalarProperty Name="IDConsumerType" ColumnName="IDConsumerType" />
+                <ScalarProperty Name="IDCostCenter" ColumnName="IDCostCenter" />
+                <ScalarProperty Name="IDNetworkOperator" ColumnName="IDNetworkOperator" />
+                <ScalarProperty Name="IDDistrict" ColumnName="IDDistrict" />
+                <ScalarProperty Name="IDAsset" ColumnName="IDAsset" />
+                <ScalarProperty Name="IDFieldCluster" ColumnName="IDFieldCluster" />
+                <ScalarProperty Name="ConsumptionPlaceName" ColumnName="ConsumptionPlaceName" />
+                <ScalarProperty Name="ConsumptionPlaceAddress" ColumnName="ConsumptionPlaceAddress" />
+                <ScalarProperty Name="IDElectricStation" ColumnName="IDElectricStation" />
+                <ScalarProperty Name="MeasurePointName" ColumnName="MeasurePointName" />
+                <ScalarProperty Name="VMSCode" ColumnName="VMSCode" />
+                <ScalarProperty Name="ComputingSign" ColumnName="ComputingSign" />
+                <ScalarProperty Name="IDVoltageLevelMeasurePoint" ColumnName="IDVoltageLevelMeasurePoint" />
+                <ScalarProperty Name="IDVoltageLevelSettlementPoint" ColumnName="IDVoltageLevelSettlementPoint" />
+                <ScalarProperty Name="RecordedEnergyCorrection" ColumnName="RecordedEnergyCorrection" />
+                <ScalarProperty Name="ElectricMeterSerial" ColumnName="ElectricMeterSerial" />
+                <ScalarProperty Name="ElectricMeterConstant" ColumnName="ElectricMeterConstant" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConsumerTypes">
+            <EntityTypeMapping TypeName="Gis.MapModel.ConsumerType">
+              <MappingFragment StoreEntitySet="ConsumerTypes">
+                <ScalarProperty Name="IDConsumerType" ColumnName="IDConsumerType" />
+                <ScalarProperty Name="ConsumerTypeName" ColumnName="ConsumerTypeName" />
+                <ScalarProperty Name="MapType" ColumnName="MapType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConsumerTypesToReports">
+            <EntityTypeMapping TypeName="Gis.MapModel.ConsumerTypesToReport">
+              <MappingFragment StoreEntitySet="ConsumerTypesToReports">
+                <ScalarProperty Name="IDConsumerTypeToReport" ColumnName="IDConsumerTypeToReport" />
+                <ScalarProperty Name="IDConsumerType" ColumnName="IDConsumerType" />
+                <ScalarProperty Name="IDReport" ColumnName="IDReport" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConsumptionDetails">
+            <EntityTypeMapping TypeName="Gis.MapModel.ConsumptionDetail">
+              <MappingFragment StoreEntitySet="ConsumptionDetails">
+                <ScalarProperty Name="IDConsumptionDetail" ColumnName="IDConsumptionDetail" />
+                <ScalarProperty Name="IDConsumption" ColumnName="IDConsumption" />
+                <ScalarProperty Name="ElectricCurrent" ColumnName="ElectricCurrent" />
+                <ScalarProperty Name="Voltage" ColumnName="Voltage" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+                <ScalarProperty Name="PowerFactor" ColumnName="PowerFactor" />
+                <ScalarProperty Name="CurrentUnbalance" ColumnName="CurrentUnbalance" />
+                <ScalarProperty Name="VoltageUnbalance" ColumnName="VoltageUnbalance" />
+                <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Consumptions">
+            <EntityTypeMapping TypeName="Gis.MapModel.Consumption">
+              <MappingFragment StoreEntitySet="Consumptions">
+                <ScalarProperty Name="IDConsumption" ColumnName="IDConsumption" />
+                <ScalarProperty Name="IDConsumer" ColumnName="IDConsumer" />
+                <ScalarProperty Name="ActiveEnergyMeterStartIndex" ColumnName="ActiveEnergyMeterStartIndex" />
+                <ScalarProperty Name="ActiveEnergyMeterEndIndex" ColumnName="ActiveEnergyMeterEndIndex" />
+                <ScalarProperty Name="ActiveEnergyConsumption" ColumnName="ActiveEnergyConsumption" />
+                <ScalarProperty Name="InductiveEnergyMeterStartIndex" ColumnName="InductiveEnergyMeterStartIndex" />
+                <ScalarProperty Name="InductiveEnergyMeterEndIndex" ColumnName="InductiveEnergyMeterEndIndex" />
+                <ScalarProperty Name="InductiveEnergyConsumption" ColumnName="InductiveEnergyConsumption" />
+                <ScalarProperty Name="CapacitiveEnergyMeterStartIndex" ColumnName="CapacitiveEnergyMeterStartIndex" />
+                <ScalarProperty Name="CapacitiveEnergyMeterEndIndex" ColumnName="CapacitiveEnergyMeterEndIndex" />
+                <ScalarProperty Name="CapacitiveEnergyConsumption" ColumnName="CapacitiveEnergyConsumption" />
+                <ScalarProperty Name="UseActiveEnergyCorrection" ColumnName="UseActiveEnergyCorrection" />
+                <ScalarProperty Name="UseInductiveEnergyCorrection" ColumnName="UseInductiveEnergyCorrection" />
+                <ScalarProperty Name="UseCapacitiveEnergyCorrection" ColumnName="UseCapacitiveEnergyCorrection" />
+                <ScalarProperty Name="ConsumptionDate" ColumnName="ConsumptionDate" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CostCenters">
+            <EntityTypeMapping TypeName="Gis.MapModel.CostCenter">
+              <MappingFragment StoreEntitySet="CostCenters">
+                <ScalarProperty Name="IDCostCenter" ColumnName="IDCostCenter" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="IDParentCostCenter" ColumnName="IDParentCostCenter" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Districts">
+            <EntityTypeMapping TypeName="Gis.MapModel.District">
+              <MappingFragment StoreEntitySet="Districts">
+                <ScalarProperty Name="IDDistrict" ColumnName="IDDistrict" />
+                <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElectricStations">
+            <EntityTypeMapping TypeName="Gis.MapModel.ElectricStation">
+              <MappingFragment StoreEntitySet="ElectricStations">
+                <ScalarProperty Name="IDElectricStation" ColumnName="IDElectricStation" />
+                <ScalarProperty Name="ElectricStationName" ColumnName="ElectricStationName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FieldClusters">
+            <EntityTypeMapping TypeName="Gis.MapModel.FieldCluster">
+              <MappingFragment StoreEntitySet="FieldClusters">
+                <ScalarProperty Name="IDFieldCluster" ColumnName="IDFieldCluster" />
+                <ScalarProperty Name="FieldClusterName" ColumnName="FieldClusterName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImportFiles">
+            <EntityTypeMapping TypeName="Gis.MapModel.ImportFile">
+              <MappingFragment StoreEntitySet="ImportFiles">
+                <ScalarProperty Name="IDImportFile" ColumnName="IDImportFile" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+                <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+                <ScalarProperty Name="UploadStartTime" ColumnName="UploadStartTime" />
+                <ScalarProperty Name="UploadEndTime" ColumnName="UploadEndTime" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+                <ScalarProperty Name="FileExtension" ColumnName="FileExtension" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Imports">
+            <EntityTypeMapping TypeName="Gis.MapModel.Import">
+              <MappingFragment StoreEntitySet="Imports">
+                <ScalarProperty Name="IDImport" ColumnName="IDImport" />
+                <ScalarProperty Name="IDImportType" ColumnName="IDImportType" />
+                <ScalarProperty Name="IDOriginalFile" ColumnName="IDOriginalFile" />
+                <ScalarProperty Name="IDAnnotatedFile" ColumnName="IDAnnotatedFile" />
+                <ScalarProperty Name="IDMonth" ColumnName="IDMonth" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImportTypes">
+            <EntityTypeMapping TypeName="Gis.MapModel.ImportType">
+              <MappingFragment StoreEntitySet="ImportTypes">
+                <ScalarProperty Name="IDImportType" ColumnName="IDImportType" />
+                <ScalarProperty Name="ImportTypeName" ColumnName="ImportTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="Gis.MapModel.Location">
+              <MappingFragment StoreEntitySet="Locations">
+                <ScalarProperty Name="IDLocation" ColumnName="IDLocation" />
+                <ScalarProperty Name="IDConsumer" ColumnName="IDConsumer" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="ElectricalLineDiagramX" ColumnName="ElectricalLineDiagramX" />
+                <ScalarProperty Name="ElectricalLineDiagramY" ColumnName="ElectricalLineDiagramY" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="Gis.MapModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="IDMenu" ColumnName="IDMenu" />
+                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+                <ScalarProperty Name="IDParentMenu" ColumnName="IDParentMenu" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuToRoles">
+            <EntityTypeMapping TypeName="Gis.MapModel.MenuToRole">
+              <MappingFragment StoreEntitySet="MenuToRoles">
+                <ScalarProperty Name="IDMenuToRole" ColumnName="IDMenuToRole" />
+                <ScalarProperty Name="IDMenu" ColumnName="IDMenu" />
+                <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+                <ScalarProperty Name="ReadPermission" ColumnName="ReadPermission" />
+                <ScalarProperty Name="CreatePermission" ColumnName="CreatePermission" />
+                <ScalarProperty Name="EditPermission" ColumnName="EditPermission" />
+                <ScalarProperty Name="DeletePermission" ColumnName="DeletePermission" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Months">
+            <EntityTypeMapping TypeName="Gis.MapModel.Month">
+              <MappingFragment StoreEntitySet="Months">
+                <ScalarProperty Name="IDMonth" ColumnName="IDMonth" />
+                <ScalarProperty Name="MonthCode" ColumnName="MonthCode" />
+                <ScalarProperty Name="MonthName" ColumnName="MonthName" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="MonthInt" ColumnName="MonthInt" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NetworkOperators">
+            <EntityTypeMapping TypeName="Gis.MapModel.NetworkOperator">
+              <MappingFragment StoreEntitySet="NetworkOperators">
+                <ScalarProperty Name="IDNetworkOperator" ColumnName="IDNetworkOperator" />
+                <ScalarProperty Name="NetworkOperatorName" ColumnName="NetworkOperatorName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationRules">
+            <EntityTypeMapping TypeName="Gis.MapModel.NotificationRule">
+              <MappingFragment StoreEntitySet="NotificationRules">
+                <ScalarProperty Name="IDNotificationRule" ColumnName="IDNotificationRule" />
+                <ScalarProperty Name="RuleDescription" ColumnName="RuleDescription" />
+                <ScalarProperty Name="SPToExecute" ColumnName="SPToExecute" />
+                <ScalarProperty Name="NotificationSubject" ColumnName="NotificationSubject" />
+                <ScalarProperty Name="NotificationBody" ColumnName="NotificationBody" />
+                <ScalarProperty Name="ValidityDays" ColumnName="ValidityDays" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notifications">
+            <EntityTypeMapping TypeName="Gis.MapModel.Notification">
+              <MappingFragment StoreEntitySet="Notifications">
+                <ScalarProperty Name="IDNotification" ColumnName="IDNotification" />
+                <ScalarProperty Name="IDNotificationRule" ColumnName="IDNotificationRule" />
+                <ScalarProperty Name="NotificationSubject" ColumnName="NotificationSubject" />
+                <ScalarProperty Name="NotificationBody" ColumnName="NotificationBody" />
+                <ScalarProperty Name="NotificationStartDate" ColumnName="NotificationStartDate" />
+                <ScalarProperty Name="NotificationEndDate" ColumnName="NotificationEndDate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationsToUsers">
+            <EntityTypeMapping TypeName="Gis.MapModel.NotificationsToUser">
+              <MappingFragment StoreEntitySet="NotificationsToUsers">
+                <ScalarProperty Name="IDNotificationToUser" ColumnName="IDNotificationToUser" />
+                <ScalarProperty Name="IDNotification" ColumnName="IDNotification" />
+                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="DateRead" ColumnName="DateRead" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reports">
+            <EntityTypeMapping TypeName="Gis.MapModel.Report">
+              <MappingFragment StoreEntitySet="Reports">
+                <ScalarProperty Name="IDReport" ColumnName="IDReport" />
+                <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+                <ScalarProperty Name="UIReportName" ColumnName="UIReportName" />
+                <ScalarProperty Name="ReportGroup" ColumnName="ReportGroup" />
+                <ScalarProperty Name="ReportGroupOrderNo" ColumnName="ReportGroupOrderNo" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportsToRoles">
+            <EntityTypeMapping TypeName="Gis.MapModel.ReportsToRole">
+              <MappingFragment StoreEntitySet="ReportsToRoles">
+                <ScalarProperty Name="IDReportToRole" ColumnName="IDReportToRole" />
+                <ScalarProperty Name="IDReport" ColumnName="IDReport" />
+                <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="Gis.MapModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Gis.MapModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersToRoles">
+            <EntityTypeMapping TypeName="Gis.MapModel.UsersToRole">
+              <MappingFragment StoreEntitySet="UsersToRoles">
+                <ScalarProperty Name="IDUserToRole" ColumnName="IDUserToRole" />
+                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+                <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VoltageLevels">
+            <EntityTypeMapping TypeName="Gis.MapModel.VoltageLevel">
+              <MappingFragment StoreEntitySet="VoltageLevels">
+                <ScalarProperty Name="IDVoltageLevel" ColumnName="IDVoltageLevel" />
+                <ScalarProperty Name="VoltageLevelName" ColumnName="VoltageLevelName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

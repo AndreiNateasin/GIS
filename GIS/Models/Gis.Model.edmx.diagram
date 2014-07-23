@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5b53406f69d2491e812043181ef2c440" Name="Diagram1">
+        <EntityTypeShape EntityType="Gis.MapModel.AcquisitionPrice" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.Asset" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.Consumer" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.ConsumerType" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.ConsumerTypesToReport" Width="1.5" PointX="5.25" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.ConsumptionDetail" Width="1.5" PointX="12.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.Consumption" Width="1.5" PointX="10.5" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.CostCenter" Width="1.5" PointX="3" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.District" Width="1.5" PointX="3" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.ElectricStation" Width="1.5" PointX="3" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.FieldCluster" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.ImportFile" Width="1.5" PointX="3.75" PointY="43.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.Import" Width="1.5" PointX="6" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.ImportType" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.Location" Width="1.5" PointX="7.5" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.Menu" Width="1.5" PointX="3" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.MenuToRole" Width="1.5" PointX="8.25" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.Month" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.NetworkOperator" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.NotificationRule" Width="1.5" PointX="3" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.Notification" Width="1.5" PointX="5.25" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.NotificationsToUser" Width="1.5" PointX="7.5" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.Report" Width="1.5" PointX="3" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.ReportsToRole" Width="1.5" PointX="5.25" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.Role" Width="1.5" PointX="5.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.User" Width="1.5" PointX="0.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.UsersToRole" Width="1.5" PointX="8" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.VoltageLevel" Width="1.5" PointX="3" PointY="40" IsExpanded="true" />
+        <AssociationConnector Association="Gis.MapModel.FK_AcquisitionPrices_NetworkOperators" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Assets_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Assets_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Consumers_Assets" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Consumers_ConsumerTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Consumers_CostCenters" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Consumers_Districts" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Consumers_ElectricStations" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Consumers_FieldClusters" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Consumers_NetworkOperators" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Consumers_VoltageLevels" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Consumers_VoltageLevels1" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Consumptions_Consumers" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Locations_Consumers" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_ConsumerTypesToReports_ConsumerTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_ConsumerTypesToReports_Reports" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_ConsumerTypesToReports_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_ConsumptionDetails_Consumptions" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_ConsumptionDetails_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_ConsumptionDetails_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Consumptions_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_CostCenters_CostCenters" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_CostCenters_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_CostCenters_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Imports_ImportFiles" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Imports_ImportFiles1" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Imports_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Locations_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Locations_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Menu_ParentMenu" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Menu_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Menu_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_MenuToRoles_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_MenuToRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_MenuToRoles_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_MenuToRoles_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_NotificationRules_NotificationRules" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_NotificationRules_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_NotificationRules_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Notifications_NotificationRules" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_NotificationsToUsers_NotificationsToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_NotificationsToUsers_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_Reports_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_ReportsToRoles_Reports" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_ReportsToRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_UsersToRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_UsersToRoles_CreatedByUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Gis.MapModel.FK_UsersToRoles_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
