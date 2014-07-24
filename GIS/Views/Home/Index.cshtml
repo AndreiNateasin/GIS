@@ -13,10 +13,12 @@
         </div>
     </section>
 }
-
-@foreach (var consumer in Model)
-{
-    <span>@consumer.Latitude </span>
-    <span>@consumer.Longitude </span>
-}
-
+<ul>
+    @foreach (var consumer in Model)
+    {
+        <li>
+            <span>@consumer.Latitude </span>
+            <span>@consumer.Longitude </span>
+        </li>
+    }
+</ul>
