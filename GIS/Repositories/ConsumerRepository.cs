@@ -13,14 +13,18 @@ namespace GIS.Repositories
             _gisDb = new GisDB();
         }
 
-        public List<StationConsumerDto> GetStationConsumers()
+        public List<SimpleConsumerDto> GetConsumersByType(string consumertType)
         {
-            return _gisDb.Consumers.Where(x => x.Active)
-                        .Select(z => new StationConsumerDto
+            return _gisDb.Consumers.Where(x => x.Active && x.ConsumerType.ConsumerTypeName == consumertType)
+                        .Select(z => new SimpleConsumerDto
                             {
                                 ConsumerType = z.ConsumerType.ConsumerTypeName,
-                                Latitude = z.Locations.FirstOrDefault() != null ?  z.Locations.FirstOrDefault().Latitude : 0,
-                                Longitude = z.Locations.FirstOrDefault() != null ? z.Locations.FirstOrDefault().Longitude : 0
+                                Locations = z.Locations.Select(l => new LocationDto
+                                {
+                                    Longitude = l.Longitude,
+                                    Latitude = l.Latitude,
+                                }),
+
                             })
                         .ToList();
         }

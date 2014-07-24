@@ -163,15 +163,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Dto\LocationDto.cs" />
-    <Compile Include="Dto\StationConsumerDto.cs" />
-    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Dto\SimpleConsumerDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\AcquisitionPrice.cs">
       <DependentUpon>Gis.tt</DependentUpon>
     </Compile>
@@ -184,6 +181,7 @@
     <Compile Include="Models\ConsumerType.cs">
       <DependentUpon>Gis.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ConsumerTypes.cs" />
     <Compile Include="Models\ConsumerTypesToReport.cs">
       <DependentUpon>Gis.tt</DependentUpon>
     </Compile>
@@ -220,6 +218,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Gis.Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Home\ConsumersModel.cs" />
     <Compile Include="Models\Import.cs">
       <DependentUpon>Gis.tt</DependentUpon>
     </Compile>
@@ -395,24 +394,15 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Filters\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

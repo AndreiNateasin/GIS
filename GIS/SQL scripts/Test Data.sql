@@ -75,6 +75,23 @@ SET  @consumer = @@IDENTITY;
 
 insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
 	Values(1, 45.16667, 26.81667, @consumer)
+
+insert into dbo.ConsumerTypes (ConsumerTypeName) 
+	Values ('Electric network')
+SET @consumerType =  @@IDENTITY;
+
+insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
+	Values ('Bucuresti - Buzau ', 1, 9, @consumerType)
+
+SET  @consumer = @@IDENTITY;
+
+insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
+	Values(1, 44.43497, 26.10489, @consumer),
+		  (1, 44.49966, 25.90714, @consumer),
+		  (1, 44.68742, 25.38528, @consumer),
+		  (1, 44.85900, 24.96231, @consumer),
+		  (1, 45.07201, 24.72748, @consumer),
+		  (1, 45.30043, 24.44183, @consumer),
+		  (1, 45.63943, 24.13971, @consumer),
+		  (1, 45.79284, 24.15070, @consumer)
 GO
-
-

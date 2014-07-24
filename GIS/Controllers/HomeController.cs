@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using GIS.Dto;
 using GIS.Models;
+using GIS.Models.Home;
 using GIS.Repositories;
 
 namespace GIS.Controllers
@@ -18,25 +20,17 @@ namespace GIS.Controllers
 
         public ActionResult Index()
         {
-            var consumers = _consumerRepository.GetStationConsumers();
+            var cityConsumers = _consumerRepository.GetConsumersByType(ConsumerTypes.City);
+            var networkConsumers = _consumerRepository.GetConsumersByType(ConsumerTypes.ElectricNetwork);
 
             ViewBag.Message = "List of active Consumers";
 
-            return View(consumers);
+            return View(new ConsumersModel
+            {
+                CityConsumers = cityConsumers,
+                WireConsumers = networkConsumers
+            });
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your app description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }

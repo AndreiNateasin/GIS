@@ -1,24 +1,26 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Index";
+   
 }
-@model  List<GIS.Dto.StationConsumerDto>
 
-@section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
-        </div>
-    </section>
-}
+@model GIS.Models.Home.ConsumersModel
+
 <ul>
-    @foreach (var consumer in Model)
+    @foreach (var cityConsumer in Model.CityConsumers)
     {
-        <li>
-            <span>@consumer.Latitude </span>
-            <span>@consumer.Longitude </span>
-        </li>
+        foreach (var location in cityConsumer.Locations)
+        {
+        <li>@location.Longitude - @location.Latitude </li>
+        }
+    }
+</ul>
+
+<ul>
+    @foreach (var cityConsumer in Model.WireConsumers)
+    {
+        foreach (var location in cityConsumer.Locations)
+        {
+        <li>@location.Longitude  - @location.Latitude </li>
+        }
     }
 </ul>

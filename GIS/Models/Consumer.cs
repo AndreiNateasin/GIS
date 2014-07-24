@@ -21,76 +21,41 @@ namespace GIS.Models
         }
     
         public int IDConsumer { get; set; }
-        
         public string ConsumerName { get; set; }
-        
         public int IDConsumerType { get; set; }
-        
         public int IDCostCenter { get; set; }
-        
         public int IDNetworkOperator { get; set; }
-        
         public int IDDistrict { get; set; }
-        
         public int IDAsset { get; set; }
-        
         public Nullable<int> IDFieldCluster { get; set; }
-        
         public string ConsumptionPlaceName { get; set; }
-        
         public string ConsumptionPlaceAddress { get; set; }
-        
         public Nullable<int> IDElectricStation { get; set; }
-        
         public string MeasurePointName { get; set; }
-        
         public string VMSCode { get; set; }
-        
         public int ComputingSign { get; set; }
-        
         public Nullable<int> IDVoltageLevelMeasurePoint { get; set; }
-        
         public Nullable<int> IDVoltageLevelSettlementPoint { get; set; }
-        
         public decimal RecordedEnergyCorrection { get; set; }
-        
         public string ElectricMeterSerial { get; set; }
-        
         public int ElectricMeterConstant { get; set; }
-        
         public System.DateTime CreatedOn { get; set; }
-        
         public int CreatedBy { get; set; }
-        
         public Nullable<System.DateTime> ModifiedOn { get; set; }
-        
         public Nullable<System.DateTime> ModifiedBy { get; set; }
-        
         public bool Active { get; set; }
-        
         public byte[] Image { get; set; }
     
-
         public virtual Asset Asset { get; set; }
-        
         public virtual ConsumerType ConsumerType { get; set; }
-        
         public virtual CostCenter CostCenter { get; set; }
-        
         public virtual District District { get; set; }
-        
         public virtual ElectricStation ElectricStation { get; set; }
-        
         public virtual FieldCluster FieldCluster { get; set; }
-        
         public virtual NetworkOperator NetworkOperator { get; set; }
-        
         public virtual VoltageLevel VoltageLevel { get; set; }
-        
         public virtual VoltageLevel VoltageLevel1 { get; set; }
-        
         public virtual ICollection<Consumption> Consumptions { get; set; }
-        
         public virtual ICollection<Location> Locations { get; set; }
     }
 }
