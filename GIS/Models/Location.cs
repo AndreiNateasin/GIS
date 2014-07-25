@@ -16,8 +16,8 @@ namespace GIS.Models
     {
         public int IDLocation { get; set; }
         public int IDConsumer { get; set; }
-        public double Longitude { get; set; }
-        public double Latitude { get; set; }
+        public string Longitude { get; set; }
+        public string Latitude { get; set; }
         public Nullable<int> ElectricalLineDiagramX { get; set; }
         public Nullable<int> ElectricalLineDiagramY { get; set; }
         public System.DateTime CreatedOn { get; set; }

@@ -11,7 +11,7 @@ insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumer
 SET  @consumer = @@IDENTITY;
 
 insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 44.43250, 6.10389, @consumer)
+	Values(1, 44.43250, 26.10389, @consumer)
 
 insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
 	Values ('Pitesti', 1, 2, @consumerType)
