@@ -1,0 +1,4 @@
+1. MarkerClusters  http://www.brad-smith.info/blog/archives/619
+2. http://www.geoplaner.com/
+3. Multiple routes implementation - http://clokey2k.com/articles/2012/displaying-multiple-routes-using-google-maps-api/
+
