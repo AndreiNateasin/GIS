@@ -422,8 +422,8 @@
           </Key>
           <Property Name="IDLocation" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="IDConsumer" Type="int" Nullable="false" />
-          <Property Name="Longitude" Type="float" Nullable="false" />
-          <Property Name="Latitude" Type="float" Nullable="false" />
+          <Property Name="Longitude" Type="nvarchar" Nullable="false" />
+          <Property Name="Latitude" Type="nvarchar" Nullable="false" />
           <Property Name="ElectricalLineDiagramX" Type="int" />
           <Property Name="ElectricalLineDiagramY" Type="int" />
           <Property Name="CreatedOn" Type="datetime" Nullable="false" />
@@ -1622,8 +1622,8 @@
           </Key>
           <Property Name="IDLocation" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="IDConsumer" Type="Int32" Nullable="false" />
-          <Property Name="Longitude" Type="Double" Nullable="false" />
-          <Property Name="Latitude" Type="Double" Nullable="false" />
+          <Property Name="Longitude" Type="String" Nullable="false" />
+          <Property Name="Latitude" Type="String" Nullable="false" />
           <Property Name="ElectricalLineDiagramX" Type="Int32" />
           <Property Name="ElectricalLineDiagramY" Type="Int32" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />

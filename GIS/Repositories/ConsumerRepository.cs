@@ -19,6 +19,8 @@ namespace GIS.Repositories
                         .Select(z => new SimpleConsumerDto
                             {
                                 ConsumerType = z.ConsumerType.ConsumerTypeName,
+                                ConsumerName = z.ConsumerName,
+                                Image = z.Image,
                                 Locations = z.Locations.Select(l => new LocationDto
                                 {
                                     Longitude = l.Longitude,

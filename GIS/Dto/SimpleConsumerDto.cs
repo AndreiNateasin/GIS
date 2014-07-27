@@ -11,6 +11,10 @@ namespace GIS.Dto
 
         public string ConsumerType { get; set; }
 
+        public string ConsumerName { get; set; }
+
+        public byte[] Image { get; set; }
+
         public IEnumerable<LocationDto> Locations { get; set; }
     }
 }

@@ -7,63 +7,43 @@
 
 
 @section Styles {
-    html { height: 100% }
+html { height: 100% }
     body { height: 100%; margin: 0px; padding: 0px }
     #map_canvas { height:500px; width:900px; }
 }
 <div id="directions_panel"></div>
 <div id="map_canvas"></div>
 @section scripts {
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"
-            type="text/javascript">
-    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true&v=3.exp"></script>
+    <script type="text/javascript"
+            src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer_compiled.js"> </script>
+    <script type="text/javascript"
+            src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/richmarker/src/richmarker-compiled.js"> </script>
 
     <script type="text/javascript">
-        (function ($) {
+        (function($) {
             var map;
-            var directionsRenderer;
             var markerArray = [];
-            var directionsService;
             var renderArray = [];
 
-            var colourArray = ['navy', 'grey', 'fuchsia', 'black', 'white', 'lime', 'maroon', 'purple', 'aqua', 'red', 'green', 'silver', 'olive', 'blue', 'yellow', 'teal'];
+            var colourArray = ['navy', 'fuchsia', 'black', 'white', 'lime', 'maroon', 'purple', 'aqua', 'red', 'green', 'silver', 'olive', 'blue', 'yellow', 'teal'];
 
-            function initialize(directionsRenderer, directionsService) {
+            function initialize() {
 
                 var latlng = new google.maps.LatLng('@Model.CityConsumers.First().Locations.First().Latitude',
-                                                    '@Model.CityConsumers.First().Locations.First().Longitude');
+                    '@Model.CityConsumers.First().Locations.First().Longitude');
 
                 var mapOptions = {
                     zoom: 10,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP, //HYBRID
                     center: latlng,
                 };
 
-                debugger;
                 map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
-                //directionsRenderer.setMap(map);
             }
 
-            //function directionsResult(response, status) {
-            //    if (status == google.maps.DirectionsStatus.OK) {
-            //        directionsRenderer.setDirections(response);
-            //        var route = response.routes[0];
-            //        var summaryPanel = document.getElementById("directions_panel");
-            //        summaryPanel.innerHTML = "";
-            //        // For each route, display summary information.
-            //        for (var i = 0; i < route.legs.length; i++) {
-            //            var routeSegment = i+1;
-            //            summaryPanel.innerHTML += "<b>Route Segment: " + routeSegment + "</b><br />";
-            //            summaryPanel.innerHTML += route.legs[i].start_address + " to ";
-            //            summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
-            //            summaryPanel.innerHTML += route.legs[i].distance.text + "<br /><br />";
-            //        }
-            //    }
-            //}
-
-            calcRoute =  function (batches, directionsRenderer, directionsService) {
+            function calcRoute(batches, directionsService) {
 
                 var combinedResults;
                 var unsortedResults = [{}]; // to hold the counter and the results themselves as they come back, to later sort
@@ -81,20 +61,19 @@
                     waypts.splice(waypts.length - 1, 1);
 
                     var request = {
-                        origin : start,
-                        destination : end,
-                        waypoints : waypts,
-                        travelMode : window.google.maps.TravelMode.WALKING
+                        origin: start,
+                        destination: end,
+                        waypoints: waypts,
+                        travelMode: window.google.maps.TravelMode.WALKING
                     };
-                    debugger;
 
-                    (function (k) {
-                        directionsService.route(request, function (result, status) {
+                    (function(k) {
+                        directionsService.route(request, function(result, status) {
                             if (status == window.google.maps.DirectionsStatus.OK) {
 
                                 var unsortedResult = {
-                                    order : k,
-                                    result : result
+                                    order: k,
+                                    result: result
                                 };
                                 unsortedResults.push(unsortedResult);
 
@@ -103,7 +82,7 @@
                                 if (directionsResultsReturned == batches.length) // we've received all the results. put to map
                                 {
                                     // sort the returned values into their correct order
-                                    unsortedResults.sort(function (a, b) {
+                                    unsortedResults.sort(function(a, b) {
                                         return parseFloat(a.order) - parseFloat(b.order);
                                     });
                                     var count = 0;
@@ -125,10 +104,9 @@
                                             }
                                         }
                                     }
-                                    debugger;
 
                                     // Create a unique DirectionsRenderer
-                                    batchRenderer = new google.maps.DirectionsRenderer();
+                                    var batchRenderer = new google.maps.DirectionsRenderer();
                                     batchRenderer.setMap(map);
 
                                     batchRenderer.setOptions({
@@ -154,11 +132,12 @@
                         });
                     })(k);
                 }
-            };
+            }
+
+            ;
 
 
-            function prepareBatch(stops)
-            {
+            function prepareBatch(stops) {
                 var batches = [];
                 var itemsPerBatch = 7; // google API max - 1 start, 1 stop, and 8 waypoints
                 var itemsCounter = 0;
@@ -189,30 +168,64 @@
                 return batches;
             }
 
-            $(function () {
-                directionsRenderer = new google.maps.DirectionsRenderer();
+            function createMarkers(consumers) {
+                var markers = [];
+
+                for (var consumerIndex = 0; consumerIndex < consumers.length; consumerIndex++) {
+                    var consumer = consumers[consumerIndex];
+
+                    var marker = new RichMarker({
+                        position: new google.maps.LatLng(consumer.lat, consumer.lng),
+                        content: '<img ng-src="data:image/jpeg;base64 {' + consumer.image + '}" title="' + consumer.consumerName + '" class="my-map-marker" />'
+                        //content: '<img src="' + './Images/orderedList9.png' + '" title="' + 'monkey' + '" class="my-map-marker" />'
+                    });
+                    google.maps.event.addListener(marker, 'click', my_click_handler_function);
+                    markers.push(marker);
+                }
+                var cluster = new MarkerClusterer(map, markers);
+            }
+
+            function my_click_handler_function(evt) {
+                //debugger;
+                //infoWindow = new google.maps.InfoWindow({
+                //    position: new google.maps.LatLng(this.position.lat(), this.position.lng()) ,
+                //    content: 'Show information about the user here'
+                //});
+                var infowindow = new google.maps.InfoWindow({
+                    content: 'Show information about the user here'
+                });
+
+                infowindow.open(map, this);
+            }
+
+
+            $(function() {
                 // Instantiate a directions service.
                 directionsService = new google.maps.DirectionsService();
 
                 var consumers = @Html.Raw(Json.Encode(Model.CityConsumers
-                                        .Select(x => new {
-                                            lat = x.Locations.First().Latitude,
-                                            lng = x.Locations.First().Longitude
-                                        })))
+                                                           .Select(x => new
+                                                               {
+                                                                   lat = x.Locations.First().Latitude,
+                                                                   lng = x.Locations.First().Longitude,
+                                                                   consumerName = x.ConsumerName,
+                                                                   image = x.Image
+                                                               })))
 
                 var electricLines = @Html.Raw(Json.Encode(Model.WireConsumers
-                     .Select(x => new {
-                         name = x.ConsumerType ,
-                         coordinates = x.Locations.Select(c => new { lat = c.Latitude, lng = c.Longitude })
-                     })))
+                                                               .Select(x => new
+                                                                   {
+                                                                       name = x.ConsumerType,
+                                                                       coordinates = x.Locations.Select(c => new {lat = c.Latitude, lng = c.Longitude})
+                                                                   })))
 
+                initialize();
 
-                initialize(directionsRenderer, directionsService);
+                createMarkers(consumers);
 
                 for (var line = 0; line < electricLines.length; line++) {
-
                     var batchesReturned = prepareBatch(electricLines[line].coordinates);
-                    calcRoute(batchesReturned, directionsRenderer, directionsService);
+                    calcRoute(batchesReturned, directionsService);
                 }
             });
 
@@ -225,7 +238,7 @@
     {
         foreach (var location in cityConsumer.Locations)
         {
-            <li>@location.Longitude - @location.Latitude </li>
+        <li>@location.Longitude - @location.Latitude </li>
         }
     }
 </ul>
@@ -235,7 +248,7 @@
     {
         foreach (var location in cityConsumer.Locations)
         {
-            <li>@location.Longitude  - @location.Latitude </li>
+        <li>@location.Longitude  - @location.Latitude </li>
         }
     }
 </ul>
