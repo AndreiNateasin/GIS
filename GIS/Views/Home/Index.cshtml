@@ -175,7 +175,11 @@ html { height: 100% }
                     var consumer = consumers[consumerIndex];
 
                     var marker = new RichMarker({
+                        flat: false,
+                        anchor: RichMarkerPosition.MIDDLE,
                         position: new google.maps.LatLng(consumer.lat, consumer.lng),
+                        image: consumer.image,
+                        consumerName: consumer.consumerName,
                         content: '<img src="data:image/png;base64,' + consumer.image + '" title="' + consumer.consumerName + '" class="my-map-marker" />'
                         //content: '<img src="' + './Images/orderedList9.png' + '" title="' + 'monkey' + '" class="my-map-marker" />'
                     });
@@ -191,8 +195,27 @@ html { height: 100% }
                 //    position: new google.maps.LatLng(this.position.lat(), this.position.lng()) ,
                 //    content: 'Show information about the user here'
                 //});
+                var imageNode = $('<img/>')
+                    .attr('src', 'data:image/png;base64,' + this.image)
+                    .attr('title', this.consumerName);
+               
+
+                var link1 = $('<a/>')
+                    .attr('href', '#')
+                    .text('Schema monofilara');
+                
+                var link2 = $('<a/>')
+                    .attr('href', '#')
+                    .text('Statistica');
+                
+                var divContent = $("<div/>")
+                    .addClass('clear-fix')
+                    .append(imageNode)
+                    .append(link1)
+                    .append(link2);
+
                 var infowindow = new google.maps.InfoWindow({
-                    content: 'Show information about the user here'
+                    content: divContent.html()
                 });
 
                 infowindow.open(map, this);
