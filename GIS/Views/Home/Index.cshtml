@@ -176,7 +176,7 @@ html { height: 100% }
 
                     var marker = new RichMarker({
                         position: new google.maps.LatLng(consumer.lat, consumer.lng),
-                        content: '<img ng-src="data:image/jpeg;base64 {' + consumer.image + '}" title="' + consumer.consumerName + '" class="my-map-marker" />'
+                        content: '<img src="data:image/png;base64,' + consumer.image + '" title="' + consumer.consumerName + '" class="my-map-marker" />'
                         //content: '<img src="' + './Images/orderedList9.png' + '" title="' + 'monkey' + '" class="my-map-marker" />'
                     });
                     google.maps.event.addListener(marker, 'click', my_click_handler_function);
@@ -209,7 +209,7 @@ html { height: 100% }
                                                                    lat = x.Locations.First().Latitude,
                                                                    lng = x.Locations.First().Longitude,
                                                                    consumerName = x.ConsumerName,
-                                                                   image = x.Image
+                                                                   image = Convert.ToBase64String(x.Image)
                                                                })))
 
                 var electricLines = @Html.Raw(Json.Encode(Model.WireConsumers

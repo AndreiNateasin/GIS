@@ -371,6 +371,7 @@
     <Content Include="SQL scripts\DeleteData.sql" />
     <Content Include="SQL scripts\FanicaCG.SQL" />
     <Content Include="SQL scripts\gps_data.sql" />
+    <Content Include="SQL scripts\InsertImages.sql" />
     <Content Include="SQL scripts\Locations.sql" />
     <Content Include="SQL scripts\Test Data.sql" />
     <Content Include="Web.config" />
