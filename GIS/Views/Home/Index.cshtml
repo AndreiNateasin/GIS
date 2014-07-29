@@ -16,16 +16,15 @@ html { height: 100% }
 @section scripts {
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true&v=3.exp"></script>
     <script type="text/javascript"
-            src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer_compiled.js"> </script>
+        src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer_compiled.js"> </script>
     <script type="text/javascript"
-            src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/richmarker/src/richmarker-compiled.js"> </script>
+        src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/richmarker/src/richmarker-compiled.js"> </script>
+    <script type="text/javascript"
+            src="@Url.Content("~/Scripts/Application/MultipleRoutesCombinations.js")"> </script>
 
     <script type="text/javascript">
         (function($) {
             var map;
-            var markerArray = [];
-            var renderArray = [];
-
             var colourArray = ['navy', 'fuchsia', 'black', 'white', 'lime', 'maroon', 'purple', 'aqua', 'red', 'green', 'silver', 'olive', 'blue', 'yellow', 'teal'];
 
             function initialize() {
@@ -43,131 +42,6 @@ html { height: 100% }
 
             }
 
-            function calcRoute(batches, directionsService) {
-
-                var combinedResults;
-                var unsortedResults = [{}]; // to hold the counter and the results themselves as they come back, to later sort
-                var directionsResultsReturned = 0;
-
-                for (var k = 0; k < batches.length; k++) {
-                    var lastIndex = batches[k].length - 1;
-                    var start = batches[k][0].location;
-                    var end = batches[k][lastIndex].location;
-
-                    // trim first and last entry from array
-                    var waypts = [];
-                    waypts = batches[k];
-                    waypts.splice(0, 1);
-                    waypts.splice(waypts.length - 1, 1);
-
-                    var request = {
-                        origin: start,
-                        destination: end,
-                        waypoints: waypts,
-                        travelMode: window.google.maps.TravelMode.WALKING
-                    };
-
-                    (function(k) {
-                        directionsService.route(request, function(result, status) {
-                            if (status == window.google.maps.DirectionsStatus.OK) {
-
-                                var unsortedResult = {
-                                    order: k,
-                                    result: result
-                                };
-                                unsortedResults.push(unsortedResult);
-
-                                directionsResultsReturned++;
-
-                                if (directionsResultsReturned == batches.length) // we've received all the results. put to map
-                                {
-                                    // sort the returned values into their correct order
-                                    unsortedResults.sort(function(a, b) {
-                                        return parseFloat(a.order) - parseFloat(b.order);
-                                    });
-                                    var count = 0;
-                                    for (var key in unsortedResults) {
-                                        if (unsortedResults[key].result != null) {
-                                            if (unsortedResults.hasOwnProperty(key)) {
-                                                if (count == 0) // first results. new up the combinedResults object
-                                                    combinedResults = unsortedResults[key].result;
-                                                else {
-                                                    // only building up legs, overview_path, and bounds in my consolidated object. This is not a complete
-                                                    // directionResults object, but enough to draw a path on the map, which is all I need
-                                                    combinedResults.routes[0].legs = combinedResults.routes[0].legs.concat(unsortedResults[key].result.routes[0].legs);
-                                                    combinedResults.routes[0].overview_path = combinedResults.routes[0].overview_path.concat(unsortedResults[key].result.routes[0].overview_path);
-
-                                                    combinedResults.routes[0].bounds = combinedResults.routes[0].bounds.extend(unsortedResults[key].result.routes[0].bounds.getNorthEast());
-                                                    combinedResults.routes[0].bounds = combinedResults.routes[0].bounds.extend(unsortedResults[key].result.routes[0].bounds.getSouthWest());
-                                                }
-                                                count++;
-                                            }
-                                        }
-                                    }
-
-                                    // Create a unique DirectionsRenderer
-                                    var batchRenderer = new google.maps.DirectionsRenderer();
-                                    batchRenderer.setMap(map);
-
-                                    batchRenderer.setOptions({
-                                        preserveViewport: true,
-                                        suppressInfoWindows: true,
-                                        polylineOptions: {
-                                            strokeWeight: 4,
-                                            strokeOpacity: 0.8,
-                                            strokeColor: colourArray[k]
-                                        },
-                                        markerOptions: {
-                                            icon: {
-                                                path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
-                                                scale: 3,
-                                                strokeColor: colourArray[k]
-                                            }
-                                        }
-                                    });
-
-                                    batchRenderer.setDirections(combinedResults);
-                                }
-                            }
-                        });
-                    })(k);
-                }
-            }
-
-            ;
-
-
-            function prepareBatch(stops) {
-                var batches = [];
-                var itemsPerBatch = 7; // google API max - 1 start, 1 stop, and 8 waypoints
-                var itemsCounter = 0;
-                var wayptsExist = stops.length > 0;
-
-                while (wayptsExist) {
-                    var subBatch = [];
-                    var subitemsCounter = 0;
-
-                    for (var j = itemsCounter; j < stops.length; j++) {
-                        subitemsCounter++;
-                        subBatch.push({
-                            location: new google.maps.LatLng(stops[j].lat, stops[j].lng),
-                            stopover: true
-                        });
-                        if (subitemsCounter == itemsPerBatch)
-                            break;
-                    }
-
-                    itemsCounter += subitemsCounter;
-                    batches.push(subBatch);
-                    wayptsExist = itemsCounter < stops.length;
-                    // If it runs again there are still points. Minus 1 before continuing to
-                    // start up with end of previous tour leg
-                    itemsCounter--;
-                }
-
-                return batches;
-            }
-
             function createMarkers(consumers) {
                 var markers = [];
 
@@ -183,31 +57,27 @@ html { height: 100% }
                         content: '<img src="data:image/png;base64,' + consumer.image + '" title="' + consumer.consumerName + '" class="my-map-marker" />'
                         //content: '<img src="' + './Images/orderedList9.png' + '" title="' + 'monkey' + '" class="my-map-marker" />'
                     });
-                    google.maps.event.addListener(marker, 'click', my_click_handler_function);
+                    google.maps.event.addListener(marker, 'click', onMarkerClick);
                     markers.push(marker);
                 }
-                var cluster = new MarkerClusterer(map, markers);
+
+                new MarkerClusterer(map, markers);
             }
 
-            function my_click_handler_function(evt) {
-                //debugger;
-                //infoWindow = new google.maps.InfoWindow({
-                //    position: new google.maps.LatLng(this.position.lat(), this.position.lng()) ,
-                //    content: 'Show information about the user here'
-                //});
+            function onMarkerClick(evt) {
                 var imageNode = $('<img/>')
                     .attr('src', 'data:image/png;base64,' + this.image)
                     .attr('title', this.consumerName);
-               
+
 
                 var link1 = $('<a/>')
                     .attr('href', '#')
                     .text('Schema monofilara');
-                
+
                 var link2 = $('<a/>')
                     .attr('href', '#')
                     .text('Statistica');
-                
+
                 var divContent = $("<div/>")
                     .addClass('clear-fix')
                     .append(imageNode)
@@ -221,6 +91,34 @@ html { height: 100% }
                 infowindow.open(map, this);
             }
 
+            function createPolylinePaths(electricLineWaypoints, index) {
+                var electricWPCoordinates = electricLineWaypoints.coordinates;
+                var wayPointArray = [];
+                for (var wayPoint = 0; wayPoint < electricWPCoordinates.length; wayPoint++) {
+                    wayPointArray
+                        .push(new google.maps.LatLng(electricWPCoordinates[wayPoint].lat,
+                            electricWPCoordinates[wayPoint].lng));
+                }
+                var lineSymbol = {
+                    path: google.maps.SymbolPath.CIRCLE
+                };
+
+                var polylineOptions = {
+                    geodesic: true,
+                    strokeColor: colourArray[index],
+                    strokeOpacity: 0.6,
+                    strokeWeight: 5,
+                    //icons: [{ icon: lineSymbol,
+                    //    offset: '100%'}]
+                };
+
+                var path = new google.maps.Polyline({
+                    path: wayPointArray,
+                });
+                path.setOptions(polylineOptions);
+                path.setMap(map);
+
+            }
 
             $(function() {
                 // Instantiate a directions service.
@@ -239,39 +137,25 @@ html { height: 100% }
                                                                .Select(x => new
                                                                    {
                                                                        name = x.ConsumerType,
-                                                                       coordinates = x.Locations.Select(c => new {lat = c.Latitude, lng = c.Longitude})
+                                                                       coordinates = x.Locations.Select(c => new { lat = c.Latitude, lng = c.Longitude })
                                                                    })))
 
                 initialize();
 
                 createMarkers(consumers);
-
+                //Draw route with Polyline 
                 for (var line = 0; line < electricLines.length; line++) {
-                    var batchesReturned = prepareBatch(electricLines[line].coordinates);
-                    calcRoute(batchesReturned, directionsService);
+                    createPolylinePaths(electricLines[line], line);
                 }
+
+                ////Draw routes with combined waypoints and multiple routes 
+                //for (var line = 0; line < electricLines.length; line++) {
+                //    var batchesReturned = prepareBatch(electricLines[line].coordinates);
+                //    calcRoute(batchesReturned, directionsService, map, colourArray);
+                //}
             });
 
         })(jQuery);
 
     </script>
 }
-<ul>
-    @foreach (var cityConsumer in Model.CityConsumers)
-    {
-        foreach (var location in cityConsumer.Locations)
-        {
-        <li>@location.Longitude - @location.Latitude </li>
-        }
-    }
-</ul>
-
-<ul>
-    @foreach (var cityConsumer in Model.WireConsumers)
-    {
-        foreach (var location in cityConsumer.Locations)
-        {
-        <li>@location.Longitude  - @location.Latitude </li>
-        }
-    }
-</ul>

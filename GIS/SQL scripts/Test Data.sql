@@ -90,7 +90,7 @@ insert into dbo.ConsumerTypes (ConsumerTypeName)
 SET @consumerType =  @@IDENTITY;
 
 insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Bucuresti - Buzau ', 1, 9, @consumerType)
+	Values ('Bucuresti - Sibiu ', 1, 9, @consumerType)
 
 SET  @consumer = @@IDENTITY;
 
