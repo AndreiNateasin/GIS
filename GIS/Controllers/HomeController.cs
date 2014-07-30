@@ -20,8 +20,8 @@ namespace GIS.Controllers
 
         public ActionResult Index()
         {
-            var cityConsumers = _consumerRepository.GetConsumersByType(ConsumerTypes.City);
-            var networkConsumers = _consumerRepository.GetConsumersByType(ConsumerTypes.ElectricNetwork);
+            var cityConsumers = _consumerRepository.GetConsumersByType(new List<string> { ConsumerTypes.City, ConsumerTypes.Pump, ConsumerTypes.Factory });
+            var networkConsumers = _consumerRepository.GetConsumersByType(new List<string> { ConsumerTypes.ElectricNetwork });
 
             ViewBag.Message = "List of active Consumers";
 

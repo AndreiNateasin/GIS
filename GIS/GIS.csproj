@@ -347,6 +347,7 @@
     <Content Include="Models\Gis.Model.edmx.diagram">
       <DependentUpon>Gis.Model.edmx</DependentUpon>
     </Content>
+    <Content Include="Models\Gis.Model.edmx.sql" />
     <Content Include="Models\Gis.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Gis.Model.edmx</DependentUpon>

@@ -123,7 +123,6 @@ html { height: 100% }
             $(function() {
                 // Instantiate a directions service.
                 directionsService = new google.maps.DirectionsService();
-
                 var consumers = @Html.Raw(Json.Encode(Model.CityConsumers
                                                            .Select(x => new
                                                                {
@@ -141,7 +140,6 @@ html { height: 100% }
                                                                    })))
 
                 initialize();
-
                 createMarkers(consumers);
                 //Draw route with Polyline 
                 for (var line = 0; line < electricLines.length; line++) {

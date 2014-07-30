@@ -84,6 +84,82 @@ SET  @consumer = @@IDENTITY;
 
 insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
 	Values(1, 44.93377, 26.02687, @consumer)
+-------------------------Pumps--------------------
+insert into dbo.ConsumerTypes (ConsumerTypeName) 
+	Values ('Pump')
+SET @consumerType =  @@IDENTITY;
+
+insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
+	Values ('German Pomp', 1, 10, @consumerType)
+
+SET  @consumer = @@IDENTITY;
+
+insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
+	Values(1, 44.34589, 23.91449, @consumer)
+--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
+	Values ('Swedish Pomp', 1, 10, @consumerType)
+
+SET  @consumer = @@IDENTITY;
+
+insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
+	Values(1, 44.47930, 24.22211, @consumer)
+--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
+	Values ('Italian Pomp', 1, 10, @consumerType)
+
+SET  @consumer = @@IDENTITY;
+
+insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
+	Values(1, 44.31445, 24.48029, @consumer)
+--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
+	Values ('Romanian Pomp', 1, 10, @consumerType)
+
+SET  @consumer = @@IDENTITY;
+
+insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
+	Values(1, 44.24760, 24.30450, @consumer)
+--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+-------------------------
+
+
+insert into dbo.ConsumerTypes (ConsumerTypeName) 
+	Values ('Factory')
+SET @consumerType =  @@IDENTITY;
+
+insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
+	Values ('German Factory', 1, 10, @consumerType)
+
+SET  @consumer = @@IDENTITY;
+
+insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
+	Values(1, 44.50945, 26.83548, @consumer)
+--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
+	Values ('Swedish Factory', 1, 10, @consumerType)
+
+SET  @consumer = @@IDENTITY;
+
+insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
+	Values(1, 44.40555, 26.72836, @consumer)
+--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
+	Values ('Italian Factory', 1, 10, @consumerType)
+
+SET  @consumer = @@IDENTITY;
+
+insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
+	Values(1, 44.44086, 26.96182, @consumer)
+--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
+	Values ('Romanian Factory', 1, 10, @consumerType)
+
+SET  @consumer = @@IDENTITY;
+
+insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
+	Values(1, 44.33683, 26.85471, @consumer)
+--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 -------------------------
 insert into dbo.ConsumerTypes (ConsumerTypeName) 
 	Values ('Electric network')

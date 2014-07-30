@@ -13,14 +13,16 @@ namespace GIS.Repositories
             _gisDb = new GisDB();
         }
 
-        public List<SimpleConsumerDto> GetConsumersByType(string consumertType)
+        public List<SimpleConsumerDto> GetConsumersByType(List<string> consumertTypes)
         {
-            return _gisDb.Consumers.Where(x => x.Active && x.ConsumerType.ConsumerTypeName == consumertType)
-                        .Select(z => new SimpleConsumerDto
+            var query = _gisDb.Consumers.Where(x => x.Active
+                && consumertTypes.Any(z => z == x.ConsumerType.ConsumerTypeName));
+
+            return query.Select(z => new SimpleConsumerDto
                             {
                                 ConsumerType = z.ConsumerType.ConsumerTypeName,
                                 ConsumerName = z.ConsumerName,
-                                Image = z.Image,
+                                Image = z.ConsumerType.Image,
                                 Locations = z.Locations.Select(l => new LocationDto
                                 {
                                     Longitude = l.Longitude,

@@ -23,6 +23,7 @@ namespace GIS.Models
         public int IDConsumerType { get; set; }
         public string ConsumerTypeName { get; set; }
         public string MapType { get; set; }
+        public byte[] Image { get; set; }
     
         public virtual ICollection<Consumer> Consumers { get; set; }
         public virtual ICollection<ConsumerTypesToReport> ConsumerTypesToReports { get; set; }
