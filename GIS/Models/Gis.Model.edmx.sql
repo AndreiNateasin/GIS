@@ -1,14 +1,13 @@
 
 -- --------------------------------------------------
--- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
+-- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 08/04/2014 18:25:40
--- Generated from EDMX file: C:\Users\User\Documents\GitHub\GIS\GIS\Models\Gis.Model.edmx
+-- Date Created: 08/04/2014 22:24:48
+-- Generated from EDMX file: D:\GitHub\GIS\GIS\Models\Gis.Model.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
-GO
-USE [GIS];
+
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -822,7 +821,7 @@ GO
 -- Creating primary key on [IDConsumerType], [IDConsumerInfoLink] in table 'ConsumerTypeInfoLinks'
 ALTER TABLE [dbo].[ConsumerTypeInfoLinks]
 ADD CONSTRAINT [PK_ConsumerTypeInfoLinks]
-    PRIMARY KEY CLUSTERED ([IDConsumerType], [IDConsumerInfoLink] ASC);
+    PRIMARY KEY NONCLUSTERED ([IDConsumerType], [IDConsumerInfoLink] ASC);
 GO
 
 -- --------------------------------------------------

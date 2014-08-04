@@ -26,7 +26,7 @@
         (function($) {
             var map;
             var colourArray = ['navy', 'fuchsia', 'black', 'white', 'lime', 'maroon', 'purple', 'aqua', 'red', 'green', 'silver', 'olive', 'blue', 'yellow', 'teal'];
-            var noImage = '@Url.Content("~/Images/NoImage.png")'
+            var noImage = '@Url.Content("~/Images/NoImage.png")';
             function initialize() {
 
                 var latlng = new google.maps.LatLng('@Model.FirstConsumer.StartLocation.Latitude',
@@ -54,6 +54,7 @@
                         position: new google.maps.LatLng(consumer.lat, consumer.lng),
                         image: consumer.image,
                         consumerName: consumer.consumerName,
+                        consumerLinks: consumer.consumerLinks,
                         content: '<img src="data:image/png;base64,' + consumer.typeImage + '" title="' + consumer.consumerName + '" class="my-map-marker" />'
                     });
                     google.maps.event.addListener(marker, 'click', onMarkerClick);
@@ -64,6 +65,7 @@
             }
 
             function onMarkerClick(evt) {
+                var consumerLinks = this.consumerLinks;
                 var imageSrc = this.image != null ? 'data:image/png;base64,' + this.image : noImage;
                 var imageNode = $('<img/>')
                     .addClass('infoWindowContent')
@@ -71,22 +73,19 @@
                     .attr('title', this.consumerName);
                 var divContainer = $('<div/>');
 
-                var link1 = $('<a/>')
-                    .addClass('infoLinks')
-                    .attr('href', '#')
-                    .text('Schema monofilara');
-
-                var link2 = $('<a/>')
-                    .addClass('infoLinks')
-                    .attr('href', '#')
-                    .text('Statistica');
-
                 var divContent = $("<ul/>")
                     .addClass('cf')
-                    .addClass('infoWindowContent')
-
-                    .append(link1)
-                    .append(link2);
+                    .addClass('infoWindowContent');
+                
+                for (var link = 0; link < consumerLinks.length; link++) {
+                    var linkElement = $('<a/>')
+                        .addClass('infoLinks')
+                        .attr('href', '#')
+                        .text(consumerLinks[link].Title)
+                        .prop('tabIndex', consumerLinks[link].ReferenceIndex);
+                    
+                    divContent.append(linkElement);
+                }
 
                 divContainer.append(imageNode).append(divContent);
 
@@ -132,8 +131,8 @@
                 var consumers = @Html.Raw(Json.Encode(Model.CityConsumers
                                                            .Select(x => new
                                                                {
-                                                                   lat = x.Locations.First().Latitude,
-                                                                   lng = x.Locations.First().Longitude,
+                                                                   lat = x.StartLocation.Latitude,
+                                                                   lng = x.StartLocation.Longitude,
                                                                    consumerName = x.ConsumerName,
                                                                    image =x.Image != null
                                                                                ? Convert.ToBase64String(x.Image)
@@ -143,7 +142,6 @@
                                                                                : null,
                                                                     consumerLinks = x.InfoLinks
                                                                })))
-
                 var electricLines = @Html.Raw(Json.Encode(Model.WireConsumers
                                                                .Select(x => new
                                                                    {

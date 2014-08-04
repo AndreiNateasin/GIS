@@ -8,6 +8,7 @@ namespace GIS.Dto
         public SimpleConsumerDto()
         {
             Locations = new List<LocationDto>();
+            InfoLinks = new List<InfoLink>();
             TypeImage = new byte[] { };
             Image = new byte[] { };
         }
@@ -22,7 +23,7 @@ namespace GIS.Dto
 
         public IEnumerable<LocationDto> Locations { get; set; }
 
-        public List<InfoLink> InfoLinks { get; set; }
+        public IEnumerable<InfoLink> InfoLinks { get; set; }
 
         public LocationDto StartLocation
         {

@@ -29,6 +29,11 @@ namespace GIS.Repositories
                                     Longitude = l.Longitude,
                                     Latitude = l.Latitude,
                                 }),
+                                InfoLinks = z.ConsumerType.ConsumerTypeInfoLinks.Select(x => new InfoLink
+                                    {
+                                        Title = x.ConsumerInfoLink.Title,
+                                        ReferenceIndex = x.ConsumerInfoLink.ReferenceIndex
+                                    })
 
                             })
                         .ToList();

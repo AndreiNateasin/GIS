@@ -7,5 +7,8 @@ namespace GIS.Dto
 {
     public class InfoLink
     {
+        public string Title { get; set; }
+
+        public string ReferenceIndex { get; set; }
     }
 }
