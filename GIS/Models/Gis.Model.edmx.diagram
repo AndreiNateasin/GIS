@@ -8,8 +8,8 @@
         <EntityTypeShape EntityType="Gis.MapModel.AcquisitionPrice" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Gis.MapModel.Asset" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Gis.MapModel.Consumer" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Gis.MapModel.ConsumerType" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Gis.MapModel.ConsumerTypesToReport" Width="1.5" PointX="5.25" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.ConsumerType" Width="2" PointX="2.875" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.ConsumerTypesToReport" Width="1.875" PointX="5.25" PointY="27.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Gis.MapModel.ConsumptionDetail" Width="1.5" PointX="12.75" PointY="18.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Gis.MapModel.Consumption" Width="1.5" PointX="10.5" PointY="16.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Gis.MapModel.CostCenter" Width="1.5" PointX="3" PointY="18.5" IsExpanded="true" />
@@ -81,6 +81,10 @@
         <AssociationConnector Association="Gis.MapModel.FK_UsersToRoles_Roles" ManuallyRouted="false" />
         <AssociationConnector Association="Gis.MapModel.FK_UsersToRoles_CreatedByUser" ManuallyRouted="false" />
         <AssociationConnector Association="Gis.MapModel.FK_UsersToRoles_Users" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Gis.MapModel.ConsumerInfoLink" Width="2" PointX="0.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gis.MapModel.ConsumerTypeInfoLink" Width="2.375" PointX="0.5" PointY="11" />
+        <AssociationConnector Association="Gis.MapModel.ConsumerTypeConsumerTypeInfoLink" />
+        <AssociationConnector Association="Gis.MapModel.ConsumerInfoLinkConsumerTypeInfoLink" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

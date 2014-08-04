@@ -12,22 +12,17 @@ namespace GIS.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ConsumerType
+    public partial class ConsumerInfoLink
     {
-        public ConsumerType()
+        public ConsumerInfoLink()
         {
-            this.Consumers = new HashSet<Consumer>();
-            this.ConsumerTypesToReports = new HashSet<ConsumerTypesToReport>();
             this.ConsumerTypeInfoLinks = new HashSet<ConsumerTypeInfoLink>();
         }
     
-        public int IDConsumerType { get; set; }
-        public string ConsumerTypeName { get; set; }
-        public string MapType { get; set; }
-        public byte[] Image { get; set; }
+        public int IDConsumerInfoLink { get; set; }
+        public string Title { get; set; }
+        public string ReferenceIndex { get; set; }
     
-        public virtual ICollection<Consumer> Consumers { get; set; }
-        public virtual ICollection<ConsumerTypesToReport> ConsumerTypesToReports { get; set; }
         public virtual ICollection<ConsumerTypeInfoLink> ConsumerTypeInfoLinks { get; set; }
     }
 }

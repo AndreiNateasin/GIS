@@ -7,10 +7,10 @@ namespace GIS.Repositories
 {
     public class ConsumerRepository
     {
-        private readonly GisDB _gisDb;
+        private readonly GisConnectionString _gisDb;
         public ConsumerRepository()
         {
-            _gisDb = new GisDB();
+            _gisDb = new GisConnectionString();
         }
 
         public List<SimpleConsumerDto> GetConsumersByType(List<string> consumertTypes)
@@ -22,7 +22,8 @@ namespace GIS.Repositories
                             {
                                 ConsumerType = z.ConsumerType.ConsumerTypeName,
                                 ConsumerName = z.ConsumerName,
-                                Image = z.ConsumerType.Image,
+                                Image = z.Image,
+                                TypeImage = z.ConsumerType.Image,
                                 Locations = z.Locations.Select(l => new LocationDto
                                 {
                                     Longitude = l.Longitude,

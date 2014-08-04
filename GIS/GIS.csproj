@@ -164,6 +164,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Dto\InfoLink.cs" />
     <Compile Include="Dto\LocationDto.cs" />
     <Compile Include="Dto\SimpleConsumerDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -178,7 +179,13 @@
     <Compile Include="Models\Consumer.cs">
       <DependentUpon>Gis.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ConsumerInfoLink.cs">
+      <DependentUpon>Gis.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ConsumerType.cs">
+      <DependentUpon>Gis.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConsumerTypeInfoLink.cs">
       <DependentUpon>Gis.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ConsumerTypes.cs" />
@@ -204,6 +211,11 @@
       <DependentUpon>Gis.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Gis.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Gis.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gis.Context1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Gis.Context.tt</DependentUpon>
@@ -339,18 +351,18 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Gis.Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Gis.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Gis.Model.edmx</DependentUpon>
-      <LastGenOutput>Gis.Context.cs</LastGenOutput>
-    </Content>
+    <Content Include="Images\NoImage.png" />
     <Content Include="Models\Gis.Model.edmx.diagram">
       <DependentUpon>Gis.Model.edmx</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Models\Gis.Model.edmx.sql" />
+    <Content Include="Models\Gis.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Gis.Context1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\Gis.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Gis.Model.edmx</DependentUpon>
       <LastGenOutput>Gis.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />

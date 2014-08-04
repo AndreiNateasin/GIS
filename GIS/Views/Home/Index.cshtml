@@ -7,7 +7,7 @@
 
 
 @section Styles {
-html { height: 100% }
+    html { height: 100% }
     body { height: 100%; margin: 0px; padding: 0px }
     #map_canvas { height:500px; width:900px; }
 }
@@ -16,9 +16,9 @@ html { height: 100% }
 @section scripts {
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true&v=3.exp"></script>
     <script type="text/javascript"
-        src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer_compiled.js"> </script>
+            src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer_compiled.js"> </script>
     <script type="text/javascript"
-        src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/richmarker/src/richmarker-compiled.js"> </script>
+            src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/richmarker/src/richmarker-compiled.js"> </script>
     <script type="text/javascript"
             src="@Url.Content("~/Scripts/Application/MultipleRoutesCombinations.js")"> </script>
 
@@ -26,11 +26,11 @@ html { height: 100% }
         (function($) {
             var map;
             var colourArray = ['navy', 'fuchsia', 'black', 'white', 'lime', 'maroon', 'purple', 'aqua', 'red', 'green', 'silver', 'olive', 'blue', 'yellow', 'teal'];
-
+            var noImage = '@Url.Content("~/Images/NoImage.png")'
             function initialize() {
 
-                var latlng = new google.maps.LatLng('@Model.CityConsumers.First().Locations.First().Latitude',
-                    '@Model.CityConsumers.First().Locations.First().Longitude');
+                var latlng = new google.maps.LatLng('@Model.FirstConsumer.StartLocation.Latitude',
+                    '@Model.FirstConsumer.StartLocation.Longitude');
 
                 var mapOptions = {
                     zoom: 10,
@@ -54,8 +54,7 @@ html { height: 100% }
                         position: new google.maps.LatLng(consumer.lat, consumer.lng),
                         image: consumer.image,
                         consumerName: consumer.consumerName,
-                        content: '<img src="data:image/png;base64,' + consumer.image + '" title="' + consumer.consumerName + '" class="my-map-marker" />'
-                        //content: '<img src="' + './Images/orderedList9.png' + '" title="' + 'monkey' + '" class="my-map-marker" />'
+                        content: '<img src="data:image/png;base64,' + consumer.typeImage + '" title="' + consumer.consumerName + '" class="my-map-marker" />'
                     });
                     google.maps.event.addListener(marker, 'click', onMarkerClick);
                     markers.push(marker);
@@ -65,27 +64,34 @@ html { height: 100% }
             }
 
             function onMarkerClick(evt) {
+                var imageSrc = this.image != null ? 'data:image/png;base64,' + this.image : noImage;
                 var imageNode = $('<img/>')
-                    .attr('src', 'data:image/png;base64,' + this.image)
+                    .addClass('infoWindowContent')
+                    .attr('src', imageSrc)
                     .attr('title', this.consumerName);
-
+                var divContainer = $('<div/>');
 
                 var link1 = $('<a/>')
+                    .addClass('infoLinks')
                     .attr('href', '#')
                     .text('Schema monofilara');
 
                 var link2 = $('<a/>')
+                    .addClass('infoLinks')
                     .attr('href', '#')
                     .text('Statistica');
 
-                var divContent = $("<div/>")
-                    .addClass('clear-fix')
-                    .append(imageNode)
+                var divContent = $("<ul/>")
+                    .addClass('cf')
+                    .addClass('infoWindowContent')
+
                     .append(link1)
                     .append(link2);
 
+                divContainer.append(imageNode).append(divContent);
+
                 var infowindow = new google.maps.InfoWindow({
-                    content: divContent.html()
+                    content: divContainer.html()
                 });
 
                 infowindow.open(map, this);
@@ -129,7 +135,13 @@ html { height: 100% }
                                                                    lat = x.Locations.First().Latitude,
                                                                    lng = x.Locations.First().Longitude,
                                                                    consumerName = x.ConsumerName,
-                                                                   image = Convert.ToBase64String(x.Image)
+                                                                   image =x.Image != null
+                                                                               ? Convert.ToBase64String(x.Image)
+                                                                               : null,
+                                                                   typeImage = x.TypeImage != null
+                                                                               ? Convert.ToBase64String(x.TypeImage)
+                                                                               : null,
+                                                                    consumerLinks = x.InfoLinks
                                                                })))
 
                 var electricLines = @Html.Raw(Json.Encode(Model.WireConsumers
@@ -141,12 +153,12 @@ html { height: 100% }
 
                 initialize();
                 createMarkers(consumers);
-                //Draw route with Polyline 
+                //Draw route with Polyline
                 for (var line = 0; line < electricLines.length; line++) {
                     createPolylinePaths(electricLines[line], line);
                 }
 
-                ////Draw routes with combined waypoints and multiple routes 
+                ////Draw routes with combined waypoints and multiple routes
                 //for (var line = 0; line < electricLines.length; line++) {
                 //    var batchesReturned = prepareBatch(electricLines[line].coordinates);
                 //    calcRoute(batchesReturned, directionsService, map, colourArray);

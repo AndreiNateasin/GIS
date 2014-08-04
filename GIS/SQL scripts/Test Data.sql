@@ -5,6 +5,9 @@ insert into dbo.ConsumerTypes (ConsumerTypeName)
 	Values ('city')
 SET @consumerType =  @@IDENTITY;
 
+insert into dbo.ConsumerTypes (ConsumerTypeName) 
+	Values ('city')
+
 insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
 	Values ('Bucuresti', 1, 1, @consumerType)
 

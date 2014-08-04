@@ -1,14 +1,14 @@
 
 -- --------------------------------------------------
--- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
+-- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/30/2014 23:38:16
--- Generated from EDMX file: D:\GitHub\GIS\GIS\Models\Gis.Model.edmx
+-- Date Created: 08/04/2014 18:25:40
+-- Generated from EDMX file: C:\Users\User\Documents\GitHub\GIS\GIS\Models\Gis.Model.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [Gis.Map];
+USE [GIS];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -161,6 +161,12 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_UsersToRoles_Users]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[UsersToRoles] DROP CONSTRAINT [FK_UsersToRoles_Users];
 GO
+IF OBJECT_ID(N'[dbo].[FK_ConsumerTypeConsumerTypeInfoLink]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ConsumerTypeInfoLinks] DROP CONSTRAINT [FK_ConsumerTypeConsumerTypeInfoLink];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ConsumerInfoLinkConsumerTypeInfoLink]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ConsumerTypeInfoLinks] DROP CONSTRAINT [FK_ConsumerInfoLinkConsumerTypeInfoLink];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -249,6 +255,12 @@ IF OBJECT_ID(N'[dbo].[UsersToRoles]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[VoltageLevels]', 'U') IS NOT NULL
     DROP TABLE [dbo].[VoltageLevels];
+GO
+IF OBJECT_ID(N'[dbo].[ConsumerInfoLinks]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ConsumerInfoLinks];
+GO
+IF OBJECT_ID(N'[dbo].[ConsumerTypeInfoLinks]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ConsumerTypeInfoLinks];
 GO
 
 -- --------------------------------------------------
@@ -614,6 +626,21 @@ CREATE TABLE [dbo].[VoltageLevels] (
 );
 GO
 
+-- Creating table 'ConsumerInfoLinks'
+CREATE TABLE [dbo].[ConsumerInfoLinks] (
+    [IDConsumerInfoLink] int IDENTITY(1,1) NOT NULL,
+    [Title] nvarchar(max)  NOT NULL,
+    [ReferenceIndex] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'ConsumerTypeInfoLinks'
+CREATE TABLE [dbo].[ConsumerTypeInfoLinks] (
+    [IDConsumerType] int  NOT NULL,
+    [IDConsumerInfoLink] int  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -784,6 +811,18 @@ GO
 ALTER TABLE [dbo].[VoltageLevels]
 ADD CONSTRAINT [PK_VoltageLevels]
     PRIMARY KEY CLUSTERED ([IDVoltageLevel] ASC);
+GO
+
+-- Creating primary key on [IDConsumerInfoLink] in table 'ConsumerInfoLinks'
+ALTER TABLE [dbo].[ConsumerInfoLinks]
+ADD CONSTRAINT [PK_ConsumerInfoLinks]
+    PRIMARY KEY CLUSTERED ([IDConsumerInfoLink] ASC);
+GO
+
+-- Creating primary key on [IDConsumerType], [IDConsumerInfoLink] in table 'ConsumerTypeInfoLinks'
+ALTER TABLE [dbo].[ConsumerTypeInfoLinks]
+ADD CONSTRAINT [PK_ConsumerTypeInfoLinks]
+    PRIMARY KEY CLUSTERED ([IDConsumerType], [IDConsumerInfoLink] ASC);
 GO
 
 -- --------------------------------------------------
@@ -1455,6 +1494,29 @@ ADD CONSTRAINT [FK_UsersToRoles_Users]
 CREATE INDEX [IX_FK_UsersToRoles_Users]
 ON [dbo].[UsersToRoles]
     ([IDUser]);
+GO
+
+-- Creating foreign key on [IDConsumerType] in table 'ConsumerTypeInfoLinks'
+ALTER TABLE [dbo].[ConsumerTypeInfoLinks]
+ADD CONSTRAINT [FK_ConsumerTypeConsumerTypeInfoLink]
+    FOREIGN KEY ([IDConsumerType])
+    REFERENCES [dbo].[ConsumerTypes]
+        ([IDConsumerType])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [IDConsumerInfoLink] in table 'ConsumerTypeInfoLinks'
+ALTER TABLE [dbo].[ConsumerTypeInfoLinks]
+ADD CONSTRAINT [FK_ConsumerInfoLinkConsumerTypeInfoLink]
+    FOREIGN KEY ([IDConsumerInfoLink])
+    REFERENCES [dbo].[ConsumerInfoLinks]
+        ([IDConsumerInfoLink])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ConsumerInfoLinkConsumerTypeInfoLink'
+CREATE INDEX [IX_FK_ConsumerInfoLinkConsumerTypeInfoLink]
+ON [dbo].[ConsumerTypeInfoLinks]
+    ([IDConsumerInfoLink]);
 GO
 
 -- --------------------------------------------------

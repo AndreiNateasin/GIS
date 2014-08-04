@@ -34,6 +34,8 @@
     <EntitySet Name="Users" EntityType="Gis.MapModel.Store.Users" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UsersToRoles" EntityType="Gis.MapModel.Store.UsersToRoles" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="VoltageLevels" EntityType="Gis.MapModel.Store.VoltageLevels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ConsumerInfoLinks" EntityType="Gis.MapModel.Store.ConsumerInfoLinks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ConsumerTypeInfoLinks" EntityType="Gis.MapModel.Store.ConsumerTypeInfoLinks" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_AcquisitionPrices_NetworkOperators" Association="Gis.MapModel.Store.FK_AcquisitionPrices_NetworkOperators">
       <End Role="NetworkOperators" EntitySet="NetworkOperators" />
       <End Role="AcquisitionPrices" EntitySet="AcquisitionPrices" />
@@ -225,6 +227,14 @@
     <AssociationSet Name="FK_UsersToRoles_Users" Association="Gis.MapModel.Store.FK_UsersToRoles_Users">
       <End Role="Users" EntitySet="Users" />
       <End Role="UsersToRoles" EntitySet="UsersToRoles" />
+    </AssociationSet>
+    <AssociationSet Name="ConsumerTypeConsumerTypeInfoLink" Association="Gis.MapModel.Store.ConsumerTypeConsumerTypeInfoLink">
+      <End Role="ConsumerType" EntitySet="ConsumerTypes" />
+      <End Role="ConsumerTypeInfoLink" EntitySet="ConsumerTypeInfoLinks" />
+    </AssociationSet>
+    <AssociationSet Name="ConsumerInfoLinkConsumerTypeInfoLink" Association="Gis.MapModel.Store.ConsumerInfoLinkConsumerTypeInfoLink">
+      <End Role="ConsumerInfoLink" EntitySet="ConsumerInfoLinks" />
+      <End Role="ConsumerTypeInfoLink" EntitySet="ConsumerTypeInfoLinks" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="AcquisitionPrices">
@@ -585,6 +595,22 @@
     </Key>
     <Property Name="IDVoltageLevel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="VoltageLevelName" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ConsumerInfoLinks">
+    <Key>
+      <PropertyRef Name="IDConsumerInfoLink" />
+    </Key>
+    <Property Name="IDConsumerInfoLink" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ReferenceIndex" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConsumerTypeInfoLinks">
+    <Key>
+      <PropertyRef Name="IDConsumerType" />
+      <PropertyRef Name="IDConsumerInfoLink" />
+    </Key>
+    <Property Name="IDConsumerType" Type="int" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="IDConsumerInfoLink" Type="int" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
   <Association Name="FK_AcquisitionPrices_NetworkOperators">
     <End Role="NetworkOperators" Type="Gis.MapModel.Store.NetworkOperators" Multiplicity="1" />
@@ -1162,6 +1188,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="ConsumerTypeConsumerTypeInfoLink">
+    <End Role="ConsumerType" Type="Gis.MapModel.Store.ConsumerTypes" Multiplicity="1" />
+    <End Role="ConsumerTypeInfoLink" Type="Gis.MapModel.Store.ConsumerTypeInfoLinks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConsumerType">
+        <PropertyRef Name="IDConsumerType" />
+      </Principal>
+      <Dependent Role="ConsumerTypeInfoLink">
+        <PropertyRef Name="IDConsumerType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ConsumerInfoLinkConsumerTypeInfoLink">
+    <End Role="ConsumerInfoLink" Type="Gis.MapModel.Store.ConsumerInfoLinks" Multiplicity="1" />
+    <End Role="ConsumerTypeInfoLink" Type="Gis.MapModel.Store.ConsumerTypeInfoLinks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConsumerInfoLink">
+        <PropertyRef Name="IDConsumerInfoLink" />
+      </Principal>
+      <Dependent Role="ConsumerTypeInfoLink">
+        <PropertyRef Name="IDConsumerInfoLink" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -1387,6 +1437,16 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="UsersToRoles" EntitySet="UsersToRoles" />
           </AssociationSet>
+          <EntitySet Name="ConsumerInfoLinks" EntityType="Gis.MapModel.ConsumerInfoLink" />
+          <EntitySet Name="ConsumerTypeInfoLinks" EntityType="Gis.MapModel.ConsumerTypeInfoLink" />
+          <AssociationSet Name="ConsumerTypeConsumerTypeInfoLink" Association="Gis.MapModel.ConsumerTypeConsumerTypeInfoLink">
+            <End Role="ConsumerType" EntitySet="ConsumerTypes" />
+            <End Role="ConsumerTypeInfoLink" EntitySet="ConsumerTypeInfoLinks" />
+          </AssociationSet>
+          <AssociationSet Name="ConsumerInfoLinkConsumerTypeInfoLink" Association="Gis.MapModel.ConsumerInfoLinkConsumerTypeInfoLink">
+            <End Role="ConsumerInfoLink" EntitySet="ConsumerInfoLinks" />
+            <End Role="ConsumerTypeInfoLink" EntitySet="ConsumerTypeInfoLinks" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="AcquisitionPrice">
           <Key>
@@ -1477,6 +1537,7 @@
           <NavigationProperty Name="Consumers" Relationship="Gis.MapModel.FK_Consumers_ConsumerTypes" FromRole="ConsumerTypes" ToRole="Consumers" />
           <NavigationProperty Name="ConsumerTypesToReports" Relationship="Gis.MapModel.FK_ConsumerTypesToReports_ConsumerTypes" FromRole="ConsumerTypes" ToRole="ConsumerTypesToReports" />
           <Property Type="Binary" Name="Image" Nullable="true" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="ConsumerTypeInfoLinks" Relationship="Gis.MapModel.ConsumerTypeConsumerTypeInfoLink" FromRole="ConsumerType" ToRole="ConsumerTypeInfoLink" />
         </EntityType>
         <EntityType Name="ConsumerTypesToReport">
           <Key>
@@ -1531,7 +1592,7 @@
           <Property Name="UseInductiveEnergyCorrection" Type="Boolean" Nullable="false" />
           <Property Name="UseCapacitiveEnergyCorrection" Type="Boolean" Nullable="false" />
           <Property Name="ConsumptionDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="CreatedBy" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Consumer" Relationship="Gis.MapModel.FK_Consumptions_Consumers" FromRole="Consumptions" ToRole="Consumers" />
           <NavigationProperty Name="ConsumptionDetails" Relationship="Gis.MapModel.FK_ConsumptionDetails_Consumptions" FromRole="Consumptions" ToRole="ConsumptionDetails" />
@@ -1623,8 +1684,8 @@
           </Key>
           <Property Name="IDLocation" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="IDConsumer" Type="Int32" Nullable="false" />
-          <Property Name="Longitude" Type="String" Nullable="false" />
-          <Property Name="Latitude" Type="String" Nullable="false" />
+          <Property Name="Longitude" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Latitude" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="ElectricalLineDiagramX" Type="Int32" />
           <Property Name="ElectricalLineDiagramY" Type="Int32" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
@@ -1683,7 +1744,7 @@
           <Property Name="MonthCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="MonthName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="MonthInt" Type="Int32" Nullable="false" />
           <Property Name="Year" Type="Int32" Nullable="false" />
         </EntityType>
@@ -2419,6 +2480,49 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ConsumerInfoLink">
+          <Key>
+            <PropertyRef Name="IDConsumerInfoLink" />
+          </Key>
+          <Property Name="IDConsumerInfoLink" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ReferenceIndex" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ConsumerTypeInfoLinks" Relationship="Gis.MapModel.ConsumerInfoLinkConsumerTypeInfoLink" FromRole="ConsumerInfoLink" ToRole="ConsumerTypeInfoLink" />
+        </EntityType>
+        <EntityType Name="ConsumerTypeInfoLink" >
+          <Key>
+            <PropertyRef Name="IDConsumerType" />
+            <PropertyRef Name="IDConsumerInfoLink" />
+          </Key>
+          <NavigationProperty Name="ConsumerType" Relationship="Gis.MapModel.ConsumerTypeConsumerTypeInfoLink" FromRole="ConsumerTypeInfoLink" ToRole="ConsumerType" />
+          <NavigationProperty Name="ConsumerInfoLink" Relationship="Gis.MapModel.ConsumerInfoLinkConsumerTypeInfoLink" FromRole="ConsumerTypeInfoLink" ToRole="ConsumerInfoLink" />
+          <Property Name="IDConsumerType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="IDConsumerInfoLink" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <Association Name="ConsumerTypeConsumerTypeInfoLink">
+          <End Type="Gis.MapModel.ConsumerType" Role="ConsumerType" Multiplicity="1" />
+          <End Type="Gis.MapModel.ConsumerTypeInfoLink" Role="ConsumerTypeInfoLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConsumerType">
+              <PropertyRef Name="IDConsumerType" />
+            </Principal>
+            <Dependent Role="ConsumerTypeInfoLink">
+              <PropertyRef Name="IDConsumerType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ConsumerInfoLinkConsumerTypeInfoLink">
+          <End Type="Gis.MapModel.ConsumerInfoLink" Role="ConsumerInfoLink" Multiplicity="1" />
+          <End Type="Gis.MapModel.ConsumerTypeInfoLink" Role="ConsumerTypeInfoLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConsumerInfoLink">
+              <PropertyRef Name="IDConsumerInfoLink" />
+            </Principal>
+            <Dependent Role="ConsumerTypeInfoLink">
+              <PropertyRef Name="IDConsumerInfoLink" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2812,6 +2916,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ConsumerInfoLinks">
+      <EntityTypeMapping TypeName="IsTypeOf(Gis.MapModel.ConsumerInfoLink)">
+        <MappingFragment StoreEntitySet="ConsumerInfoLinks">
+          <ScalarProperty Name="IDConsumerInfoLink" ColumnName="IDConsumerInfoLink" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ReferenceIndex" ColumnName="ReferenceIndex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsumerTypeInfoLinks">
+      <EntityTypeMapping TypeName="IsTypeOf(Gis.MapModel.ConsumerTypeInfoLink)">
+        <MappingFragment StoreEntitySet="ConsumerTypeInfoLinks">
+          <ScalarProperty Name="IDConsumerType" ColumnName="IDConsumerType" />
+          <ScalarProperty Name="IDConsumerInfoLink" ColumnName="IDConsumerInfoLink" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -2828,6 +2949,7 @@
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
