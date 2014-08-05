@@ -1,0 +1,62 @@
+﻿
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+.infoLinks {
+    display: block;
+}
+
+.infoWindowContent {
+    display: inline-block;
+}
+
+.infobox-wrapper {
+    display: none;
+}
+
+#infobox {
+    border: 2px solid black;
+    margin-top: 8px;
+    background: #333;
+    background-image: initial;
+    color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: .5em 1em;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    text-shadow: 0 -1px #000000;
+    -webkit-box-shadow: 0 0 8px #000;
+    box-shadow: 0 0 8px #000;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#map_canvas {
+    height: 500px;
+    width: 900px;
+}

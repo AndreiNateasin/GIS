@@ -5,20 +5,19 @@
 @using GIS.Dto;
 @model GIS.Models.Home.ConsumersModel
 
-
 @section Styles {
-    html { height: 100% }
-    body { height: 100%; margin: 0px; padding: 0px }
-    #map_canvas { height:500px; width:900px; }
+    <link href="@Url.Content("~/Content/gis.style.css")" rel="stylesheet" type="text/css" />
 }
 <div id="directions_panel"></div>
 <div id="map_canvas"></div>
+
 @section scripts {
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true&v=3.exp"></script>
     <script type="text/javascript"
             src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer_compiled.js"> </script>
     <script type="text/javascript"
             src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/richmarker/src/richmarker-compiled.js"> </script>
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
     <script type="text/javascript"
             src="@Url.Content("~/Scripts/Application/MultipleRoutesCombinations.js")"> </script>
 
@@ -76,24 +75,42 @@
                 var divContent = $("<ul/>")
                     .addClass('cf')
                     .addClass('infoWindowContent');
-                
+
                 for (var link = 0; link < consumerLinks.length; link++) {
                     var linkElement = $('<a/>')
                         .addClass('infoLinks')
                         .attr('href', '#')
                         .text(consumerLinks[link].Title)
                         .prop('tabIndex', consumerLinks[link].ReferenceIndex);
-                    
+
                     divContent.append(linkElement);
                 }
 
                 divContainer.append(imageNode).append(divContent);
 
-                var infowindow = new google.maps.InfoWindow({
-                    content: divContainer.html()
+                //var infowindow = new google.maps.InfoWindow({
+                //    content: divContainer.html()
+                //});
+
+                //infowindow.open(map, this);
+
+                var infobox = new InfoBox({
+                    content: divContainer.html(),
+                    disableAutoPan: false,
+                    maxWidth: 150,
+                    pixelOffset: new google.maps.Size(-140, 0),
+                    zIndex: null,
+                    boxStyle: {
+                        background: '@Url.Content("~/Images/NoImage.png")' + "no-repeat",
+                        opacity: 0.95,
+                        width: "280px"
+                    },
+                    closeBoxMargin: "12px 4px 2px 2px",
+                    closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
+                    infoBoxClearance: new google.maps.Size(1, 1)
                 });
 
-                infowindow.open(map, this);
+                infobox.open(map, this);
             }
 
             function createPolylinePaths(electricLineWaypoints, index) {
