@@ -77,13 +77,15 @@
                     .addClass('infoWindowContent');
 
                 for (var link = 0; link < consumerLinks.length; link++) {
+                    var liElement  = $('<li/>');
                     var linkElement = $('<a/>')
                         .addClass('infoLinks')
                         .attr('href', '#')
                         .text(consumerLinks[link].Title)
                         .prop('tabIndex', consumerLinks[link].ReferenceIndex);
 
-                    divContent.append(linkElement);
+                    liElement.append(linkElement);
+                    divContent.append(liElement);
                 }
 
                 divContainer.append(imageNode).append(divContent);
@@ -101,8 +103,8 @@
                     pixelOffset: new google.maps.Size(-140, 0),
                     zIndex: null,
                     boxStyle: {
-                        background: '@Url.Content("~/Images/NoImage.png")' + "no-repeat",
-                        opacity: 0.95,
+                        background: '#89ABAB',
+                        opacity: 0.75,
                         width: "280px"
                     },
                     closeBoxMargin: "12px 4px 2px 2px",
