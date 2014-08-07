@@ -68,27 +68,36 @@
                 var imageSrc = this.image != null ? 'data:image/png;base64,' + this.image : noImage;
                 var imageNode = $('<img/>')
                     .addClass('infoWindowContent')
+                    .addClass('consumerImage')
                     .attr('src', imageSrc)
                     .attr('title', this.consumerName);
                 var divContainer = $('<div/>');
 
-                var divContent = $("<ul/>")
-                    .addClass('cf')
-                    .addClass('infoWindowContent');
+                var mainContentDiv = $('<div/>')
+                    .addClass('infoWindowContent')
+                    .addClass('mainContentDiv')
+                    .addClass('cf');
+                var titleElement = $('<p/>')
+                    .addClass('infoWindowTitle')
+                    .text('Consumer title');
+
+                var ulElement = $("<ul/>");
 
                 for (var link = 0; link < consumerLinks.length; link++) {
                     var liElement  = $('<li/>');
                     var linkElement = $('<a/>')
-                        .addClass('infoLinks')
                         .attr('href', '#')
                         .text(consumerLinks[link].Title)
                         .prop('tabIndex', consumerLinks[link].ReferenceIndex);
 
                     liElement.append(linkElement);
-                    divContent.append(liElement);
+                    ulElement.append(liElement);
+                    mainContentDiv
+                        .append(titleElement)
+                        .append(ulElement);
                 }
 
-                divContainer.append(imageNode).append(divContent);
+                divContainer.append(imageNode).append(mainContentDiv);
 
                 //var infowindow = new google.maps.InfoWindow({
                 //    content: divContainer.html()
@@ -104,8 +113,8 @@
                     zIndex: null,
                     boxStyle: {
                         background: '#89ABAB',
-                        opacity: 0.75,
-                        width: "280px"
+                        opacity: 0.85,
+                        width: "300px"
                     },
                     closeBoxMargin: "12px 4px 2px 2px",
                     closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",

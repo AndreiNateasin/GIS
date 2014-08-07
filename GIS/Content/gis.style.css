@@ -22,7 +22,23 @@
 }
 
 .infoWindowContent {
-    display: inline-block;
+    float: left;
+}
+
+.infoWindowTitle {
+    color: #D3F2E7;
+    text-decoration: solid;
+    font-size: 16px;
+    text-align: center;
+}
+
+.mainContentDiv {
+    width: 200px;
+}
+
+.consumerImage {
+    padding-left: 5px;
+    padding-top: 5px;
 }
 
 .infobox-wrapper {
@@ -45,9 +61,9 @@
     box-shadow: 0 0 8px #000;
 }
 
-#infobox a:link, a:visited, a:active, a:hover {
-    color: white;
-}
+    #infobox a:link, a:visited, a:active, a:hover {
+        color: white;
+    }
 
 html {
     height: 100%;
