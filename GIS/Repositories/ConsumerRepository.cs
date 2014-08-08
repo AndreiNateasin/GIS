@@ -39,5 +39,14 @@ namespace GIS.Repositories
                         .ToList();
         }
 
+        public IList<ConsumerTypeDto> GetConsumerTypes()
+        {
+            return _gisDb.ConsumerTypes.Select(x => new ConsumerTypeDto
+            {
+                ConsumerTypeName = x.ConsumerTypeName,
+                Image = x.Image,
+                MapType = x.MapType
+            }).ToList();
+        }
     }
 }

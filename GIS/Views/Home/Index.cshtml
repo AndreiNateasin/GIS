@@ -79,7 +79,7 @@
                     .addClass('cf');
                 var titleElement = $('<p/>')
                     .addClass('infoWindowTitle')
-                    .text('Consumer title');
+                    .text(this.consumerName);
 
                 var ulElement = $("<ul/>");
 
@@ -98,12 +98,6 @@
                 }
 
                 divContainer.append(imageNode).append(mainContentDiv);
-
-                //var infowindow = new google.maps.InfoWindow({
-                //    content: divContainer.html()
-                //});
-
-                //infowindow.open(map, this);
 
                 var infobox = new InfoBox({
                     content: divContainer.html(),
@@ -195,3 +189,6 @@
 
     </script>
 }
+
+
+@{ Html.RenderAction("DisplayMapLegend"); }

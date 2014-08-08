@@ -1,0 +1,13 @@
+﻿@model IList<GIS.Dto.ConsumerTypeDto>
+
+<ul class="ulConsumerType">
+    @foreach (var consumerType in Model)
+    {
+        var typeImage = consumerType.Image != null ? Convert.ToBase64String(consumerType.Image) : null;
+
+        <li>
+            <img src="data:image/png;base64, @typeImage" /> -
+            @consumerType.ConsumerTypeName
+        </li>
+    }
+</ul>

@@ -79,3 +79,14 @@ body {
     height: 500px;
     width: 900px;
 }
+
+.ulConsumerType {
+    list-style-type: none;
+}
+
+    .ulConsumerType li {
+        font-family: Arial, 'Times New Roman';
+        font-size: 19px;
+        text-align: left;
+        letter-spacing:5px;
+    }

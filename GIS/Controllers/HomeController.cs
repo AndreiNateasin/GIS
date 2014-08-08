@@ -32,5 +32,12 @@ namespace GIS.Controllers
             });
         }
 
+        public PartialViewResult DisplayMapLegend()
+        {
+            var consumerTypes = _consumerRepository.GetConsumerTypes();
+
+            return PartialView(consumerTypes);
+        }
+
     }
 }
