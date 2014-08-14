@@ -110,7 +110,7 @@
                         opacity: 0.85,
                         width: "300px"
                     },
-                    closeBoxMargin: "12px 4px 2px 2px",
+                    closeBoxMargin: "6px 4px 2px 2px",
                     closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
                     infoBoxClearance: new google.maps.Size(1, 1)
                 });
@@ -134,7 +134,7 @@
                     geodesic: true,
                     strokeColor: colourArray[index],
                     strokeOpacity: 0.6,
-                    strokeWeight: 5,
+                    strokeWeight: electricLineWaypoints.capacity * 2 ,
                     //icons: [{ icon: lineSymbol,
                     //    offset: '100%'}]
                 };
@@ -168,6 +168,7 @@
                                                                .Select(x => new
                                                                    {
                                                                        name = x.ConsumerType,
+                                                                       capacity = x.Capacity,
                                                                        coordinates = x.Locations.Select(c => new { lat = c.Latitude, lng = c.Longitude })
                                                                    })))
 

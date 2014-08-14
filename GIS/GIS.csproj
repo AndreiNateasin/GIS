@@ -205,6 +205,9 @@
     <Compile Include="Models\District.cs">
       <DependentUpon>Gis.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ElectricLineCapacity.cs">
+      <DependentUpon>Gis.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ElectricStation.cs">
       <DependentUpon>Gis.tt</DependentUpon>
     </Compile>

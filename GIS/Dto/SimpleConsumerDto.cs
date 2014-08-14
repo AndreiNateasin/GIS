@@ -21,6 +21,8 @@ namespace GIS.Dto
 
         public byte[] TypeImage { get; set; }
 
+        public int Capacity { get; set; }
+
         public IEnumerable<LocationDto> Locations { get; set; }
 
         public IEnumerable<InfoLink> InfoLinks { get; set; }

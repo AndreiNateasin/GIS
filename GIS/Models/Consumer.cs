@@ -45,6 +45,7 @@ namespace GIS.Models
         public Nullable<System.DateTime> ModifiedBy { get; set; }
         public bool Active { get; set; }
         public byte[] Image { get; set; }
+        public ElectricLineCapacity Capacity { get; set; }
     
         public virtual Asset Asset { get; set; }
         public virtual ConsumerType ConsumerType { get; set; }

@@ -300,6 +300,7 @@
     <Property Name="ModifiedBy" Type="datetime" Nullable="true" />
     <Property Name="Active" Type="bit" Nullable="false" />
     <Property Name="Image" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Capacity" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ConsumerTypes">
     <Key>
@@ -1526,6 +1527,7 @@
           <NavigationProperty Name="VoltageLevel1" Relationship="Gis.MapModel.FK_Consumers_VoltageLevels1" FromRole="Consumers" ToRole="VoltageLevels" />
           <NavigationProperty Name="Consumptions" Relationship="Gis.MapModel.FK_Consumptions_Consumers" FromRole="Consumers" ToRole="Consumptions" />
           <NavigationProperty Name="Locations" Relationship="Gis.MapModel.FK_Locations_Consumers" FromRole="Consumers" ToRole="Locations" />
+          <Property Name="Capacity" Type="Gis.MapModel.ElectricLineCapacity" Nullable="false" />
         </EntityType>
         <EntityType Name="ConsumerType">
           <Key>
@@ -2523,6 +2525,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EnumType Name="ElectricLineCapacity">
+          <Member Name="Low" Value="1" />
+          <Member Name="Medium" Value="2" />
+          <Member Name="High" Value="3" />
+        </EnumType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2593,6 +2600,7 @@
           <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
           <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

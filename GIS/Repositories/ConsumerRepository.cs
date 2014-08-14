@@ -23,6 +23,7 @@ namespace GIS.Repositories
                                 ConsumerType = z.ConsumerType.ConsumerTypeName,
                                 ConsumerName = z.ConsumerName,
                                 Image = z.Image,
+                                Capacity = (int)z.Capacity,
                                 TypeImage = z.ConsumerType.Image,
                                 Locations = z.Locations.Select(l => new LocationDto
                                 {

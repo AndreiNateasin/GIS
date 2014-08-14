@@ -2,13 +2,14 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 08/05/2014 10:57:38
+-- Date Created: 08/14/2014 11:56:59
 -- Generated from EDMX file: C:\Users\User\Documents\GitHub\GIS\GIS\Models\Gis.Model.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-
+USE [GIS];
+GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
 
@@ -326,7 +327,8 @@ CREATE TABLE [dbo].[Consumers] (
     [ModifiedOn] datetime  NULL,
     [ModifiedBy] datetime  NULL,
     [Active] bit  NOT NULL,
-    [Image] varbinary(max)  NULL
+    [Image] varbinary(max)  NULL,
+    [Capacity] int  NOT NULL
 );
 GO
 
