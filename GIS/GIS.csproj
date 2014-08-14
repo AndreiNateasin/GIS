@@ -290,6 +290,7 @@
     <Compile Include="Repositories\ConsumerRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\FanicaNewVersion.sql" />
     <Content Include="App_Data\Gis.Map.mdf" />
     <Content Include="App_Data\Gis.Map_log.ldf">
       <DependentUpon>Gis.Map.mdf</DependentUpon>
@@ -370,6 +371,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Gis.cs</LastGenOutput>
     </Content>
+    <Content Include="App_Data\FanicaCG_20140814.bak" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\Application\MultipleRoutesCombinations.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
