@@ -6,174 +6,131 @@
 GO
 
 ------------------Consumer links------------------------ 
-insert into dbo.ConsumerInfoLinks (ReferenceIndex, Title)
+insert into dbo.MapElementLinks(ReferenceIndex, Title)
 							values('1', 'Schema Monofilara')
 Insert into #variables  values('consumerTypeLink1', @@IDENTITY)
 
-insert into dbo.ConsumerInfoLinks (ReferenceIndex, Title)
+insert into dbo.MapElementLinks (ReferenceIndex, Title)
 							values('2', 'Grafic consum')
 Insert into #variables  values('consumerTypeLink2', @@IDENTITY)
 
-insert into dbo.ConsumerInfoLinks (ReferenceIndex, Title)
+insert into dbo.MapElementLinks (ReferenceIndex, Title)
 							values('3', 'Raport consum')
 Insert into #variables  values('consumerTypeLink3', @@IDENTITY)
 
 ------------------Consumer links------------------------ 
 
 
-insert into dbo.ConsumerTypes (ConsumerTypeName) 
+insert into dbo.MapElementTypes(TypeName) 
 	Values ('city')
 Insert into #variables  values('consumerTypeCity', @@IDENTITY)
 
 Go
-insert into dbo.ConsumerTypeInfoLinks (IDConsumerInfoLink, IDConsumerType) 
+insert into dbo.MapElementsToMapElementLinks(IDMapElementLink, IDMapElementType) 
 	Values ((Select Value From #variables Where VarName = 'consumerTypeLink1'), (Select Value From #variables Where VarName = 'consumerTypeCity'))
 
-insert into dbo.ConsumerTypeInfoLinks (IDConsumerInfoLink, IDConsumerType) 
+insert into dbo.MapElementsToMapElementLinks (IDMapElementLink, IDMapElementType) 
 	Values ((Select Value From #variables Where VarName = 'consumerTypeLink2'), (Select Value From #variables Where VarName = 'consumerTypeCity'))
 
-insert into dbo.ConsumerTypeInfoLinks (IDConsumerInfoLink, IDConsumerType) 
+insert into dbo.MapElementsToMapElementLinks (IDMapElementLink, IDMapElementType) 
 	Values ((Select Value From #variables Where VarName = 'consumerTypeLink3'), (Select Value From #variables Where VarName = 'consumerTypeCity'))
 
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Bucuresti', 1, 1, (Select Value From #variables Where VarName = 'consumerTypeCity'))
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Bucuresti', 1,  (Select Value From #variables Where VarName = 'consumerTypeCity'), 44.43250, 26.10389)
 
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 44.43250, 26.10389, @@IDENTITY)
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Pitesti', 1,  (Select Value From #variables Where VarName = 'consumerTypeCity'), 44.86056, 24.86778)
 
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Pitesti', 1, 2, (Select Value From #variables Where VarName = 'consumerTypeCity'))
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Sibiu', 1,  (Select Value From #variables Where VarName = 'consumerTypeCity'), 45.79278,24.15207)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 44.86056, 24.86778, @@IDENTITY)
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Sibiu', 1, 3, (Select Value From #variables Where VarName = 'consumerTypeCity'))
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Cluj Napoca', 1, (Select Value From #variables Where VarName = 'consumerTypeCity'), 46.76667, 23.58333)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 45.79278,24.15207, @@IDENTITY)
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Suceava', 1,  (Select Value From #variables Where VarName = 'consumerTypeCity'), 47.65139, 26.25556)
 
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Cluj Napoca', 1, 4, (Select Value From #variables Where VarName = 'consumerTypeCity'))
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Balti', 1,  (Select Value From #variables Where VarName = 'consumerTypeCity'), 47.75399, 27.91841)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 46.76667, 23.58333, @@IDENTITY)
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Chisinau', 1,  (Select Value From #variables Where VarName = 'consumerTypeCity'), 47.01070, 28.86870)
 
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Suceava', 1, 5, (Select Value From #variables Where VarName = 'consumerTypeCity'))
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Galati', 1,  (Select Value From #variables Where VarName = 'consumerTypeCity'), 45.42333, 28.04250)
 
-
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 47.65139, 26.25556, @@IDENTITY)
-
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Balti', 1, 6, (Select Value From #variables Where VarName = 'consumerTypeCity'))
-
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 47.75399, 27.91841, @@IDENTITY)
-
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Chisinau', 1, 7, (Select Value From #variables Where VarName = 'consumerTypeCity'))
-
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 47.01070, 28.86870, @@IDENTITY)
-
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Galati', 1, 8, (Select Value From #variables Where VarName = 'consumerTypeCity'))
-
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 45.42333, 28.04250, @@IDENTITY)
 ------------------------
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Buzau', 1, 9, (Select Value From #variables Where VarName = 'consumerTypeCity'))
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Buzau', 1,  (Select Value From #variables Where VarName = 'consumerTypeCity'), 45.16667, 26.81667)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 45.16667, 26.81667, @@IDENTITY)
 -------------------------
 
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Ploiesti', 1, 10, (Select Value From #variables Where VarName = 'consumerTypeCity'))
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Ploiesti', 1,  (Select Value From #variables Where VarName = 'consumerTypeCity'), 44.93377, 26.02687)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 44.93377, 26.02687, @@IDENTITY)
 -------------------------Pumps--------------------
-insert into dbo.ConsumerTypes (ConsumerTypeName) 
+insert into dbo.MapElementTypes (TypeName) 
 	Values ('Pump')
 Insert into #variables  values('consumerTypePump', @@IDENTITY)
 
 Go
-insert into dbo.ConsumerTypeInfoLinks (IDConsumerInfoLink, IDConsumerType) 
+insert into dbo.MapElementsToMapElementLinks (IDMapElementLink, IDMapElementType) 
 	Values ((Select Value From #variables Where VarName = 'consumerTypeLink1'), (Select Value From #variables Where VarName = 'consumerTypePump'))
 
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('German Pump', 1, 10, (Select Value From #variables Where VarName = 'consumerTypePump'))
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('German Pump', 1,  (Select Value From #variables Where VarName = 'consumerTypePump'), 44.34589, 23.91449)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 44.34589, 23.91449, @@IDENTITY)
 --<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Swedish Pump', 1, 10, (Select Value From #variables Where VarName = 'consumerTypePump'))
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Swedish Pump', 1,  (Select Value From #variables Where VarName = 'consumerTypePump'), 44.47930, 24.22211)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 44.47930, 24.22211, @@IDENTITY)
 --<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Italian Pump', 1, 10, (Select Value From #variables Where VarName = 'consumerTypePump'))
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Italian Pump', 1, (Select Value From #variables Where VarName = 'consumerTypePump'), 44.31445, 24.48029)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 44.31445, 24.48029, @@IDENTITY)
 --<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Romanian Pump', 1, 10, (Select Value From #variables Where VarName = 'consumerTypePump'))
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Romanian Pump', 1, (Select Value From #variables Where VarName = 'consumerTypePump'), 44.24760, 24.30450)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 44.24760, 24.30450, @@IDENTITY)
 --<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 -------------------------
 
 
-insert into dbo.ConsumerTypes (ConsumerTypeName) 
+insert into dbo.MapElementTypes (TypeName) 
 	Values ('Factory')
 Insert into #variables  values('consumerTypeFactory', @@IDENTITY)
 
 Go
-insert into dbo.ConsumerTypeInfoLinks (IDConsumerInfoLink, IDConsumerType) 
+insert into dbo.MapElementsToMapElementLinks (IDMapElementLink, IDMapElementType) 
 	Values ((Select Value From #variables Where VarName = 'consumerTypeLink3'), (Select Value From #variables Where VarName = 'consumerTypeFactory'))
 
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('German Factory', 1, 10, (Select Value From #variables Where VarName = 'consumerTypeFactory'))
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('German Factory', 1, (Select Value From #variables Where VarName = 'consumerTypeFactory'), 44.50945, 26.83548)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 44.50945, 26.83548, @@IDENTITY)
 --<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Swedish Factory', 1, 10, (Select Value From #variables Where VarName = 'consumerTypeFactory'))
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Swedish Factory', 1, (Select Value From #variables Where VarName = 'consumerTypeFactory'), 44.40555, 26.72836)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 44.40555, 26.72836, @@IDENTITY)
 --<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Italian Factory', 1, 10, (Select Value From #variables Where VarName = 'consumerTypeFactory'))
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Italian Factory', 1,  (Select Value From #variables Where VarName = 'consumerTypeFactory'), 44.44086, 26.96182)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 44.44086, 26.96182, @@IDENTITY)
 --<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Romanian Factory', 1, 10, (Select Value From #variables Where VarName = 'consumerTypeFactory'))
+insert into dbo.Consumers (Name,Active , IDMapElementType, Latitude, Longitude) 
+	Values ('Romanian Factory', 1, (Select Value From #variables Where VarName = 'consumerTypeFactory'), 44.33683, 26.85471)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
-	Values(1, 44.33683, 26.85471, @@IDENTITY)
 --<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 -------------------------
-insert into dbo.ConsumerTypes (ConsumerTypeName) 
+insert into dbo.MapElementTypes (TypeName) 
 	Values ('Electric network')
 Insert into #variables  values('consumerTypeNetwork', @@IDENTITY)
 
 
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Bucuresti - Sibiu ', 1, 9, (Select Value From #variables Where VarName = 'consumerTypeNetwork'))
+insert into dbo.ElectricLines(Name,Active , IDMapElementType, Capacity) 
+	Values ('Bucuresti - Sibiu ', 1, (Select Value From #variables Where VarName = 'consumerTypeNetwork'), 5)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
+insert into.dbo.GPSCoordinates (Active, Latitude, Longitude,IDElectricLine)
 	Values(1, 44.43497, 26.10489, @@IDENTITY),
 		  (1, 44.49966, 25.90714, @@IDENTITY),
 		  (1, 44.68742, 25.38528, @@IDENTITY),
@@ -184,10 +141,10 @@ insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
 		  (1, 45.79284, 24.15070, @@IDENTITY)
 ------------------------------------------------------
 
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Bucuresti - Ploiesti ', 1, 9, (Select Value From #variables Where VarName = 'consumerTypeNetwork'))
+insert into dbo.ElectricLines (Name,Active , IDMapElementType, Capacity) 
+	Values ('Bucuresti - Ploiesti ', 1, (Select Value From #variables Where VarName = 'consumerTypeNetwork'),3)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
+insert into.dbo.GPSCoordinates (Active, Latitude, Longitude,IDElectricLine)
 	Values
 		  (1, 44.42805, 26.10437, @@IDENTITY),
 		  (1, 44.51644, 26.09051, @@IDENTITY),
@@ -209,10 +166,10 @@ insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
 		  (1, 44.93377, 26.02687, @@IDENTITY)
 ------------------------------------------------------
 
-insert into dbo.Consumers (ConsumerName,Active,ElectricMeterConstant, IDConsumerType) 
-	Values ('Chisinau - Galati ', 1, 9, (Select Value From #variables Where VarName = 'consumerTypeNetwork'))
+insert into dbo.ElectricLines (Name,Active , IDMapElementType, Capacity) 
+	Values ('Chisinau - Galati ', 1, (Select Value From #variables Where VarName = 'consumerTypeNetwork'), 1)
 
-insert into.dbo.Locations (Active, Latitude, Longitude,IDConsumer)
+insert into.dbo.GPSCoordinates (Active, Latitude, Longitude,IDElectricLine)
 	Values
 		  (1, 47.0107,  28.8687,  @@IDENTITY),
 		  (1, 46.90862, 28.6854,  @@IDENTITY),

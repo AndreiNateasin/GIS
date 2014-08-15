@@ -28,8 +28,8 @@
             var noImage = '@Url.Content("~/Images/NoImage.png")';
             function initialize() {
 
-                var latlng = new google.maps.LatLng('@Model.FirstConsumer.StartLocation.Latitude',
-                    '@Model.FirstConsumer.StartLocation.Longitude');
+                var latlng = new google.maps.LatLng('@Model.FirstConsumer.Latitude',
+                    '@Model.FirstConsumer.Longitude');
 
                 var mapOptions = {
                     zoom: 10,
@@ -153,8 +153,8 @@
                 var consumers = @Html.Raw(Json.Encode(Model.CityConsumers
                                                            .Select(x => new
                                                                {
-                                                                   lat = x.StartLocation.Latitude,
-                                                                   lng = x.StartLocation.Longitude,
+                                                                   lat = x.Latitude,
+                                                                   lng = x.Longitude,
                                                                    consumerName = x.ConsumerName,
                                                                    image =x.Image != null
                                                                                ? Convert.ToBase64String(x.Image)
@@ -167,7 +167,7 @@
                 var electricLines = @Html.Raw(Json.Encode(Model.WireConsumers
                                                                .Select(x => new
                                                                    {
-                                                                       name = x.ConsumerType,
+                                                                       name = x.ConsumerName,
                                                                        capacity = x.Capacity,
                                                                        coordinates = x.Locations.Select(c => new { lat = c.Latitude, lng = c.Longitude })
                                                                    })))

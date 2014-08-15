@@ -8,18 +8,18 @@ namespace GIS.Models.Home
     {
         public ConsumersModel()
         {
-            CityConsumers = new List<SimpleConsumerDto>();
-            WireConsumers = new List<SimpleConsumerDto>();
+            CityConsumers = new List<ConsumerDto>();
+            WireConsumers = new List<ElectricLineDto>();
         }
 
-        public List<SimpleConsumerDto> CityConsumers { get; set; }
-        public List<SimpleConsumerDto> WireConsumers { get; set; }
+        public List<ConsumerDto> CityConsumers { get; set; }
+        public List<ElectricLineDto> WireConsumers { get; set; }
 
-        public SimpleConsumerDto FirstConsumer
+        public ConsumerDto FirstConsumer
         {
             get
             {
-                return CityConsumers.Any() ? CityConsumers.First() : new SimpleConsumerDto();
+                return CityConsumers.Any() ? CityConsumers.First() : new ConsumerDto();
             }
         }
     }

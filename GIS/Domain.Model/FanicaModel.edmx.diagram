@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ddfdc30b24a7449daa1ff4b0263d640e" Name="Diagram1" ZoomLevel="106">
+        <EntityTypeShape EntityType="FanicaCGModel.Assets" Width="1.5" PointX="3" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.Capacitors" Width="1.5" PointX="5.25" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.CapacitorTypes" Width="1.5" PointX="3" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.Consumers" Width="1.5" PointX="8.25" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.Consumption" Width="1.5" PointX="10.5" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.ConsumptionDetails" Width="1.5" PointX="12.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.CostCenters" Width="1.5" PointX="3" PointY="44.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.DataSources" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.Districts" Width="1.5" PointX="3" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.ElectricalTariffs" Width="1.5" PointX="10.5" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.ElectricalThresholds" Width="1.875" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.ElectricLines" Width="1.5" PointX="5.25" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.ElectricStations" Width="1.5" PointX="6" PointY="49" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.EnergyInput" Width="1.5" PointX="15.75" PointY="32" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.FieldClusters" Width="1.5" PointX="6" PointY="52.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.FiscalMeters" Width="1.5" PointX="10.5" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.GPSCoordinates" Width="1.5" PointX="7.5" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.ImportFiles" Width="1.5" PointX="0.75" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.Imports" Width="1.5" PointX="3" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.ImportTypes" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.MapElementLinks" Width="2.125" PointX="5.125" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.MapElementsToMapElementLinks" Width="3" PointX="1" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.MapElementTypes" Width="1.875" PointX="8.25" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.Menu" Width="1.5" PointX="3" PointY="52.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.MenuToRoles" Width="1.5" PointX="5.25" PointY="40.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.Months" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.NetworkOperators" Width="1.5" PointX="8.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.NotificationRules" Width="1.5" PointX="3" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.Notifications" Width="1.5" PointX="5.25" PointY="57.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.NotificationsToUsers" Width="1.5" PointX="7.5" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.PowerTransformers" Width="1.5" PointX="13.5" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.PowerTransformersToElectricLines" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.Reports" Width="1.5" PointX="3" PointY="61.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.ReportsToRoles" Width="1.5" PointX="5.25" PointY="61.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.Roles" Width="1.5" PointX="5.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.Users" Width="1.5" PointX="0.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.UsersToRoles" Width="1.5" PointX="8" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.VoltageLevels" Width="1.5" PointX="3" PointY="40.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.WellProduction" Width="1.5" PointX="13.5" PointY="39.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.MapElectricLines" Width="2.125" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FanicaCGModel.MapElements" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="FanicaCGModel.FK_Assets_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Assets_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_ElectricLines_Assets" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_FiscalMeters_Assets" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_PowerTransformers_Assets" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Capacitors_CapacitorTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Capacitors_MapElementTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Capacitors_PowerTransformers" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Capacitors_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Capacitors_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_CapacitorTypes_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_CapacitorTypes_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Consumers_Consumers" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Consumers_ConsumerTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Consumers_CostCenters" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Consumers_Districts" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Consumers_ElectricStations" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Consumers_FieldClusters" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Consumers_MapElementTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Consumers_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Consumers_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Consumption_Consumers" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_WellProduction_Consumers" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_ConsumptionDetails_Consumptions" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_ConsumptionDetails_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_ConsumptionDetails_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_CostCenters_CostCenters" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_CostCenters_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_CostCenters_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_ElectricLines_Districts" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_FiscalMeters_Districts" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_PowerTransformers_Districts" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_AcquisitionPrices_NetworkOperators" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_ElectricalThresholds_ElectricalThresholds" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_ElectricLines_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_ElectricLines_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_ElectricLines_VoltageLevels" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_FiscalMeters_ElectricLines" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_GPSCoordinates_ElectricLine" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_PowerTransformers_ElectricLines" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_EnergyInput_FiscalMeters" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_EnergyInput_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_FiscalMeters_MapElementTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_FiscalMeters_NetworkOperators" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_FiscalMeters_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_FiscalMeters_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_FiscalMeters_VoltageLevels" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Locations_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Locations_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Imports_ImportFiles" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Imports_ImportFiles1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Imports_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_PowerTransformers_MapElementTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Menu_ParentMenu" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Menu_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Menu_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_MenuToRoles_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_MenuToRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_MenuToRoles_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_MenuToRoles_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_NotificationRules_NotificationRules" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_NotificationRules_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_NotificationRules_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Notifications_NotificationRules" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_NotificationsToUsers_NotificationsToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_NotificationsToUsers_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_PowerTransformers_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_PowerTransformers_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_PowerTransformers_VoltageLevels" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_PowerTransformers_VoltageLevels1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_Reports_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_ReportsToRoles_Reports" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_ReportsToRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_UsersToRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_UsersToRoles_CreatedByUser" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_UsersToRoles_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.FK_WellProduction_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FanicaCGModel.MapElementLinksMapElementsToMapElementLinks" />
+        <AssociationConnector Association="FanicaCGModel.MapElementTypesMapElementsToMapElementLinks" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -2,51 +2,61 @@
 using System.Linq;
 using GIS.Dto;
 using GIS.Models;
+using GIS.Domain.Model;
 
 namespace GIS.Repositories
 {
     public class ConsumerRepository
     {
-        private readonly GisConnectionString _gisDb;
+        private readonly FanicaCGEntities _gisDb;
         public ConsumerRepository()
         {
-            _gisDb = new GisConnectionString();
+            _gisDb = new FanicaCGEntities();
         }
 
-        public List<SimpleConsumerDto> GetConsumersByType(List<string> consumertTypes)
+        public List<ConsumerDto> GetConsumers()
         {
-            var query = _gisDb.Consumers.Where(x => x.Active
-                && consumertTypes.Any(z => z == x.ConsumerType.ConsumerTypeName));
+            var query = _gisDb.Consumers.Where(x => x.Active);
 
-            return query.Select(z => new SimpleConsumerDto
+            return query.Select(z => new ConsumerDto
+            {
+                ConsumerType = z.MapElementTypes.TypeName,
+                ConsumerName = z.Name,
+                Image = z.Image,
+                TypeImage = z.MapElementTypes.TypeImage,
+                Longitude = z.Longitude,
+                Latitude = z.Latitude,
+                InfoLinks = z.MapElementTypes.MapElementsToMapElementLinks.Select(x => new InfoLink
+                {
+                    Title = x.MapElementLinks.Title,
+                    ReferenceIndex = x.MapElementLinks.ReferenceIndex
+                })
+            }).ToList();
+        }
+
+
+        public List<ElectricLineDto> GetElectricLines()
+        {
+            var query = _gisDb.ElectricLines;
+
+            return query.Select(z => new ElectricLineDto
                             {
-                                ConsumerType = z.ConsumerType.ConsumerTypeName,
-                                ConsumerName = z.ConsumerName,
-                                Image = z.Image,
+                                ConsumerName = z.Name,
                                 Capacity = (int)z.Capacity,
-                                TypeImage = z.ConsumerType.Image,
-                                Locations = z.Locations.Select(l => new LocationDto
+                                Locations = z.GPSCoordinates.Select(l => new LocationDto
                                 {
                                     Longitude = l.Longitude,
                                     Latitude = l.Latitude,
                                 }),
-                                InfoLinks = z.ConsumerType.ConsumerTypeInfoLinks.Select(x => new InfoLink
-                                    {
-                                        Title = x.ConsumerInfoLink.Title,
-                                        ReferenceIndex = x.ConsumerInfoLink.ReferenceIndex
-                                    })
-
-                            })
-                        .ToList();
+                            }).ToList();
         }
 
         public IList<ConsumerTypeDto> GetConsumerTypes()
         {
-            return _gisDb.ConsumerTypes.Select(x => new ConsumerTypeDto
+            return _gisDb.MapElementTypes.Select(x => new ConsumerTypeDto
             {
-                ConsumerTypeName = x.ConsumerTypeName,
-                Image = x.Image,
-                MapType = x.MapType
+                ConsumerTypeName = x.TypeName,
+                Image = x.TypeImage,
             }).ToList();
         }
     }

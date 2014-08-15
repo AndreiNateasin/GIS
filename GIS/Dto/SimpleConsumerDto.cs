@@ -3,11 +3,10 @@ using System.Linq;
 
 namespace GIS.Dto
 {
-    public class SimpleConsumerDto
+    public class ConsumerDto : LocationDto
     {
-        public SimpleConsumerDto()
+        public ConsumerDto()
         {
-            Locations = new List<LocationDto>();
             InfoLinks = new List<InfoLink>();
             TypeImage = new byte[] { };
             Image = new byte[] { };
@@ -21,18 +20,6 @@ namespace GIS.Dto
 
         public byte[] TypeImage { get; set; }
 
-        public int Capacity { get; set; }
-
-        public IEnumerable<LocationDto> Locations { get; set; }
-
         public IEnumerable<InfoLink> InfoLinks { get; set; }
-
-        public LocationDto StartLocation
-        {
-            get
-            {
-                return Locations.Any() ? Locations.First() : new LocationDto();
-            }
-        }
     }
 }

@@ -164,132 +164,165 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Domain.Model\Assets.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\Capacitors.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\CapacitorTypes.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\Consumers.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\Consumption.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\ConsumptionDetails.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\CostCenters.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\DataSources.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\Districts.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\ElectricalTariffs.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\ElectricalThresholds.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\ElectricLineCapacityEnum.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\ElectricLines.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\ElectricStations.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\EnergyInput.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\FanicaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FanicaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\FanicaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\FanicaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FanicaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\FieldClusters.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\FiscalMeters.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\GPSCoordinates.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\ImportFiles.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\Imports.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\ImportTypes.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\MapElectricLines.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\MapElementLinks.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\MapElements.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\MapElementsToMapElementLinks.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\MapElementTypes.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\Menu.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\MenuToRoles.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\Months.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\NetworkOperators.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\NotificationRules.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\Notifications.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\NotificationsToUsers.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\PowerTransformers.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\PowerTransformersToElectricLines.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\Reports.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\ReportsToRoles.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\Roles.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\Users.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\UsersToRoles.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\VoltageLevels.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain.Model\WellProduction.cs">
+      <DependentUpon>FanicaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Dto\ConsumerTypeDto.cs" />
     <Compile Include="Dto\InfoLink.cs" />
     <Compile Include="Dto\LocationDto.cs" />
+    <Compile Include="Dto\ElectricLineDto.cs" />
     <Compile Include="Dto\SimpleConsumerDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AcquisitionPrice.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Asset.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Consumer.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ConsumerInfoLink.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ConsumerType.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ConsumerTypeInfoLink.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\ConsumerTypes.cs" />
-    <Compile Include="Models\ConsumerTypesToReport.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Consumption.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ConsumptionDetail.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CostCenter.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\District.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ElectricLineCapacity.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ElectricStation.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\FieldCluster.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Gis.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Gis.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Gis.Context1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Gis.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Gis.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Gis.Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Gis.Model.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\Home\ConsumersModel.cs" />
-    <Compile Include="Models\Import.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ImportFile.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ImportType.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Location.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Menu.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MenuToRole.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Month.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NetworkOperator.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Notification.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NotificationRule.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NotificationsToUser.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Report.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ReportsToRole.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Role.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\User.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UsersToRole.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VoltageLevel.cs">
-      <DependentUpon>Gis.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ConsumerRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\FanicaCG.mdf" />
+    <Content Include="App_Data\FanicaCG_log.ldf">
+      <DependentUpon>FanicaCG.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\FanicaNewVersion.sql" />
     <Content Include="App_Data\Gis.Map.mdf" />
     <Content Include="App_Data\Gis.Map_log.ldf">
@@ -351,27 +384,28 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Domain.Model\FanicaModel.edmx.sql" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Models\Gis.Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Gis.Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <Content Include="Images\NoImage.png" />
-    <Content Include="Models\Gis.Model.edmx.diagram">
-      <DependentUpon>Gis.Model.edmx</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Models\Gis.Model.edmx.sql" />
-    <Content Include="Models\Gis.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Gis.Context1.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Gis.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Gis.cs</LastGenOutput>
-    </Content>
     <Content Include="App_Data\FanicaCG_20140814.bak" />
+    <EntityDeploy Include="Domain.Model\FanicaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FanicaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Domain.Model\FanicaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FanicaModel.edmx</DependentUpon>
+      <LastGenOutput>FanicaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Domain.Model\FanicaModel.edmx.diagram">
+      <DependentUpon>FanicaModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Domain.Model\FanicaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FanicaModel.edmx</DependentUpon>
+      <LastGenOutput>FanicaModel.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\Application\MultipleRoutesCombinations.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
