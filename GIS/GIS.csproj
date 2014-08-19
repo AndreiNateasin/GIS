@@ -196,9 +196,11 @@
     </Compile>
     <Compile Include="Domain.Model\ElectricalThresholds.cs">
       <DependentUpon>FanicaModel.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domain.Model\ElectricLineCapacityEnum.cs">
       <DependentUpon>FanicaModel.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domain.Model\ElectricLines.cs">
       <DependentUpon>FanicaModel.tt</DependentUpon>
@@ -210,19 +212,19 @@
       <DependentUpon>FanicaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Domain.Model\FanicaModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>FanicaModel.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Domain.Model\FanicaModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>FanicaModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Domain.Model\FanicaModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>FanicaModel.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Domain.Model\FieldClusters.cs">
       <DependentUpon>FanicaModel.tt</DependentUpon>
@@ -306,9 +308,9 @@
       <DependentUpon>FanicaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Dto\ConsumerTypeDto.cs" />
+    <Compile Include="Dto\ElectricLineDto.cs" />
     <Compile Include="Dto\InfoLink.cs" />
     <Compile Include="Dto\LocationDto.cs" />
-    <Compile Include="Dto\ElectricLineDto.cs" />
     <Compile Include="Dto\SimpleConsumerDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -384,28 +386,24 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Domain.Model\FanicaModel.edmx.sql" />
-    <Content Include="favicon.ico" />
-    <Content Include="Global.asax" />
-    <Content Include="Images\NoImage.png" />
-    <Content Include="App_Data\FanicaCG_20140814.bak" />
-    <EntityDeploy Include="Domain.Model\FanicaModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FanicaModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <Content Include="Domain.Model\FanicaModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>FanicaModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>FanicaModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Domain.Model\FanicaModel.edmx.diagram">
       <DependentUpon>FanicaModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Domain.Model\FanicaModel.edmx.sql" />
     <Content Include="Domain.Model\FanicaModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>FanicaModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>FanicaModel.cs</LastGenOutput>
     </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\NoImage.png" />
+    <Content Include="App_Data\FanicaCG_20140814.bak" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\Application\MultipleRoutesCombinations.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -467,6 +465,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Domain.Model\FanicaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FanicaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
